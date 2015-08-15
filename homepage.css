@@ -1,0 +1,155 @@
+#content_area img[src*="/Home_Graphic_Welcome.jpg"] {
+    width: 100%;
+}
+
+/* CONVERTS ALL IMAGES IN ARTICLE 2 (HOMEPAGE) TO BE RESPONSIVE */
+#div_articleid_2 img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#content_area table {
+  table-layout: fixed;
+}
+
+#div_articleid_2 img[src$="/FeaturedProducts.gif"] {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  width: 198px;
+  height: auto;
+  min-width: 25px;
+}
+
+img[src$="/FeaturedProducts.gif"] {
+  width: 198px;
+  margin-left: 0px !important;
+}
+
+#div_articleid_2 img[src$="/clear1x1.gif"],
+#div_articleid_2 .v65-productDisplay img {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  width: auto;
+  height: auto;
+  min-width: 25px;
+}
+
+.content {
+  padding-top: 0;
+}
+
+/* HOMEPAGE FEATURED PRODUCTS */
+.v65-productDisplay .productnamecolor.colors_productname, a.productnamecolor.colors_productname {
+  color: #484848;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.5em;
+  text-align: center; /* added by yan 08/07 */
+}
+
+.v65-productDisplay .productnamecolor.colors_productname:hover, a.productnamecolor.colors_productname:hover {
+  color: #e9616e;
+  text-decoration: none;
+}
+table.v65-productDisplay font.text.colors_text, table.v65-productDisplay font.text.colors_text b {
+  color: #484848;
+  font-size: 12px;
+}
+
+.v-product .text {
+  text-align: center; /* added by yan 08/07 */
+}
+
+.v-product div {
+  text-align: center; /* added by yan 08/11 */
+}
+
+.v-product .product_discountprice {
+  text-align: center; /* added by yan 08/07 */
+}
+
+/* FEATURED PRODUCTS */
+#content_area .v65-productDisplay img[src$="nophoto.gif"],
+#content_area .v65-productDisplay img[src*="/v/vspfiles/photos/"] {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border: 0 !important;
+  /*margin-left:0px;    /* added 7/20 Jenny */*/
+}
+
+/* Product Title */
+table.v65-productDisplay .productnamecolor {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+/* List Price */
+table.v65-productDisplay .product_listprice,
+table.v65-productDisplay .product_listprice b {
+font-size: 12px;
+font-weight: normal;
+}
+
+/* Our Price */
+table.v65-productDisplay .product_productprice,
+table.v65-productDisplay .product_productprice b {
+font-size: 12px;
+font-weight: normal;
+}
+
+/* Sale Price */
+table.v65-productDisplay .product_saleprice,
+table.v65-productDisplay .product_saleprice b {
+  font-size: 12px;
+  font-weight: normal;
+  color: #e74f5d;
+  text-align: center; /* added by yan 08/07 */
+}
+
+/* Deal Price */
+table.v65-productDisplay .product_dealprice {
+  font-size: 12px;
+  font-weight: normal;
+  color: #e74f5d;
+  text-align: center; /* added by yan 08/07 */
+}
+
+@media (max-width:480px){
+  /* Product Title */
+  table.v65-productDisplay .productnamecolor {
+      font-size: 12px;
+  }
+
+  /* List Price */
+  table.v65-productDisplay .product_listprice,
+  table.v65-productDisplay .product_listprice b {
+    font-size: 12px;
+  }
+
+  /* Our Price */
+  table.v65-productDisplay .product_productprice,
+  table.v65-productDisplay .product_productprice b {
+    font-size: 12px;
+  }
+
+  /* Sale Price */
+  table.v65-productDisplay .product_saleprice,
+  table.v65-productDisplay .product_saleprice b {
+    font-size: 12px;
+  }
+
+  /* Deal Price */
+  table.v65-productDisplay .product_dealprice {
+    font-size: 12px;
+  }
+}

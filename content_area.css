@@ -1,0 +1,210 @@
+/* Modal Styles */
+@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700);
+
+body {
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.42857;
+  color: #545454;
+  background-color: #e6dfcd; }
+
+
+/* Modal Spacing */
+table.colors_lines_light td {
+  padding: 0px;
+}
+
+/* Hacky way to make My Orders table center align on myaccount.asp */
+form[name='form2'] > table > tbody > tr:nth-child(2) td {
+  text-align: -webkit-center;
+}
+
+/* Hacky way to make text in My Orders table left align on myaccount.asp */
+form[name='form2'] > table > tbody > tr:nth-child(2) td table td {
+  text-align: left;
+}
+
+form[name='form2'] > table > tbody > tr > td > table > tbody > tr > td {
+  border: 1px solid grey;
+  padding: 4px;
+}
+
+form[name='form2'] > table > tbody > tr > td > table[width='520'] > tbody > tr > td {
+  border: 0px;
+  padding: 0px;
+}
+
+/* Hacky way to beautify orders.asp */
+form[name='form2'] > table > tbody > tr > td > table > tbody > tr > td ul {
+  list-style: none;
+  padding-left: 0 !important;;
+}
+
+form[name='form2'] > table > tbody > tr > td > table > tbody > tr > td table {
+  table-layout: fixed;
+}
+
+form[name='form2'] > table > tbody > tr > td > table > tbody > tr > td table td:nth-child(1) {
+  width: 79%;
+}
+form[name='form2'] > table > tbody > tr > td > table > tbody > tr > td table td:nth-child(2) {
+  width: 10%;
+}
+form[name='form2'] > table > tbody > tr > td > table > tbody > tr > td table td:nth-child(3) {
+  width: 11%;
+}
+
+.container a[href='myaccount.asp'] {
+  font-size: 14px;
+}
+
+/* COLORS */
+.colors_background3 {
+  background-color: #D94545;
+}
+
+.colors_highlight {
+  background-color: #fb0;
+}
+
+.colors_lines {
+  background-color: #000;
+}
+
+.colors_lines_light {
+  background-color: #ddd;
+}
+
+.colors_menutitle {
+  background-color: #444;
+}
+
+.colors_menutitletext {
+  color: #fff;
+}
+
+/* PRODUCT NAME COLOR */
+.colors_productname {
+  color: #333333;
+}
+
+/* PRODUCT PRICE COLOR */
+.colors_productprice {
+  color: #cc0000;
+}
+
+a.colors_homepage_title {
+  color: #333333;
+}
+
+body,
+.colors_background_main,
+.colors_background1,
+.colors_background2 {
+  background-color: #fff;
+}
+
+a,
+.colors_background2_text,
+.colors_background3_text,
+.colors_links {
+  color: #333333;
+}
+
+a.colors_background2_text:hover,
+a.colors_background3_text:hover,
+a.colors_productname:hover {
+  color: #666666;
+}
+
+a:hover,
+a.colors_links:hover {
+  color: #666666;
+}
+
+td, .colors_text {
+  color: black;
+}
+
+.colors_background1_text {
+  color: black;
+}
+
+.colors_background1_text:hover {
+  color: #666666;
+}
+
+.colors_backgroundlight,
+.colors_backgroundneutral,
+.colors_descriptionbox,
+.colors_pricebox {
+  background-color: #eee;
+}
+
+.colors_backgroundlight_dark,
+.colors_backgroundneutral_dark {
+  background-color: #ddd;
+}
+
+/* CONTENT AREA */
+font {
+  color: black;
+  font-size: 14px;
+}
+
+form {
+  margin: 0;
+}
+
+.productnamecolor, a.productnamecolor {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+a.carttext:hover {
+  font-size: 10px;
+  text-decoration: underline;
+}
+
+.navtitle, a.navtitle, a.navtitle:hover {
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+a.navtop:hover {
+  color: #666666;
+  text-decoration: underline;
+}
+
+table, td, .bgcolor1, .bgcolor2, .bgcolor3,
+.pricecolor, a.regularlink,
+.nav1, a.nav1, .nav1_selected, a.nav1_selected,
+.nav2, a.nav2, .nav2_selected, a.nav2_selected,
+.nav3, a.nav3, .nav3_selected, a.nav3_selected,
+.navbottom, a.navbottom, .navspecials, a.navspecials {
+  font-size: 14px;
+}
+
+textarea, input, .navtop, a.navtop {
+  color: #000;
+  font-size: 12px;
+}
+
+.productnamecolorLARGE, a.productnamecolorLARGE, a.productnamecolorLARGE:hover {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.productnamecolorsmall, a.productnamecolorsmall,
+.pricecolorsmall, .smalltext, .carttext, a.carttext {
+  font-size: 10px;
+}
+
+a.regularlink:hover, a.navbottom:hover {
+  text-decoration: underline;
+}
+
+table[width="385"] {
+  width: 100% !important;
+  max-width: 385px !important;
+}

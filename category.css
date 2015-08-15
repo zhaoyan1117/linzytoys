@@ -1,0 +1,299 @@
+/**************************
+*       BREADCRUMBS       *
+**************************/
+
+#divWaitModal + table > tbody > tr:first-child a, /*Targets text*/
+#divWaitModal + table > tbody > tr:first-child b /*Targets greater-than symbol*/ {
+  color: #484848;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+/*****************************
+*   WHOLE SUB CAT CONTAINER  *
+*****************************/
+
+/*Set container's background or border*/
+.colors_backgroundneutral {
+  background: none; /*Overrides default*/
+  border-bottom: 1px solid #eaeaea;
+  display: block;
+  margin-bottom: 30px;
+  padding-bottom: 12px;
+}
+
+/*****************************
+*           HEADING          *
+*****************************/
+
+/* Heading background */
+table.colors_backgroundlight {
+  background: none;
+  border-bottom: 0 solid #e1e1e1;
+  width: 100%;
+}
+
+/* Heading text styling */
+table.colors_backgroundlight > tbody > tr > td:first-child b {
+  color: #484848;
+  display: block;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-family: inherit;
+  font-weight: normal;
+  padding: 20px 0 10px;
+  border-bottom: 1px solid #eaeaea;
+  margin-bottom: 12px;
+}
+
+/*****************************
+*        CATEGORY LINKS      *
+*****************************/
+
+/* Category links outer container (excludes heading container) */
+/* Use for background and padding */
+table.colors_backgroundlight + table {
+  padding: 3% 0;
+}
+
+.subcategory_name {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Category link */
+a.subcategory_link {
+  font-size: 14px;
+  display: block;
+  padding:2% 0;
+  font-weight: normal;
+}
+
+a.subcategory_link:before {
+  content: "\2022";
+  display: inline-block;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+/* Category link hover */
+a.subcategory_link:hover {
+  text-decoration: none;
+}
+
+/*****************************
+*      RESPONSIVE IMAGES     *
+*****************************/
+
+table.v65-productDisplay .v65-productPhoto img,
+img[src$="nophoto.gif"],
+img[src*="/v/vspfiles/photos/"]{
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 0 15px;
+  margin-left: 0px;
+}
+
+/*****************************
+*       CATEGORY STYLES      *
+*****************************/
+
+/* Product Title */
+table.v65-productDisplay .productnamecolor {
+  font: 600 12px 'Source Sans Pro', Arial, Sans-Serif;
+
+  text-align: center; /* added by yan 08/07 */
+}
+
+.v-product div {
+  text-align: center; /* added by yan 08/11 */
+}
+
+/* List Price */
+table.v65-productDisplay .product_listprice,
+table.v65-productDisplay .product_listprice b {
+  color: #484848;
+  font-size: 12px;
+  font-weight: normal;
+
+  text-align: center; /* added by yan 08/07 */
+}
+
+/* Our Price */
+table.v65-productDisplay .product_productprice,
+table.v65-productDisplay .product_productprice b {
+  color: #484848;
+  font-size: 12px;
+  font-weight: normal;
+
+  text-align: center; /* added by yan 08/07 */
+}
+
+
+/* Sale Price */
+table.v65-productDisplay .product_saleprice,
+table.v65-productDisplay .product_saleprice b {
+  color: #aa1f1f;
+  font-size: 12px;
+  font-weight: normal;
+
+  text-align: center; /* added by yan 08/07 */
+}
+
+/* Deal Price */
+table.v65-productDisplay .product_dealprice {
+  color: #aa1f1f;
+  font-size: 12px;
+  font-weight: normal;
+
+  text-align: center; /* added by yan 08/07 */
+}
+
+/* You Save */
+table.v65-productDisplay .product_yousave {
+  color: #484848;
+  font-size: 11px;
+  font-style: italic;
+  font-weight: normal;
+
+  text-align: center; /* added by yan 08/07 */
+}
+
+p.v-product__desc {
+  text-align: center; /* added by yan 08/07 */
+}
+
+/* Discount Price */
+table.v65-productDisplay .product_discountprice {
+  text-align: center; /* added by yan 08/07 */
+}
+
+/* Set Up Cost */
+table.v65-productDisplay .product_setupcost, table.v65-productDisplay .product_setupcost b {}
+
+/* Description */
+table.v65-productDisplay img + br + font.text.colors_text, /*Single rows / Select / Checkboxes / List*/
+table.v65-productDisplay td[valign="top"] > font.text.colors_text /*Grid / Lightweight Grid*/ {
+  color: #686868;
+  font-size: 14px;
+  font-weight: normal;
+
+  text-align: center; /* added by yan 08/07 */
+}
+
+table.v65-productDisplay .v65-productPhoto img,
+img[src*="/v/vspfiles/photos/"] {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 0 15px;
+  margin-left: 0px;
+}
+/*****************************
+*  CENTER PROD NAME & PRICE  *
+*****************************/
+
+/*#content_area table.v65-productDisplay {
+  text-align: center;
+}*/
+
+/*****************************
+*    REMOVE DIVIDER LINES    *
+*****************************/
+
+/*td[background$="Grid_Single_Divider_Vert.gif"],
+td[background$="Grid_Single_Divider_Horiz.gif"] {
+  background: none !important;
+}*/
+
+/* * * * * * FIXES * * * * * */
+
+#content_area table {table-layout: fixed;}
+
+.colors_backgroundlight td[width="195"] + td[width="20"] {display: none;}
+
+img[src$="Bullet_SubCategory.gif"] {display: none;}
+
+#jmenuhide b,
+#MainForm font[size="2"] b {
+  font-weight: normal;
+}
+
+/* Remove padding-left from breadcrumbs */
+#divWaitModal + table > tbody > tr:first-child td {padding-left: 0;}
+
+/* Remove default Arial font family */
+font[face="Arial"] {font-family: inherit;}
+
+/* Remove default padding of table containing subcat links */
+table.colors_backgroundlight + table td {padding: 0;}
+
+/* Remove excess spacing to left of product name in Checkboxes display mode*/
+a.productnamecolor.colors_productname + img {display: none;}
+
+/* Override valign="bottom" in "Sort By:" container */
+form#MainForm > input[name="Cat"] + table td[valign="bottom"][rowspan="2"] {
+  vertical-align: top;
+  padding-top: 5px;
+}
+
+/* Remove excess spacing on left and right of "Sort By" container */
+form#MainForm > input[name="Cat"] + table > tbody > tr > td,
+form#MainForm > input[name="Cat"] + table td[valign="bottom"][rowspan="2"],
+form#MainForm > input[name="Cat"] + table td[align="right"] {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Heading */
+table.colors_backgroundlight > tbody > tr > td > img, /*Heading images*/
+.colors_lines_light, .colors_lines_light + .colors_backgroundneutral  /*Lines below heading*/ {
+  display: none;
+}
+
+
+@media (max-width:480px){
+  .v65-productDisplay{
+    width: 100%;
+    table-layout: fixed;
+  }
+  td[background*="/v/vspfiles/templates/have_hold_r/images/Grid_Divider_Vertical.gif"]{
+    padding:0 10px;
+  }
+  form#MainForm > input[name="Cat"] + table > tbody > tr > td, form#MainForm > input[name="Cat"] + table td[valign="bottom"][rowspan="2"], form#MainForm > input[name="Cat"] + table td[align="right"]{
+    display: block;
+    margin-bottom: 15px;
+    text-align: left;
+  }
+
+  /* Product Title */
+  table.v65-productDisplay .productnamecolor {
+      font-size: 12px;
+  }
+
+  /* List Price */
+  table.v65-productDisplay .product_listprice,
+  table.v65-productDisplay .product_listprice b {
+    font-size: 12px;
+  }
+
+  /* Our Price */
+  table.v65-productDisplay .product_productprice,
+  table.v65-productDisplay .product_productprice b {
+    font-size: 12px;
+  }
+
+  /* Sale Price */
+  table.v65-productDisplay .product_saleprice,
+  table.v65-productDisplay .product_saleprice b {
+    font-size: 12px;
+  }
+
+  /* Deal Price */
+  table.v65-productDisplay .product_dealprice {
+    font-size: 12px;
+  }
+
+
+}
