@@ -36,6 +36,20 @@
                     // Move shipping address and cost table outside.
                     var shippingCostTable = document.getElementById('v65-onepage-ShippingCostParent');
                     cartTable.parentNode.appendChild(shippingCostTable);
+
+                    // Separate total cell in cart table.
+                    var totalRow = document.getElementById('v65-onepage-ShippingCostTotalRow');
+                    var totalValue = document.getElementById('v65-onepage-total-value-cell');
+                    var totalCell = document.createElement("TD");
+                    var totalSpan = $('#TotalsTotalTD');
+                    totalCell.innerText = "Total:";
+                    totalCell.style.color = "#111";
+                    totalCell.style.fontSize = "20px";
+                    totalRow.insertBefore(totalCell, totalValue);
+                    totalSpan.text(totalSpan.text().slice(totalSpan.text().indexOf('$')))
+
+                    // Remove line break in cost table.
+                    $("#TotalsDivContainer br").remove();
                 });
             }
 

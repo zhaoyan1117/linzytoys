@@ -142,9 +142,21 @@
   opacity: 1.0;
 }
 
+#content_area #v65-cart-totals-parent {
+  border-top: 1px solid rgb(204, 204, 204);
+}
+
 /**************************
 *       CART DETAILS      *
 **************************/
+table#v65-onepage-ShippingCostDetails td[align="right"].v65-onepage-shippingcost-detail {
+  width: 10%;
+}
+
+table#v65-onepage-ShippingCostDetails tr.v65-onepage-summary-spacer-row {
+  display: none;
+}
+
 /* All summary text the same? Use this and delete the next three sections */
 #content_area #table_checkout_cart0 #v65-onepage-ordersummary-header-row td,
 #content_area #table_checkout_cart0 #v65-onepage-ordersummary-items td,
@@ -170,8 +182,7 @@
 
 #content_area #v65-onepage-ShippingCostDetails {
   margin-right: 0;
-  padding-left: 0;
-  padding-right: 15px; }
+  padding: 0; }
 
 /**************************
 *    BORDER ABOVE TOTAL   *
@@ -186,8 +197,8 @@
 #content_area #TotalsTotalTD {
   color: #111;
   display: block;
-  margin-top: 10px;
-  font-weight: normal !important; }
+  font-weight: normal !important;
+  border-top: 1px solid black; }
 
 /**************************
 *      OTHER TEXT       *
@@ -204,7 +215,12 @@
   font-size: 13px;
   text-indent: 0px;
   vertical-align: middle;
-  padding: 0px 10px; }
+  padding: 0px 10px;
+  padding-top: 8px; }
+
+#content_area #v65-onepage-ordercomments-row {
+  border-top: 1px solid rgb(204, 204, 204);
+}
 
 #content_area #v65-onepage-ordercomments-row #v65-onepage-ordercomments-value textarea {
   margin-top: 5px;
