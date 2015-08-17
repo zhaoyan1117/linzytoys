@@ -316,6 +316,14 @@ table#v65-onepage-ShippingCostDetails tr.v65-onepage-summary-spacer-row {
   padding: 8px 0px;
 }
 
+#content_area #v65-onepage-ShippingCostParent #v65-addresstype-row-parent {
+  display: none;
+}
+
+#content_area #v65-onepage-ShippingCostParent #v65-onepage-copy-to-shipping-row {
+  display: none;
+}
+
 /**************************
 *    BORDER ABOVE TOTAL   *
 **************************/
