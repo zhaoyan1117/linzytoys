@@ -97,6 +97,18 @@
 /*******************************
 *    TABLE CHECKOUT SUM BKG    *
 *******************************/
+
+#content_area #billing-info-announcement {
+    width: 96%;
+    height: auto;
+
+    margin: 15px auto;
+
+    font-size: 17px;
+    text-align: center;
+    color: rgba(217,69,69,0.85);
+}
+
 /* Order summary background color */
 #content_area #table_checkout_cart0 {
   background: #f7f7f8 !important;

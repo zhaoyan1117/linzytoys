@@ -51,6 +51,12 @@
                     // Remove line break in cost table.
                     $("#TotalsDivContainer br").remove();
                     $("#table_checkout_cart0 br").remove();
+
+                    // Add address announcement.
+                    var announceDiv = document.createElement("DIV");
+                    announceDiv.innerText = "Please fill out the following billing information as mush as you can, our professional sales will contact you later to confirm the order!"
+                    announceDiv.id = 'billing-info-announcement';
+                    addressTable.parentNode.insertBefore(announceDiv, addressTable);
                 });
             }
 
