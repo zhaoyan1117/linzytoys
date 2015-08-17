@@ -24,10 +24,16 @@
 *     HEADINGS IMAGES     *
 **************************/
 #content_area #v65-onepage-ContentTable .v65-onepage-headerShort {
-  background: #f7f7f8;
   width: 100%;
+
+  background-color: rgba(217, 69, 69, 0.85098);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
   color: #111;
-  font-size: 14px;
+
+  font-size: 15px;
+  font-weight: normal;
   text-transform: uppercase;
 }
 
@@ -109,6 +115,10 @@
     color: rgba(217,69,69,0.85);
 }
 
+#billing-header, #shipping-header, #v65-checkout-payment-header {
+    padding-bottom: 0px !important;
+}
+
 /* Order summary background color */
 #content_area #table_checkout_cart0 {
   background: #f7f7f8 !important;
@@ -128,7 +138,6 @@
 
   width: 47%;
 
-  margin-top: 10px;
   margin-left: 2%;
   margin-bottom: 0px;
 }
@@ -137,7 +146,6 @@
   float: right;
   width: 47%;
 
-  margin-top: 10px;
   margin-right: 2%;
   margin-bottom: 0px;
 }

@@ -48,9 +48,10 @@
                     totalRow.insertBefore(totalCell, totalValue);
                     totalSpan.text(totalSpan.text().slice(totalSpan.text().indexOf('$')))
 
-                    // Remove line break in cost table.
+                    // Remove line break in tables.
                     $("#TotalsDivContainer br").remove();
                     $("#table_checkout_cart0 br").remove();
+                    $("#v65-onepage-ContentTable br").remove();
 
                     // Add address announcement.
                     var announceDiv = document.createElement("DIV");
