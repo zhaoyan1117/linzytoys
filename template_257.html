@@ -65,6 +65,19 @@
 
                     // Remove unused tr.
                     $('#v65-onepage-Billing tr:nth-last-child(-n+3)').remove();
+
+                    // Register same billing address button.
+                    $('#v65-onepage-shippingParent-row').hide();
+                    $('#v65-onepage-savedShipping-row').hide();
+                    $('#v65-SameAsBilling').change(function() {
+                        if (this.checked) {
+                            $('#v65-onepage-shippingParent-row').hide();
+                            $('#v65-onepage-savedShipping-row').hide();
+                        } else {
+                            $('#v65-onepage-shippingParent-row').show();
+                            $('#v65-onepage-savedShipping-row').show();
+                        }
+                    });
                 });
             }
 
