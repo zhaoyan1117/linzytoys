@@ -58,6 +58,9 @@
                     announceDiv.innerText = "Please fill out the following billing information as mush as you can, our professional sales will contact you later to confirm the order!"
                     announceDiv.id = 'billing-info-announcement';
                     addressTable.parentNode.insertBefore(announceDiv, addressTable);
+
+                    // Remove unused tr.
+                    $('#v65-onepage-Billing tr:nth-last-child(-n+3)').remove();
                 });
             }
 
