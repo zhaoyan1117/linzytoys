@@ -76,19 +76,21 @@
 **********************************/
 /* Heading background-color */
 #content_area #table_checkout_cart0 #v65-onepage-cartsummary-header {
-  background: #f7f7f8; }
+  background-color: rgba(217,69,69,0.85);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px; }
 
 /* Heading text */
 #content_area #table_checkout_cart0 #v65-onepage-cartsummary-label {
   color: #111;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: normal; }
 
 /* "Edit" text styling */
 #content_area #table_checkout_cart0 #v65-onepage-editcart {
   color: #111;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: normal;
 }
 
@@ -135,6 +137,7 @@
 
   width: 140px;
   margin: 10px;
+  margin-bottom: 15px;
   opacity: 0.85;
 }
 
@@ -143,6 +146,10 @@
 }
 
 #content_area #v65-cart-totals-parent {
+  border-top: 1px solid rgb(204, 204, 204);
+}
+
+#content_area #v65-onepage-total-value-cell {
   border-top: 1px solid rgb(204, 204, 204);
 }
 
@@ -197,8 +204,7 @@ table#v65-onepage-ShippingCostDetails tr.v65-onepage-summary-spacer-row {
 #content_area #TotalsTotalTD {
   color: #111;
   display: block;
-  font-weight: normal !important;
-  border-top: 1px solid black; }
+  font-weight: normal !important; }
 
 /**************************
 *      OTHER TEXT       *
