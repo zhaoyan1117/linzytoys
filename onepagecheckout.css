@@ -324,6 +324,62 @@ table#v65-onepage-ShippingCostDetails tr.v65-onepage-summary-spacer-row {
   display: none;
 }
 
+#content_area #v65-onepage-ShippingCost > tbody > tr:last-child td {
+  padding: 0px !important;
+}
+
+#content_area #v65-onepage-ShippingCost table {
+  width: 100%;
+}
+
+#content_area #v65-onepage-ShippingCost select[name='ShippingSpeedChoice'] {
+  margin: 0px;
+}
+
+#content_area table#v65-onepage-ShippingCostParent #shipping-method-title {
+  text-align: center;
+  color: #545454;
+  margin-top: 6px;
+}
+
+#content_area table#v65-onepage-ShippingCostParent #shipping-method-expl {
+  text-align: center;
+  color: rgba(217,69,69,0.85);
+  margin-bottom: 6px;
+}
+
+#content_area table#v65-onepage-ShippingCostParent #DisplayShippingSpeedChoicesTD {
+  padding: 10px;
+}
+
+#content_area table#v65-onepage-ShippingCostParent td input[type="password"],
+#content_area table#v65-onepage-ShippingCostParent td input[type="text"],
+#content_area table#v65-onepage-ShippingCostParent td select {
+  background: white !important;
+
+  width: 100% !important;
+  height: 42px;
+
+  color: #111;
+
+  margin: 0px;
+  border: 0px;
+  border-radius: 0;
+
+  text-align: left;
+
+  line-height: 30px;
+
+  box-shadow: none;
+}
+
+#content_area table#v65-onepage-ShippingCostParent td input[type="password"]:focus,
+#content_area table#v65-onepage-ShippingCostParent td input[type="text"]:focus,
+#content_area table#v65-onepage-ShippingCostParent td select:focus {
+  box-shadow: inset 0 0 5px rgba(217, 69, 69, 0.3);
+}
+
+
 /**************************
 *    BORDER ABOVE TOTAL   *
 **************************/

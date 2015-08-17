@@ -78,6 +78,19 @@
                             $('#v65-onepage-savedShipping-row').show();
                         }
                     });
+
+                    // Add shipping method title and expl.
+                    var shippingMethodTitle = document.createElement('DIV');
+                    shippingMethodTitle.id = "shipping-method-title";
+                    shippingMethodTitle.innerText = "Shipping Method:"
+
+                    var shippingMethodExpl = document.createElement('DIV');
+                    shippingMethodExpl.id = "shipping-method-expl";
+                    shippingMethodExpl.innerText = "Select TBD now and our professional sales will finalize shipping method with you later!"
+
+                    var shippingMethodSelect = document.getElementById('DisplayShippingSpeedChoicesTD');
+                    shippingMethodSelect.parentNode.parentNode.insertBefore(shippingMethodTitle, shippingMethodSelect.parentNode);
+                    shippingMethodSelect.parentNode.parentNode.appendChild(shippingMethodExpl);
                 });
             }
 
