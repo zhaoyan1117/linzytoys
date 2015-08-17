@@ -98,8 +98,35 @@
 /* Order summary background color */
 #content_area #table_checkout_cart0 {
   background: #f7f7f8 !important;
+
+  float: none;
+
+  width: 96%;
+
   margin-top: 20px;
-  /*Resets margin*/ }
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 0px;
+}
+
+#content_area #v65-onepage-ContentTable {
+  float: left;
+
+  width: 47%;
+
+  margin-top: 10px;
+  margin-left: 2%;
+  margin-bottom: 0px;
+}
+
+#content_area #v65-onepage-ShippingCostParent {
+  float: right;
+  width: 47%;
+
+  margin-top: 10px;
+  margin-right: 2%;
+  margin-bottom: 0px;
+}
 
 /**************************
 *       CART DETAILS      *
