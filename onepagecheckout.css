@@ -128,6 +128,20 @@
   margin-bottom: 0px;
 }
 
+#content_area #btnSubmitOrder {
+  float: none;
+
+  vertical-align: middle;
+
+  width: 140px;
+  margin: 10px;
+  opacity: 0.85;
+}
+
+#content_area #btnSubmitOrder:hover {
+  opacity: 1.0;
+}
+
 /**************************
 *       CART DETAILS      *
 **************************/
@@ -187,12 +201,16 @@
 /* Order Comments text */
 #content_area #v65-onepage-ordercomments-row #v65-onepage-ordercomments-value {
   color: black;
-  text-transform: uppercase;
-  font-size: 12px;
-  text-indent: 0px; }
+  font-size: 13px;
+  text-indent: 0px;
+  vertical-align: middle;
+  padding: 0px 10px; }
 
 #content_area #v65-onepage-ordercomments-row #v65-onepage-ordercomments-value textarea {
-  margin-top: 5px; }
+  margin-top: 5px;
+  width: 100%;
+  max-width: 940px;
+}
 
 /* Textarea border and background */
 #content_area textarea#v65-onepage-ordercomments-input {
