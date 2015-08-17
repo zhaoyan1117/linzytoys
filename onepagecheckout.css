@@ -185,8 +185,12 @@
   text-align: center;
 }
 
+#content_area #v65-onepage-saved-billing-table #span_remove_selected_billing {
+  margin-top: 4px;
+}
+
 #content_area #v65-onepage-saved-billing-table td font {
-  width: 33% !important;
+  width: 41% !important;
 }
 
 #content_area #v65-onepage-saved-billing-table td span.PageText_L15n {
@@ -198,7 +202,7 @@
 }
 
 #content_area #v65-onepage-saved-billing-table td select[name='My_Saved_Billing'] {
-  margin: 0 10px;
+  margin: 0px;
 }
 
 /**************************
