@@ -94,8 +94,7 @@
 }
 
 #content_area table#v65-onepage-Billing td:first-child {
-  width: 26%
-}
+  width: 38%;}
 
 #content_area table#v65-onepage-Billing td {
   border-bottom: 1px solid #e3e3e3;
@@ -129,6 +128,17 @@
 *    TABLE CHECKOUT SUM BKG    *
 *******************************/
 
+#content_area #v65-onepage-payment-details-parent-table {
+  background-color: cyan;
+  width: 31%;
+  float: left;
+  margin-left: 1.5%;
+}
+
+#content_area #v65-onepage-payment-details-parent-table div.v65-onepage-headerShort {
+  width: 100%;
+}
+
 #content_area #billing-info-announcement {
     width: 96%;
     height: auto;
@@ -161,17 +171,19 @@
 #content_area #v65-onepage-ContentTable {
   float: left;
 
-  width: 47%;
+  width: 31%;
 
   margin-left: 2%;
   margin-bottom: 0px;
 }
 
 #content_area #v65-onepage-ShippingCostParent {
-  float: right;
-  width: 47%;
+  float: left;
+  width: 31%;
 
-  margin-right: 2%;
+  background-color: red;
+
+  margin-left: 1.5%;
   margin-bottom: 0px;
 }
 
@@ -215,7 +227,8 @@
 }
 
 #content_area #v65-onepage-saved-billing-table td font {
-  width: 41% !important;
+  width: 52% !important;
+  margin-bottom: 8px;
 }
 
 #content_area #v65-onepage-saved-billing-table td span.PageText_L15n {
@@ -267,6 +280,14 @@ table#v65-onepage-ShippingCostDetails tr.v65-onepage-summary-spacer-row {
 #content_area #v65-onepage-ShippingCostDetails {
   margin-right: 0;
   padding: 0; }
+
+#content_area #v65-onepage-ShippingCostParent div.v65-onepage-headerShort {
+  width: 100%;
+}
+
+#content_area #v65-onepage-ShippingCostParent input {
+  width: 100% !important;
+}
 
 /**************************
 *    BORDER ABOVE TOTAL   *

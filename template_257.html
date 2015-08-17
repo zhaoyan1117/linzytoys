@@ -37,6 +37,10 @@
                     var shippingCostTable = document.getElementById('v65-onepage-ShippingCostParent');
                     cartTable.parentNode.appendChild(shippingCostTable);
 
+                    // Move payment table outside.
+                    var paymentTable = document.getElementById('v65-onepage-payment-details-parent-table');
+                    cartTable.parentNode.appendChild(paymentTable);
+
                     // Separate total cell in cart table.
                     var totalRow = document.getElementById('v65-onepage-ShippingCostTotalRow');
                     var totalValue = document.getElementById('v65-onepage-total-value-cell');
