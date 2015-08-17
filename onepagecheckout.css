@@ -173,6 +173,34 @@
   border-top: 1px solid rgb(204, 204, 204);
 }
 
+#content_area #v65-onepage-Detail {
+  background-color: #f7f7f8;
+}
+
+#content_area #v65-onepage-Detail tr.v65-onepage-SavedLocations {
+  border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+#content_area #v65-onepage-saved-billing-table td {
+  text-align: center;
+}
+
+#content_area #v65-onepage-saved-billing-table td font {
+  width: 33% !important;
+}
+
+#content_area #v65-onepage-saved-billing-table td span.PageText_L15n {
+  line-height: 23px;
+}
+
+#content_area #v65-onepage-saved-billing-table td span.v65-space {
+  display: none;
+}
+
+#content_area #v65-onepage-saved-billing-table td select[name='My_Saved_Billing'] {
+  margin: 0 10px;
+}
+
 /**************************
 *       CART DETAILS      *
 **************************/

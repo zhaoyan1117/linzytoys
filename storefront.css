@@ -1000,13 +1000,13 @@ table[width="96%"] {
 /* "My Saved Billing Addresses" */
 #content_area #v65-onepage-saved-billing-table font[style*="font-weight: bold;"] {
   display: inline-block;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: normal !important;
   line-height: 14px !important;
   padding-right: 2px;
   text-align: right;
-  vertical-align: top;
-  width: 91px; }
+  vertical-align: middle;
+  width: 33%; }
 
 /* "My Saved Billing Addresses" select */
 #content_area select[onchange*="Choose_My_Saved_Billing"] {
