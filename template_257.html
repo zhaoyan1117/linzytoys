@@ -87,7 +87,7 @@
 
                 // Add address announcement.
                 var announceDiv = document.createElement("DIV");
-                announceDiv.innerText = "Please fill out the following information as mush as you can, our professional sales will contact you later to finalize the details!"
+                announceDiv.innerText = "Please update the following information as mush as you can, our professional sales will contact you to finalize the details in 1 business day!"
                 announceDiv.id = 'billing-info-announcement';
                 addressTable.parentNode.insertBefore(announceDiv, addressTable);
 
@@ -98,7 +98,7 @@
 
                 var shippingMethodExpl = document.createElement('DIV');
                 shippingMethodExpl.id = "shipping-method-expl";
-                shippingMethodExpl.innerText = "Select TBD now and our professional sales will finalize shipping method with you later!"
+                shippingMethodExpl.innerText = "Select TBD now and our professional sales will finalize shipping method with you in 1 business day!"
 
                 var shippingMethodSelect = document.getElementById('DisplayShippingSpeedChoicesTD');
                 shippingMethodSelect.parentNode.parentNode.insertBefore(shippingMethodTitle, shippingMethodSelect.parentNode);
@@ -107,14 +107,23 @@
                 // Add payment method expl.
                 var paymentMethodExpl = document.createElement('DIV');
                 paymentMethodExpl.id = "payment-method-expl";
-                paymentMethodExpl.innerText = "Select TBD now and our professional sales will finalize payment with you later!"
+                paymentMethodExpl.innerText = "Select TBD now and our professional sales will finalize payment with you in 1 business day!"
 
                 var paymentRow = document.getElementById('v65-onepage-payment-details-parent-row');
                 paymentRow.parentNode.appendChild(paymentMethodExpl);
             }
 
             function preFillTables() {
+                $('input#v65-onepage-billfirstname').val('default first name');
+                $('input#v65-onepage-billlastname').val('default last name');
+                $('input#v65-onepage-billcompanyname').val('default company name');
+                $('input#v65-onepage-billaddr1').val('default address');
+                $('input#v65-onepage-billcity').val('default city');
+                $('input#v65-onepage-billpostalcode').val('00000');
+                $('input#v65-onepage-billphone').val('0000000000');
 
+                $('#DisplayShippingSpeedChoicesTD select').val('922');
+                $('#PaymentMethodTypeDisplay').val('TBD');
             }
 
             function checkoutPageSetup () {
