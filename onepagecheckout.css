@@ -435,7 +435,7 @@ table#v65-onepage-Shipping td {
 }
 
 #v65-onepage-ShippingCost > tbody > tr:nth-child(3) > td {
-  padding: 0px;
+  padding: 0px !important;
 }
 
 /**************************
