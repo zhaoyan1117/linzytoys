@@ -26,80 +26,102 @@
 
         <script src='https://cdn.rawgit.com/hazzik/livequery/master/dist/jquery.livequery.min.js'></script>
         <script type="text/javascript">
+            function reStructure() {
+                // Swap address table and cart table.
+                var addressTable = document.getElementById('v65-onepage-ContentTable');
+                var cartTable = document.getElementById('table_checkout_cart0');
+                cartTable.parentNode.insertBefore(cartTable, addressTable);
+
+                // Move shipping address and cost table outside.
+                var shippingCostTable = document.getElementById('v65-onepage-ShippingCostParent');
+                cartTable.parentNode.appendChild(shippingCostTable);
+
+                // Move payment table outside.
+                var paymentTable = document.getElementById('v65-onepage-payment-details-parent-table');
+                cartTable.parentNode.appendChild(paymentTable);
+
+                // Separate total cell in cart table.
+                var totalRow = document.getElementById('v65-onepage-ShippingCostTotalRow');
+                var totalValue = document.getElementById('v65-onepage-total-value-cell');
+                var totalCell = document.createElement("TD");
+                var totalSpan = $('#TotalsTotalTD');
+                totalCell.innerText = "Total:";
+                totalCell.style.color = "#111";
+                totalCell.style.fontSize = "20px";
+                totalRow.insertBefore(totalCell, totalValue);
+                totalSpan.text(totalSpan.text().slice(totalSpan.text().indexOf('$')))
+
+                // Remove line break in tables.
+                $("#TotalsDivContainer br").remove();
+                $("#table_checkout_cart0 br").remove();
+                $("#v65-onepage-ContentTable br").remove();
+                $("#v65-onepage-payment-details-parent-table br").remove();
+
+                // Remove unused tr.
+                $('#v65-onepage-Billing tr:nth-last-child(-n+3)').remove();
+
+                // Register same billing address button.
+                $('#v65-onepage-shippingParent-row').hide();
+                $('#v65-onepage-savedShipping-row').hide();
+                $('#v65-SameAsBilling').change(function() {
+                    if (this.checked) {
+                        $('#v65-onepage-shippingParent-row').hide();
+                        $('#v65-onepage-savedShipping-row').hide();
+                    } else {
+                        $('#v65-onepage-shippingParent-row').show();
+                        $('#v65-onepage-savedShipping-row').show();
+                    }
+                });
+
+                // Hide cell if no saved addresses.
+                if ($('#v65-onepage-saved-billing-table').length == 0) {
+                    $('#v65-onepage-Detail > tbody > tr.v65-onepage-SavedLocations').hide();
+                }
+                if ($('#v65-onepage-saved-shipping-table').length == 0) {
+                    $('#v65-onepage-savedShipping-row').hide();
+                }
+            }
+
+            function addAnouncement() {
+                var addressTable = document.getElementById('v65-onepage-ContentTable');
+
+                // Add address announcement.
+                var announceDiv = document.createElement("DIV");
+                announceDiv.innerText = "Please fill out the following information as mush as you can, our professional sales will contact you later to finalize the details!"
+                announceDiv.id = 'billing-info-announcement';
+                addressTable.parentNode.insertBefore(announceDiv, addressTable);
+
+                // Add shipping method title and expl.
+                var shippingMethodTitle = document.createElement('DIV');
+                shippingMethodTitle.id = "shipping-method-title";
+                shippingMethodTitle.innerText = "Shipping Method:"
+
+                var shippingMethodExpl = document.createElement('DIV');
+                shippingMethodExpl.id = "shipping-method-expl";
+                shippingMethodExpl.innerText = "Select TBD now and our professional sales will finalize shipping method with you later!"
+
+                var shippingMethodSelect = document.getElementById('DisplayShippingSpeedChoicesTD');
+                shippingMethodSelect.parentNode.parentNode.insertBefore(shippingMethodTitle, shippingMethodSelect.parentNode);
+                shippingMethodSelect.parentNode.parentNode.appendChild(shippingMethodExpl);
+
+                // Add payment method expl.
+                var paymentMethodExpl = document.createElement('DIV');
+                paymentMethodExpl.id = "payment-method-expl";
+                paymentMethodExpl.innerText = "Select TBD now and our professional sales will finalize payment with you later!"
+
+                var paymentRow = document.getElementById('v65-onepage-payment-details-parent-row');
+                paymentRow.parentNode.appendChild(paymentMethodExpl);
+            }
+
+            function preFillTables() {
+
+            }
+
             function checkoutPageSetup () {
                 $('#v65-onepage-header').livequery(function() {
-                    // Swap address table and cart table.
-                    var addressTable = document.getElementById('v65-onepage-ContentTable');
-                    var cartTable = document.getElementById('table_checkout_cart0');
-                    cartTable.parentNode.insertBefore(cartTable, addressTable);
-
-                    // Move shipping address and cost table outside.
-                    var shippingCostTable = document.getElementById('v65-onepage-ShippingCostParent');
-                    cartTable.parentNode.appendChild(shippingCostTable);
-
-                    // Move payment table outside.
-                    var paymentTable = document.getElementById('v65-onepage-payment-details-parent-table');
-                    cartTable.parentNode.appendChild(paymentTable);
-
-                    // Separate total cell in cart table.
-                    var totalRow = document.getElementById('v65-onepage-ShippingCostTotalRow');
-                    var totalValue = document.getElementById('v65-onepage-total-value-cell');
-                    var totalCell = document.createElement("TD");
-                    var totalSpan = $('#TotalsTotalTD');
-                    totalCell.innerText = "Total:";
-                    totalCell.style.color = "#111";
-                    totalCell.style.fontSize = "20px";
-                    totalRow.insertBefore(totalCell, totalValue);
-                    totalSpan.text(totalSpan.text().slice(totalSpan.text().indexOf('$')))
-
-                    // Remove line break in tables.
-                    $("#TotalsDivContainer br").remove();
-                    $("#table_checkout_cart0 br").remove();
-                    $("#v65-onepage-ContentTable br").remove();
-                    $("#v65-onepage-payment-details-parent-table br").remove();
-
-                    // Add address announcement.
-                    var announceDiv = document.createElement("DIV");
-                    announceDiv.innerText = "Please fill out the following information as mush as you can, our professional sales will contact you later to finalize the details!"
-                    announceDiv.id = 'billing-info-announcement';
-                    addressTable.parentNode.insertBefore(announceDiv, addressTable);
-
-                    // Remove unused tr.
-                    $('#v65-onepage-Billing tr:nth-last-child(-n+3)').remove();
-
-                    // Register same billing address button.
-                    $('#v65-onepage-shippingParent-row').hide();
-                    $('#v65-onepage-savedShipping-row').hide();
-                    $('#v65-SameAsBilling').change(function() {
-                        if (this.checked) {
-                            $('#v65-onepage-shippingParent-row').hide();
-                            $('#v65-onepage-savedShipping-row').hide();
-                        } else {
-                            $('#v65-onepage-shippingParent-row').show();
-                            $('#v65-onepage-savedShipping-row').show();
-                        }
-                    });
-
-                    // Add shipping method title and expl.
-                    var shippingMethodTitle = document.createElement('DIV');
-                    shippingMethodTitle.id = "shipping-method-title";
-                    shippingMethodTitle.innerText = "Shipping Method:"
-
-                    var shippingMethodExpl = document.createElement('DIV');
-                    shippingMethodExpl.id = "shipping-method-expl";
-                    shippingMethodExpl.innerText = "Select TBD now and our professional sales will finalize shipping method with you later!"
-
-                    var shippingMethodSelect = document.getElementById('DisplayShippingSpeedChoicesTD');
-                    shippingMethodSelect.parentNode.parentNode.insertBefore(shippingMethodTitle, shippingMethodSelect.parentNode);
-                    shippingMethodSelect.parentNode.parentNode.appendChild(shippingMethodExpl);
-
-                    // Add payment method expl.
-                    var paymentMethodExpl = document.createElement('DIV');
-                    paymentMethodExpl.id = "payment-method-expl";
-                    paymentMethodExpl.innerText = "Select TBD now and our professional sales will finalize payment with you later!"
-
-                    var paymentRow = document.getElementById('v65-onepage-payment-details-parent-row');
-                    paymentRow.parentNode.appendChild(paymentMethodExpl);
+                    reStructure();
+                    addAnouncement();
+                    preFillTables();
                 });
             }
 
