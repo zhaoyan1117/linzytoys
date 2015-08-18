@@ -63,23 +63,18 @@
 **************************/
 #content_area table#v65-onepage-Detail td input[type="password"],
 #content_area table#v65-onepage-Detail td input[type="text"],
-#content_area table#v65-onepage-Detail td select {
+#content_area table#v65-onepage-Detail td select,
+select#PaymentMethodTypeDisplay {
   background: white !important;
-
   width: 100% !important;
-  height: 42px;
-
-  color: #111;
-
-  margin: 0px;
-  border: 0px;
-  border-radius: 0;
-
-  text-align: left;
-
-  line-height: 30px;
-
-  box-shadow: none;
+  height: 42px !important;
+  color: #111 !important;
+  margin: 0px !important;
+  border: 0px !important;
+  border-radius: 0 !important;
+  text-align: left !important;
+  line-height: 30px !important;
+  box-shadow: none !important;
 }
 
 #content_area table#v65-onepage-Detail td input[type="password"]:focus,
@@ -225,7 +220,8 @@ float: left;
   text-align: center;
 }
 
-#content_area #v65-onepage-saved-billing-table #span_remove_selected_billing {
+#content_area #v65-onepage-saved-billing-table #span_remove_selected_billing,
+#span_remove_selected_shipping {
   margin-top: 4px;
 }
 
@@ -244,6 +240,19 @@ float: left;
 
 #content_area #v65-onepage-saved-billing-table td select[name='My_Saved_Billing'] {
   margin: 0px;
+}
+
+#v65-onepage-payment-details-parent-row > td > table:nth-child(10) {
+  display: none;
+}
+
+table#savedPayment {
+  width: 100% !important;
+}
+
+table#savedPayment td {
+  border-bottom: 1px solid #e3e3e3;
+  border-right: 1px solid #e3e3e3;
 }
 
 /**************************
@@ -310,10 +319,6 @@ table#v65-onepage-ShippingCostDetails tr.v65-onepage-summary-spacer-row {
   display: none;
 }
 
-#content_area #v65-onepage-ShippingCost > tbody > tr:last-child td {
-  padding: 0px !important;
-}
-
 #content_area #v65-onepage-ShippingCost table {
   width: 100%;
 }
@@ -328,10 +333,15 @@ table#v65-onepage-ShippingCostDetails tr.v65-onepage-summary-spacer-row {
   margin-top: 6px;
 }
 
-#content_area table#v65-onepage-ShippingCostParent #shipping-method-expl {
+#content_area table#v65-onepage-ShippingCostParent #shipping-method-expl,
+div#payment-method-expl {
   text-align: center;
   color: rgba(217,69,69,0.85);
   margin-bottom: 6px;
+}
+
+div#payment-method-expl {
+  margin-top: 5px;
 }
 
 #content_area table#v65-onepage-ShippingCostParent #DisplayShippingSpeedChoicesTD {
@@ -393,8 +403,14 @@ table#v65-onepage-ShippingCostDetails tr.v65-onepage-summary-spacer-row {
   border-bottom: 1px solid rgb(204, 204, 204);
 }
 
-#v65-onepage-Shipping > tbody > tr td.v65-onepage-shipping-label-cell font {
+#v65-onepage-Shipping > tbody > tr td.v65-onepage-shipping-label-cell font,
+#savedPayment > tbody > tr > td.v65-payment-details-label-cell > font {
   color: #545454;
+}
+
+#savedPayment > tbody > tr > td.v65-payment-details-label-cell {
+  text-align: right !important;
+  width: 38% !important;
 }
 
 table#v65-onepage-Shipping td:first-child {
@@ -412,6 +428,14 @@ table#v65-onepage-Shipping td {
 
 #v65-onepage-ShippingParent > td {
   display: none;
+}
+
+#CalcWaitDivContainer > table > tbody > tr > td:nth-child(1) {
+  text-align: right !important;
+}
+
+#v65-onepage-ShippingCost > tbody > tr:nth-child(3) > td {
+  padding: 0px;
 }
 
 /**************************

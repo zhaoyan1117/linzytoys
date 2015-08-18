@@ -56,6 +56,7 @@
                     $("#TotalsDivContainer br").remove();
                     $("#table_checkout_cart0 br").remove();
                     $("#v65-onepage-ContentTable br").remove();
+                    $("#v65-onepage-payment-details-parent-table br").remove();
 
                     // Add address announcement.
                     var announceDiv = document.createElement("DIV");
@@ -91,6 +92,14 @@
                     var shippingMethodSelect = document.getElementById('DisplayShippingSpeedChoicesTD');
                     shippingMethodSelect.parentNode.parentNode.insertBefore(shippingMethodTitle, shippingMethodSelect.parentNode);
                     shippingMethodSelect.parentNode.parentNode.appendChild(shippingMethodExpl);
+
+                    // Add payment method expl.
+                    var paymentMethodExpl = document.createElement('DIV');
+                    paymentMethodExpl.id = "payment-method-expl";
+                    paymentMethodExpl.innerText = "Select TBD now and our professional sales will finalize payment with you later!"
+
+                    var paymentRow = document.getElementById('v65-onepage-payment-details-parent-row');
+                    paymentRow.parentNode.appendChild(paymentMethodExpl);
                 });
             }
 
