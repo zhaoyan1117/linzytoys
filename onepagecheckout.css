@@ -493,3 +493,25 @@ table#v65-onepage-Shipping td {
 
 #content_area textarea#v65-onepage-ordercomments-input:focus {
   border: 1px solid #e3e3e3 !important; }
+
+@media only screen and (max-width: 767px) {
+  #content_area #v65-onepage-ContentTable,
+  #content_area #v65-onepage-ShippingCostParent,
+  #content_area #v65-onepage-payment-details-parent-table {
+    margin: 10px 0;
+    width: 100% !important;
+    clear: both;
+  }
+
+  #content_area #v65-onepage-Shipping td.v65-onepage-shipping-label-cell div {
+    text-align: right !important;
+  }
+
+  #content_area #v65-onepage-Billing div {
+    text-align: right;
+  }
+
+  #content_area table#v65-onepage-ContentTable td {
+    display: table-cell;
+  }
+}
