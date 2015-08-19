@@ -434,6 +434,10 @@ table#v65-onepage-Shipping td {
   padding: 0px !important;
 }
 
+#CalcShippingDivContainer {
+  width: auto !important;
+}
+
 /**************************
 *    BORDER ABOVE TOTAL   *
 **************************/
