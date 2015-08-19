@@ -805,3 +805,40 @@ a.shipping-deal .highlight {
   color: #f5a34e;
   text-decoration: none;
 }
+
+
+/*****************************
+* *        ERROR MSG       * *
+*****************************/
+.v65-error-list-wrapper {
+    padding: 10px;
+}
+.v65-error-list-container {
+  position:relative;
+  background-color: rgba(255,255,204, 1.0);
+  border: 1px dotted orange;
+  text-align: left;
+}
+.v65-error-list-image {
+  display: none;
+  position:absolute;
+  left:0;
+  width:60px;
+  height:100%;
+  background-image: url(/a/i/error_alert.gif);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.v65-error-list-text {
+  margin-left: 20px;
+  height:100%;
+}
+.v65-error-list-text ul
+{
+  font-size: 1.2em;
+  font-weight: 600;
+  margin:0;
+  padding: 5px;
+}
+
+.v65-error-list-clear { clear:both; }

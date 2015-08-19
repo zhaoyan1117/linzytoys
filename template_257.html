@@ -91,6 +91,10 @@
                 announceDiv.id = 'billing-info-announcement';
                 addressTable.parentNode.insertBefore(announceDiv, addressTable);
 
+                // Change error msg location.
+                var errorDiv = document.getElementById('FormatListofErrorsDiv');
+                addressTable.parentNode.insertBefore(errorDiv, addressTable);
+
                 // Add shipping method title and expl.
                 var shippingMethodTitle = document.createElement('DIV');
                 shippingMethodTitle.id = "shipping-method-title";
