@@ -113,24 +113,99 @@
                 paymentRow.parentNode.appendChild(paymentMethodExpl);
             }
 
+            function fillValue(element, value) {
+                if ($(element).val() != value) {
+                    $(element).val(value);
+                    if (value) {
+                        $(element).click().change().keydown();
+                    }
+                }
+            }
+
+            // Same as copy_billing_to_shipping except not reCalculateShipping in the end.
+            function myCopyB2S() {
+                var Form = document.OnePageCheckoutForm
+
+                ChosenCopyElement(Form.ShipCountry, Form.BillingCountry.value);
+
+                if (typeof(v2makeSel) == 'function') {
+                    v2makeSel(document.getElementById('ShipCountry'));
+                }
+
+                ChosenCopyElement(Form.ShipFirstName, Form.BillingFirstName.value);
+                ChosenCopyElement(Form.ShipLastName, Form.BillingLastName.value);
+                ChosenCopyElement(Form.ShipCompanyName, Form.BillingCompanyName.value);
+                ChosenCopyElement(Form.ShipAddress1, Form.BillingAddress1.value);
+                ChosenCopyElement(Form.ShipAddress2, Form.BillingAddress2.value);
+                ChosenCopyElement(Form.ShipCity, Form.BillingCity.value);
+                ChosenCopyElement(Form.ShipState, Form.BillingState.value);
+
+                if (Form.ShipState_dropdown.length > 0) {
+                    document.getElementById('span_v2state_dropdown').style.display='block';
+                    document.getElementById('span_v2state_textbox').style.display='none';
+                    ChosenCopyElement(Form.ShipState_dropdown, Form.ShipState.value);
+                }
+                else {
+                    document.getElementById('span_v2state_dropdown').style.display='none';
+                    document.getElementById('span_v2state_textbox').style.display='block';
+                }
+                ChosenCopyElement(Form.ShipPostalCode, Form.BillingPostalCode.value);
+                ChosenCopyElement(Form.ShipPhoneNumber, Form.BillingPhoneNumber.value);
+                ChosenCopyElement(Form.ShipFaxNumber, Form.BillingFaxNumber.value);
+            }
+
+            function setupForm() {
+                document.getElementById('v65-onepage-CopyBillingToShippingLink').onclick = myCopyB2S;
+                document.getElementById('BillingState').onblur = function(){};
+                $('#DisplayShippingSpeedChoicesTD select')[0].onchange = function(){};
+                $('#v65-onepage-CheckoutForm').unbind();
+                // preFillTables();
+            }
+
             function preFillTables() {
-                $('input#v65-onepage-billfirstname').val('default first name');
-                $('input#v65-onepage-billlastname').val('default last name');
-                $('input#v65-onepage-billcompanyname').val('default company name');
-                $('input#v65-onepage-billaddr1').val('default address');
-                $('input#v65-onepage-billcity').val('default city');
-                $('input#v65-onepage-billpostalcode').val('00000');
-                $('input#v65-onepage-billphone').val('0000000000');
+                var defaultFirstName = 'default first name';
+                var defaultLastName = 'default last name';
+                var defaultCompany = 'default company';
+                var defaultAddr = 'default address';
+                var defaultCity = 'default city';
+                var defaultPostalCode = '00000';
+                var defaultPhone = '0000000000';
+                var defaultCountry = 'United States';
+                var defaultState = 'CA';
+
+                // Billing
+                fillValue('select#BillingCountry', defaultCountry);
+                if (typeof(v2makeSel) == 'function') {
+                    v2makeSel(document.getElementById('BillingCountry'));;
+                }
+                fillValue('input#v65-onepage-billfirstname', defaultFirstName);
+                fillValue('input#v65-onepage-billlastname', defaultLastName);
+                fillValue('input#v65-onepage-billcompanyname', defaultCompany);
+                fillValue('input#v65-onepage-billaddr1', defaultAddr);
+                fillValue('input#v65-onepage-billcity', defaultCity);
+                fillValue('input#v65-onepage-billpostalcode', defaultPostalCode);
+                fillValue('input#v65-onepage-billphone', defaultPhone);
+                fillValue('select#BillingState_dropdown', defaultState);
+                fillValue('input#BillingState', defaultState);
+
+                // Shipping
+                $('#v65-onepage-CopyBillingToShippingLink').click()
 
                 $('#DisplayShippingSpeedChoicesTD select').val('922');
+
+                console.log($('#ShipState').val());
+                console.log($('#BillingState').val());
+
+                // Payment
                 $('#PaymentMethodTypeDisplay').val('TBD');
+                $('#PaymentMethodType').val('TBD');
             }
 
             function checkoutPageSetup () {
                 $('#v65-onepage-header').livequery(function() {
                     reStructure();
                     addAnouncement();
-                    preFillTables();
+                    $('#v65-onepage-CheckoutForm').ready(setupForm);
                 });
             }
 
