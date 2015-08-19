@@ -80,6 +80,22 @@
                 if ($('#v65-onepage-saved-shipping-table').length == 0) {
                     $('#v65-onepage-savedShipping-row').hide();
                 }
+
+                tranlsateToSpanish();
+            }
+
+            function tranlsateToSpanish() {
+                // Change place order btn if spanish.
+                if (document.documentElement.lang == 'es') {
+                    var placeOrderBtn = 'https://cdn.rawgit.com/zhaoyan1117/linzytoys/master/assets/order_es.gif'
+                    var savedBillingAddr = 'Las direcciones de facturación Guardadas';
+                    var shipToBilling = ' Enviar a mi dirección de facturación';
+                    var savedShipAddr = 'Las direcciones de envío Guardadas';
+                    document.getElementById('btnSubmitOrder').src = placeOrderBtn;
+                    $('#v65-onepage-saved-billing-table > tbody > tr > td > font').text(savedBillingAddr);
+                    $('#v65-sameasbilling-checkbox-row > td')[0].lastChild.nodeValue = shipToBilling;
+                    $('#v65-onepage-saved-shipping-table > tbody > tr > td > font').text(savedShipAddr);
+                }
             }
 
             function addAnouncement() {
