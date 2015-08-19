@@ -155,8 +155,22 @@
             }
 
             function setupForm() {
+                // Use myCopyB2S func.
                 document.getElementById('v65-onepage-CopyBillingToShippingLink').onclick = myCopyB2S;
+
+                // Remove re calculate shipping event.
+                document.getElementById('BillingState_dropdown').onchange = function() {
+                    document.getElementById('BillingState').value=this.value;
+                    this.style.backgroundColor='#ffffff';
+                };
                 document.getElementById('BillingState').onblur = function(){};
+
+                document.getElementById('ShipState_dropdown').onchange = function() {
+                    document.getElementById('ShipState').value=this.value;
+                    this.style.backgroundColor='#ffffff';
+                };
+                document.getElementById('ShipState').onblur = function(){};
+
                 $('#DisplayShippingSpeedChoicesTD select')[0].onchange = function(){};
                 $('#v65-onepage-CheckoutForm').unbind();
                 // preFillTables();
