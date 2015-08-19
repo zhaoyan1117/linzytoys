@@ -91,10 +91,20 @@
                     var savedBillingAddr = 'Las direcciones de facturación Guardadas';
                     var shipToBilling = ' Enviar a mi dirección de facturación';
                     var savedShipAddr = 'Las direcciones de envío Guardadas';
+                    var billingInfo = 'DATOS DE FACTURACIÓN';
+                    var shippingInfo = 'INFORMACIÓN DE ENVÍO';
+                    var payment = 'PAGO';
+                    var yourOrder = 'Su pedido';
+                    var edit = 'Editar';
                     document.getElementById('btnSubmitOrder').src = placeOrderBtn;
                     $('#v65-onepage-saved-billing-table > tbody > tr > td > font').text(savedBillingAddr);
                     $('#v65-sameasbilling-checkbox-row > td')[0].lastChild.nodeValue = shipToBilling;
                     $('#v65-onepage-saved-shipping-table > tbody > tr > td > font').text(savedShipAddr);
+                    $('<style>#content_area #billing-header .v65-onepage-headerShort::before{content: "'+ billingInfo + '}"</style>').appendTo('head');
+                    $('<style>#content_area #shipping-header .v65-onepage-headerShort::before{content: "'+ shippingInfo + '}"</style>').appendTo('head');
+                    $('<style>#content_area #v65-checkout-payment-header .v65-onepage-headerShort::before{content: "'+ payment + '"}</style>').appendTo('head');
+                    $('#v65-onepage-cartsummary-label').text(yourOrder);
+                    $('#v65-onepage-editcart').text(edit);
                 }
             }
 
