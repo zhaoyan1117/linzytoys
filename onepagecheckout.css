@@ -74,7 +74,7 @@ select#PaymentMethodTypeDisplay {
   border-radius: 0 !important;
   text-align: left !important;
   line-height: 30px !important;
-  box-shadow: none !important;
+  box-shadow: none;
 }
 
 #content_area table#v65-onepage-Detail td input[type="password"]:focus,
