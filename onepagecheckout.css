@@ -54,7 +54,7 @@
 #content_area table#v65-onepage-ContentTable td {
   color: black; }
 
-#content_area table#v65-onepage-ContentTable td font {
+#v65-onepage-saved-billing-table > tbody > tr > td > font {
   color: #545454;
 }
 
@@ -402,11 +402,6 @@ div#payment-method-expl {
 
 #v65-onepage-savedShipping-row {
   border-bottom: 1px solid rgb(204, 204, 204);
-}
-
-#v65-onepage-Shipping > tbody > tr td.v65-onepage-shipping-label-cell font,
-#savedPayment > tbody > tr > td.v65-payment-details-label-cell > font {
-  color: #545454;
 }
 
 #savedPayment > tbody > tr > td.v65-payment-details-label-cell {
