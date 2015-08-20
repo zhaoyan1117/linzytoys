@@ -219,8 +219,10 @@
 
                 // Billing
                 fillValue('select#BillingCountry', defaultCountry);
-                if (typeof(v2makeSel) == 'function') {
-                    v2makeSel(document.getElementById('BillingCountry'));;
+                if (typeof(v1makeSel) == 'function') {
+                    v1makeSel(document.getElementById('BillingCountry'));;
+                } else {
+                    alert('mmm');
                 }
                 fillValue('input#v65-onepage-billfirstname', defaultFirstName);
                 fillValue('input#v65-onepage-billlastname', defaultLastName);
@@ -239,6 +241,8 @@
 
                 console.log($('#ShipState').val());
                 console.log($('#BillingState').val());
+                console.log($('#ShipState_dropdown').val());
+                console.log($('#BillingState_dropdown').val());
 
                 // Payment
                 $('#PaymentMethodTypeDisplay').val('TBD');
