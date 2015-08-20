@@ -143,15 +143,6 @@
                 paymentRow.parentNode.appendChild(paymentMethodExpl);
             }
 
-            function fillValue(element, value) {
-                if ($(element).val() != value) {
-                    $(element).val(value);
-                    if (value) {
-                        $(element).click().change().keydown();
-                    }
-                }
-            }
-
             // Same as copy_billing_to_shipping except not reCalculateShipping in the end.
             function myCopyB2S() {
                 var Form = document.OnePageCheckoutForm
@@ -203,50 +194,6 @@
 
                 $('#DisplayShippingSpeedChoicesTD select')[0].onchange = function(){};
                 $('#v65-onepage-CheckoutForm').unbind();
-                // preFillTables();
-            }
-
-            function preFillTables() {
-                var defaultFirstName = 'default first name';
-                var defaultLastName = 'default last name';
-                var defaultCompany = 'default company';
-                var defaultAddr = 'default address';
-                var defaultCity = 'default city';
-                var defaultPostalCode = '00000';
-                var defaultPhone = '0000000000';
-                var defaultCountry = 'United States';
-                var defaultState = 'CA';
-
-                // Billing
-                fillValue('select#BillingCountry', defaultCountry);
-                if (typeof(v1makeSel) == 'function') {
-                    v1makeSel(document.getElementById('BillingCountry'));;
-                } else {
-                    alert('mmm');
-                }
-                fillValue('input#v65-onepage-billfirstname', defaultFirstName);
-                fillValue('input#v65-onepage-billlastname', defaultLastName);
-                fillValue('input#v65-onepage-billcompanyname', defaultCompany);
-                fillValue('input#v65-onepage-billaddr1', defaultAddr);
-                fillValue('input#v65-onepage-billcity', defaultCity);
-                fillValue('input#v65-onepage-billpostalcode', defaultPostalCode);
-                fillValue('input#v65-onepage-billphone', defaultPhone);
-                fillValue('select#BillingState_dropdown', defaultState);
-                fillValue('input#BillingState', defaultState);
-
-                // Shipping
-                $('#v65-onepage-CopyBillingToShippingLink').click()
-
-                $('#DisplayShippingSpeedChoicesTD select').val('922');
-
-                console.log($('#ShipState').val());
-                console.log($('#BillingState').val());
-                console.log($('#ShipState_dropdown').val());
-                console.log($('#BillingState_dropdown').val());
-
-                // Payment
-                $('#PaymentMethodTypeDisplay').val('TBD');
-                $('#PaymentMethodType').val('TBD');
             }
 
             function checkoutPageSetup () {
