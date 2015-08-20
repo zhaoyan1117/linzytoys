@@ -339,6 +339,7 @@ div#payment-method-expl {
   color: rgba(217,69,69,0.85);
   margin-bottom: 6px;
   font-size: 13px;
+  padding: 3px;
 }
 
 div#payment-method-expl {
