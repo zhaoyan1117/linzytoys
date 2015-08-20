@@ -215,7 +215,7 @@
                 $('#v65-onepage-CheckoutForm').unbind();
             }
 
-            function checkoutPageSetup () {
+            function checkoutPageSetup() {
                 $('#v65-onepage-header').livequery(function() {
                     reStructure();
                     addAnouncement();
@@ -226,8 +226,22 @@
             var onCheckoutPage = (location.pathname == "/one-page-checkout.asp") ||
                 (location.pathname.indexOf("/one-page-checkout.asp") != -1);
 
+
+            function productDetailPageSetup() {
+                // Setup zoom image size.
+                $('#product_photo').mouseover(function() {
+                    $('#vZoomMagnifierImage').width($('#vZoomTransparentOverlay').width());
+                });
+            }
+
+            var onProductDetailPage = (location.pathname == "/ProductDetails.asp") ||
+                                      (location.pathname.indexOf("-p/") != -1) ||
+                                      (location.pathname.indexOf("_p/") != -1);
+
             if (onCheckoutPage) {
                 $(checkoutPageSetup);
+            } else if (onProductDetailPage) {
+                $(productDetailPageSetup);
             }
         </script>
     </head>
