@@ -81,7 +81,25 @@
                     $('#v65-onepage-savedShipping-row').hide();
                 }
 
+                addBottomSubmitButton();
                 tranlsateToSpanish();
+            }
+
+            function addBottomSubmitButton() {
+                var theForm = document.getElementById('v65-onepage-CheckoutForm');
+
+                var clearDiv = document.createElement('DIV');
+                clearDiv.id = 'tablesClear';
+                theForm.appendChild(clearDiv);
+
+                var bottomSubmitBtn = document.getElementById('btnSubmitOrder').cloneNode();
+                var bottomPriceText = document.createTextNode('Total: ' + $('#TotalsTotalTD').text());
+
+                var btnDiv = document.createElement('DIV');
+                btnDiv.id = 'btnSubmitOrderBottom';
+                btnDiv.appendChild(bottomSubmitBtn);
+                btnDiv.appendChild(bottomPriceText);
+                theForm.appendChild(btnDiv);
             }
 
             function tranlsateToSpanish() {

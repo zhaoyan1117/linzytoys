@@ -255,6 +255,35 @@ table#savedPayment td {
   border-right: 1px solid #e3e3e3;
 }
 
+#tablesClear {
+  clear: both;
+}
+
+#btnSubmitOrderBottom {
+  background-color: #f7f7f8;
+
+  border-radius: 3px;
+
+  width: 96%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+
+  text-align: center;
+
+  color: black;
+  font-size: 20px;
+  font-weight: normal;
+  height: 66px;
+  line-height: 66px;
+  border: 1px solid #e3e3e3;
+}
+
+#btnSubmitOrderBottom #btnSubmitOrder {
+  width: 140px;
+  margin-right: 23px;
+}
+
 /**************************
 *       CART DETAILS      *
 **************************/
@@ -514,5 +543,9 @@ table#v65-onepage-Shipping td {
 
   #content_area table#v65-onepage-ContentTable td {
     display: table-cell;
+  }
+
+  #btnSubmitOrderBottom {
+    width: 100%;
   }
 }
