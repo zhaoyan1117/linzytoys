@@ -842,3 +842,12 @@ a.shipping-deal .highlight {
 }
 
 .v65-error-list-clear { clear:both; }
+
+@media only screen and (max-width: 767px) {
+  .v65-error-list-image {
+    display: none !important;
+  }
+  .v65-error-list-text {
+    margin-left: 20px !important;
+  }
+}

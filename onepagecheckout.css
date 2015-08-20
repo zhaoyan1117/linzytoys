@@ -88,7 +88,9 @@ select#PaymentMethodTypeDisplay {
 }
 
 #content_area table#v65-onepage-Billing td:first-child {
-  width: 38%;}
+  width: 38%;
+  border-left: 1px solid #e3e3e3;
+}
 
 #content_area table#v65-onepage-Billing td {
   border-bottom: 1px solid #e3e3e3;
@@ -441,6 +443,7 @@ div#payment-method-expl {
 
 table#v65-onepage-Shipping td:first-child {
   width: 38% !important;
+  border-left: 1px solid #e3e3e3;
 }
 
 table#v65-onepage-Shipping td {
@@ -523,6 +526,12 @@ table#v65-onepage-Shipping td {
 
 #content_area textarea#v65-onepage-ordercomments-input:focus {
   border: 1px solid #e3e3e3 !important; }
+
+#v65-onepage-CheckoutForm #FormatListofErrorsDiv {
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 @media only screen and (max-width: 767px) {
   #content_area #v65-onepage-ContentTable,

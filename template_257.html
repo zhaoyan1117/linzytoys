@@ -115,6 +115,7 @@
                     var yourOrder = 'Su pedido';
                     var edit = 'Editar';
                     document.getElementById('btnSubmitOrder').src = placeOrderBtn;
+                    $('#btnSubmitOrderBottom #btnSubmitOrder')[0].src = placeOrderBtn;
                     $('#v65-onepage-saved-billing-table > tbody > tr > td > font').text(savedBillingAddr);
                     $('#v65-sameasbilling-checkbox-row > td')[0].lastChild.nodeValue = shipToBilling;
                     $('#v65-onepage-saved-shipping-table > tbody > tr > td > font').text(savedShipAddr);
