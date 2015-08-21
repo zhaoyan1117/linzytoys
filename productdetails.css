@@ -29,9 +29,12 @@ font.productnamecolorLARGE.colors_productname {
 /* Container for both .colors_priceboxes */
 #v65-product-parent > tbody > tr:first-child + tr > td[align="right"] {
 /*  max-width: 450px; */
-  padding-left: 5px;
-  margin-bottom: 4%;
-  width: 100%;
+
+/* padding-left: 5px; */
+
+/* margin-bottom: 4%; */
+
+width: 100%;
 }
 
 /* Select and input borders */
@@ -46,8 +49,9 @@ font.productnamecolorLARGE.colors_productname {
 
 /* 1st Pricebox Container - Use for padding, borders, & bkg*/
 span + .colors_pricebox {
-  background: #fff; /*Overrides default*/
-  padding: 10px 15px;
+  background: white; /*Overrides default*/
+
+  /* padding: 10px 15px; */
 }
 td[background="/v/vspfiles/templates/have_hold_r/images/PBox_Border_Left.gif"] + td{
   padding:15px;
@@ -280,7 +284,7 @@ table#v65-product-parent > tbody > tr:nth-child(2) > td:first-child img#product_
 /* td containing prices, desc., prod. code, free shipping */
 td[background$="PBox_Border_Left.gif"] + td > table > tbody > tr > td:first-child {
   display: block;
-  padding: 0 15px;
+  padding: 0;
 }
 
 /* td containing Qty and Add to buttons */
@@ -836,4 +840,18 @@ table td{
 /* share buttons */
 #btn_vsharethis a {
   padding: 4px;
+}
+
+/*************************
+   My~~~~~~~
+*************************/
+
+/* Remove unnecessary cells. */
+#v65-product-parent > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr > td > table > tbody > tr:nth-child(1),
+#v65-product-parent > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr > td > table > tbody > tr:nth-child(3),
+#v65-product-parent > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td:nth-child(1),
+#v65-product-parent > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td:nth-child(3),
+#v65-product-parent > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr:nth-child(2),
+#v65-product-parent > tbody > tr:nth-child(3) {
+  display: none;
 }
