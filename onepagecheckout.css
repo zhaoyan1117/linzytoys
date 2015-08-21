@@ -28,7 +28,7 @@
   background-color: rgba(217, 69, 69, 0.85098);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  color: #111;
+  color: white; /* Color of card title on checkout page */
   font-size: 14px;
   font-weight: normal;
   text-transform: uppercase;
@@ -104,18 +104,20 @@ select#PaymentMethodTypeDisplay {
 #content_area #table_checkout_cart0 #v65-onepage-cartsummary-header {
   background-color: rgba(217,69,69,0.85);
   border-top-left-radius: 10px;
-  border-top-right-radius: 10px; }
+  border-top-right-radius: 10px;
+  color: white;
+}
 
 /* Heading text */
 #content_area #table_checkout_cart0 #v65-onepage-cartsummary-label {
-  color: #111;
+  color: white;
   text-transform: uppercase;
   font-size: 15px;
   font-weight: normal; }
 
 /* "Edit" text styling */
 #content_area #table_checkout_cart0 #v65-onepage-editcart {
-  color: #111;
+  /* color: #111; */
   font-size: 13px;
   font-weight: normal;
 }

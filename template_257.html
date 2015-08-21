@@ -128,11 +128,18 @@
             }
 
             function addAnouncement() {
+                /*
+                    Checkout page announcement.
+                */
+                var mainAnnouncement = "Please update the following information as mush as you can, our professional sales will contact you to finalize the details in 1 business day!";
+                var shippingMethodAnnouncement = "Select any shipping method for now and our customer service will contact you for shipping details within 24 hours!";
+                var paymentMethodAnnouncement = "Select any shipping method for now and our customer service will contact you for payment details within 24 hours!";
+
                 var addressTable = document.getElementById('v65-onepage-ContentTable');
 
                 // Add address announcement.
                 var announceDiv = document.createElement("DIV");
-                announceDiv.innerText = "Please update the following information as mush as you can, our professional sales will contact you to finalize the details in 1 business day!"
+                announceDiv.innerText = mainAnnouncement;
                 announceDiv.id = 'billing-info-announcement';
                 addressTable.parentNode.insertBefore(announceDiv, addressTable);
 
@@ -147,7 +154,7 @@
 
                 var shippingMethodExpl = document.createElement('DIV');
                 shippingMethodExpl.id = "shipping-method-expl";
-                shippingMethodExpl.innerText = "Select any shipping method for now and our professional sales will finalize shipping method with you in 1 business day!"
+                shippingMethodExpl.innerText = shippingMethodAnnouncement;
 
                 var shippingMethodSelect = document.getElementById('DisplayShippingSpeedChoicesTD');
                 shippingMethodSelect.parentNode.parentNode.insertBefore(shippingMethodTitle, shippingMethodSelect.parentNode);
@@ -156,7 +163,7 @@
                 // Add payment method expl.
                 var paymentMethodExpl = document.createElement('DIV');
                 paymentMethodExpl.id = "payment-method-expl";
-                paymentMethodExpl.innerText = "Select any payment method for now and our professional sales will finalize payment method with you in 1 business day!"
+                paymentMethodExpl.innerText = paymentMethodAnnouncement;
 
                 var paymentRow = document.getElementById('v65-onepage-payment-details-parent-row');
                 paymentRow.parentNode.appendChild(paymentMethodExpl);
