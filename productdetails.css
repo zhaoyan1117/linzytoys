@@ -20,6 +20,16 @@ font.productnamecolorLARGE.colors_productname {
   font-weight: normal;
   text-transform: uppercase;
   font-family: inherit;
+  margin-bottom: 5px;
+}
+
+#titleUnderline {
+  border-bottom: 1px solid rgb(204, 204, 204);
+  margin-bottom: 10px;
+}
+
+#priceTable {
+  margin-bottom: 10px;
 }
 
 /***********************************
@@ -27,14 +37,8 @@ font.productnamecolorLARGE.colors_productname {
 ***********************************/
 
 /* Container for both .colors_priceboxes */
-#v65-product-parent > tbody > tr:first-child + tr > td[align="right"] {
-/*  max-width: 450px; */
-
-/* padding-left: 5px; */
-
-/* margin-bottom: 4%; */
-
-width: 100%;
+#v65-product-parent > tbody > tr:nth-child(2) > td:nth-child(2) {
+  width: 43%;
 }
 
 /* Select and input borders */
@@ -58,21 +62,16 @@ td[background="/v/vspfiles/templates/have_hold_r/images/PBox_Border_Left.gif"] +
 }
 /* Description Text */
 .colors_pricebox span[itemprop="description"] {
-/*  color: #686868;
-  display: block;
-  font-size: 12px;
-  margin-bottom: 10px; */
-
+  margin-bottom: 10px;
   color: black;
   display: block;
   font-size: 14px;
-  padding: 5px;
 }
 
 div[itemprop="offers"] {
-  text-align: right;
-  padding: 5px;
-  margin-top: 20px;
+  /* text-align: right; */
+  /* padding: 5px; */
+  /* margin-top: 20px; */
 }
 
 div[itemprop="offers"] > table {
@@ -270,7 +269,7 @@ br + .colors_pricebox img.vCSS_img_add_to_wishlist {margin-bottom: 10px;}
 *****************************/
 
 table#v65-product-parent > tbody > tr:nth-child(2) > td:first-child {
-  width: 50%;
+  width: 43%;
 }
 
 table#v65-product-parent > tbody > tr:nth-child(2) > td:first-child a#product_photo_zoom_url {
@@ -284,12 +283,13 @@ table#v65-product-parent > tbody > tr:nth-child(2) > td:first-child img#product_
 /* td containing prices, desc., prod. code, free shipping */
 td[background$="PBox_Border_Left.gif"] + td > table > tbody > tr > td:first-child {
   display: block;
-  padding: 0;
+  padding: 0px 8px;
 }
 
 /* td containing Qty and Add to buttons */
 td#v65-productdetail-action-wrapper {
-  display: block;
+  width: 14%;
+
   text-align: center;
 
   margin-top: 20px;
@@ -482,7 +482,9 @@ td.v65-productDisplay-cell.v65-productAvailability {
   .colors_lines_light a.productnamecolorsmall.colors_productname {
     font-size: 11px;
     padding: 0;
-  }
+
+    word-break: break-word;
+}
 }
 
 /**************************
@@ -717,7 +719,7 @@ td[background] {background: none !important;}
 .Multi-Child_Background input.vCSS_input_addtocart {margin: 0; display: block;}
 
 /* Removes spacing before breadcrumbs */
-td.vCSS_breadcrumb_td b {display: block; margin-bottom:10px;}
+td.vCSS_breadcrumb_td b {display: block; margin-bottom: 20px;}
 
 form#vCSS_mainform > img,
 form#vCSS_mainform > br,
@@ -832,7 +834,7 @@ table td{
 #product_photo {display: none;}*/
 #product_photo_zoom_url {
   display: inline-block;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   background-color: #fff;
   /*border: 1px solid #eee;*/
 }
@@ -852,6 +854,13 @@ table td{
 #v65-product-parent > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td:nth-child(1),
 #v65-product-parent > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td:nth-child(3),
 #v65-product-parent > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr:nth-child(2),
-#v65-product-parent > tbody > tr:nth-child(3) {
+#v65-product-parent > tbody > tr:nth-child(3),
+#v65-product-parent > tbody > tr:nth-child(2) > td:nth-child(1) > table > tbody > tr > td:nth-child(2) {
   display: none;
+}
+
+#imageActionExpl {
+  text-align: center;
+  color: rgb(64, 64, 64);
+  font-size: 13px;
 }

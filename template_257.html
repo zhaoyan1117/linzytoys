@@ -239,6 +239,56 @@
                 $('#product_photo').mouseover(function() {
                     $('#vZoomMagnifierImage').width($('#vZoomTransparentOverlay').width());
                 });
+
+                // Move action button td.
+                var containerTr = $('#v65-product-parent > tbody > tr:nth-child(2)')[0];
+                var actionTd = document.getElementById('v65-productdetail-action-wrapper');
+                containerTr.appendChild(actionTd);
+
+                // Move product title.
+                var titleFont = $('font.productnamecolorLARGE.colors_productname')[0];
+                var offerDiv = $('div[itemprop="offers"]')[0];
+                var titleUnderLineDiv = document.createElement('DIV');
+                titleUnderLineDiv.id = 'titleUnderline';
+
+                // Move price table.
+                $('#v65-product-parent > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr:nth-child(1) > td > div > table')[0].id = 'priceTable';
+                var priceTable = document.getElementById('priceTable');
+                $(offerDiv.parentNode).prepend(priceTable);
+                $(offerDiv.parentNode).prepend(titleUnderLineDiv);
+                $(offerDiv.parentNode).prepend(titleFont);
+
+                // Cleanup breadcrumb td.
+                var breadcrumbTd = $('td.vCSS_breadcrumb_td')[0];
+                while (breadcrumbTd.childNodes.length > 1) {
+                    breadcrumbTd.removeChild(breadcrumbTd.lastChild);
+                }
+
+                // Remove br in itemoffers.
+                $('div[itemprop="offers"] br')[2].remove();
+                $('#v65-product-parent > tbody > tr:nth-child(2) > td:nth-child(1) > table > tbody > tr > td:nth-child(1) br').remove();
+
+                // Clear feature fields.
+                $('#v65-product-related').siblings().hide();
+
+                // Hide large pic button.
+                $('#product_photo_zoom_url').next().next().hide();
+                $('#product_photo_zoom_url').next().hide();
+
+                // Add image action expl.
+                var imageActionExplDivText = 'Roll over image to zoom in';
+                var imageActionExplDivHoverText = 'Click to open expanded view';
+                var imageActionExplDiv = document.createElement('DIV');
+                imageActionExplDiv.id = 'imageActionExpl';
+                imageActionExplDiv.innerText = imageActionExplDivText;
+                $('#product_photo_zoom_url').after(imageActionExplDiv);
+
+                $('#product_photo_zoom_url').mouseover(function() {
+                    imageActionExplDiv.innerText = imageActionExplDivHoverText;
+                });
+                $('#vZoomMagnifierImage').mouseout(function() {
+                    imageActionExplDiv.innerText = imageActionExplDivText;
+                });
             }
 
             var onProductDetailPage = (location.pathname == "/ProductDetails.asp") ||
