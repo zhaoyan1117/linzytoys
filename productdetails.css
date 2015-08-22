@@ -288,28 +288,32 @@ td[background$="PBox_Border_Left.gif"] + td > table > tbody > tr > td:first-chil
 
 /* td containing Qty and Add to buttons */
 td#v65-productdetail-action-wrapper {
+  min-width: 159px;
   width: 14%;
-
   text-align: center;
-
-  margin-top: 20px;
-  margin-left: 15px;
-  margin-right: 15px;
+  height: 401px;
+  padding: 0px 3px;
 }
 
-td#v65-productdetail-action-wrapper > table:nth-child(1) > tbody > tr > td:nth-child(1) {
-  float: left;
-  margin-top: 7.35px;
-  margin-left: 28%;
+#action-wrapper-div {
+  background-color: #f7f7f8;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 3px;
+  height: 100%;
+  position: relative;
 }
 
-td#v65-productdetail-action-wrapper > table:nth-child(1) > tbody > tr > td:nth-child(2) {
-  float: left;
-  margin-left: 10px;
+#action-wrapper-div > table:nth-child(2) {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-td#v65-productdetail-action-wrapper > table:nth-child(3) {
-  margin-left: 10%;
+#action-wrapper-div > table:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 /* Allows buttons to span width of .colors_pricebox */
@@ -318,6 +322,10 @@ td#v65-productdetail-action-wrapper tbody,
 td#v65-productdetail-action-wrapper tr,
 td#v65-productdetail-action-wrapper td {
   display: block;
+}
+
+#btn_vsharethis > div {
+  text-align: center;
 }
 
 /*****************************
@@ -844,6 +852,19 @@ table td{
   padding: 4px;
 }
 
+#btn_vsharethis > div > a.pin-it-button {
+  margin: 0px !important;
+  float: left;
+}
+
+#btn_vsharethis > div > a.pin-it-button > img {
+  float: left;
+}
+
+#v65-share-buttons-container {
+  padding: 11.5px;
+}
+
 /*************************
    My~~~~~~~
 *************************/
@@ -863,4 +884,25 @@ table td{
   text-align: center;
   color: rgb(64, 64, 64);
   font-size: 13px;
+}
+
+#v65-product-parent + table {
+  margin-top: 20px;
+}
+
+span[itemprop="description"] ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+span[itemprop="description"] li {
+  padding-left: 1em;
+  text-indent: -.7em;
+}
+
+span[itemprop="description"] li:before {
+  content: "•";
+  padding-right: 4px;
+  color: rgb(128, 128, 128);
 }

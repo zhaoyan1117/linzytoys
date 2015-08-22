@@ -244,6 +244,15 @@
                 var containerTr = $('#v65-product-parent > tbody > tr:nth-child(2)')[0];
                 var actionTd = document.getElementById('v65-productdetail-action-wrapper');
                 containerTr.appendChild(actionTd);
+                $('#v65-productdetail-action-wrapper br').remove();
+                var actionWrapperDiv = document.createElement('DIV');
+                actionWrapperDiv.id = 'action-wrapper-div';
+                var shareBtns = document.getElementById('v65-share-buttons-container');
+                actionWrapperDiv.appendChild(shareBtns);
+                while (actionTd.childNodes.length > 0) {
+                    actionWrapperDiv.appendChild(actionTd.childNodes[0]);
+                }
+                actionTd.appendChild(actionWrapperDiv);
 
                 // Move product title.
                 var titleFont = $('font.productnamecolorLARGE.colors_productname')[0];
@@ -265,7 +274,8 @@
                 }
 
                 // Remove br in itemoffers.
-                $('div[itemprop="offers"] br')[2].remove();
+                var offersBrs = $('div[itemprop="offers"] br');
+                offersBrs[offersBrs.length-1].remove();
                 $('#v65-product-parent > tbody > tr:nth-child(2) > td:nth-child(1) > table > tbody > tr > td:nth-child(1) br').remove();
 
                 // Clear feature fields.
