@@ -259,12 +259,14 @@
                 var offerDiv = $('div[itemprop="offers"]')[0];
                 var titleUnderLineDiv = document.createElement('DIV');
                 titleUnderLineDiv.id = 'titleUnderline';
+                var itemNumber = $('div[itemprop="offers"] i');
+                itemNumber = itemNumber[itemNumber.length-1];
 
-                // Move price table.
                 $('#v65-product-parent > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr:nth-child(1) > td > div > table')[0].id = 'priceTable';
                 var priceTable = document.getElementById('priceTable');
                 $(offerDiv.parentNode).prepend(priceTable);
                 $(offerDiv.parentNode).prepend(titleUnderLineDiv);
+                $(offerDiv.parentNode).prepend(itemNumber);
                 $(offerDiv.parentNode).prepend(titleFont);
 
                 // Cleanup breadcrumb td.

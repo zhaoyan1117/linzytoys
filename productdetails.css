@@ -20,12 +20,16 @@ font.productnamecolorLARGE.colors_productname {
   font-weight: normal;
   text-transform: uppercase;
   font-family: inherit;
+}
+
+font.productnamecolorLARGE.colors_productname + i {
+  display: block;
   margin-bottom: 5px;
 }
 
 #titleUnderline {
   border-bottom: 1px solid rgb(204, 204, 204);
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 #priceTable {
