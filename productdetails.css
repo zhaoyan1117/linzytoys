@@ -253,6 +253,11 @@ input#v65-product-wishlist-button {
     display: block;
     margin: 0 auto 10px;
     width: 131px;
+    opacity: 0.85;
+}
+
+input#v65-product-wishlist-button:hover {
+    opacity: 1.0;
 }
 
 /* "Add to Registry" img */
@@ -909,4 +914,8 @@ span[itemprop="description"] li:before {
   content: "•";
   padding-right: 4px;
   color: rgb(128, 128, 128);
+}
+
+input.v65-productdetail-cartqty {
+  padding: 2px 5px!important;
 }
