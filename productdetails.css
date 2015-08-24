@@ -930,6 +930,14 @@ input#v65-product-wishlist-button2 {
   display: none;
 }
 
+img[src*="btn_largerphoto.gif"] {
+  width: 131px;
+}
+
+img[src*="btn_addtocart.gif"] {
+  width: 140px;
+}
+
 @media only screen and (max-width: 767px) {
   #v65-product-parent > tbody > tr:nth-child(2) > td {
     width: 100% !important;
