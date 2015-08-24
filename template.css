@@ -221,10 +221,10 @@ a:hover {
   color: #484848;
   font-size: 12px;
   padding-left: 25px;
-  margin-left: 10px;
+  margin-left: 30px;
   position: relative;
   text-decoration: none;
-  background: url(../images/template/cart.png) no-repeat 6px center;
+  background: url(../images/template/cart.svg) no-repeat 2px center;
   -webkit-transition: all .15s ease-in;
   -moz-transition: all .15s ease-in;
   -o-transition: all .15s ease-in;
@@ -572,7 +572,7 @@ a.shipping-deal .highlight {
 ******************************/
 
 .newsletter {
-  /*border-bottom: 1px solid #eaeaea;*/
+  border-bottom: 1px solid #eaeaea;
   border-top: 1px solid #eaeaea;
   color: #484848;
   margin: 10px auto 0;
@@ -656,7 +656,7 @@ a.shipping-deal .highlight {
 
 .footer {
   padding: 25px 0;
-  background: url(../images/template/faded-border.png) repeat-x 0 0;
+  /* background: url(../images/template/faded-border.png) repeat-x 0 0; */
   border-bottom: 1px solid #eaeaea;
   color: #484848;
   font-size: 12px;
