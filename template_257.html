@@ -325,7 +325,13 @@
             }
 
             function productDetailPageTranslate() {
-
+                if (document.documentElement.lang == 'es') {
+                    var addToCartBtn = 'https://cdn.rawgit.com/zhaoyan1117/linzytoys/master/assets/cart2_es.gif';
+                    var wlBtn = 'https://cdn.rawgit.com/zhaoyan1117/linzytoys/master/assets/wl2_es.gif';
+                    $('input[src*="btn_addtocart.gif"]').attr("src", addToCartBtn);
+                    $('img[src*="btn_addtocart.gif"]').attr("src", addToCartBtn);
+                    $('input[src*="btn_addtowishlist.gif"]').attr("src", wlBtn);
+                }
             }
 
             var onProductDetailPage = (location.pathname == "/ProductDetails.asp") ||
