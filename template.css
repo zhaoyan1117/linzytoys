@@ -17,7 +17,7 @@ body {
 }
 
 .page-wrap {
-/*  border-top: 4px solid #f5a34e;*/
+/* border-top: 4px solid #f5a34e; */
 }
 
 /*****************************
@@ -270,16 +270,19 @@ a:hover {
 *****************************/
 
 a.shipping-deal {
-  background: url(../images/template/faded-border.png) repeat-x 0 0;
-  border-bottom: 1px solid #eaeaea;
-/*  border-top: 1px solid #eaeaea;*/
-  width: 71.5%;
-  color: #484848;
   display: block;
+  width: 79.2%;
+
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+
+  margin: 15px auto;
+  padding: 10px 0;
+
   font-size: 14px;
-  margin: 0 auto 15px;
-  padding: 13px 0 10px;
+  color: #484848;
   text-align: center;
+
   -webkit-transition: all .15s ease-in;
   -moz-transition: all .15s ease-in;
   -o-transition: all .15s ease-in;

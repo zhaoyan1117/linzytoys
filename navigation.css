@@ -25,18 +25,11 @@
   color: #f5a34e;
   text-decoration: none;
 }
-
 #main-nav {
   text-align: center;
   padding-left: 0px;
   padding-right: 0px;
 }
-
-#display_menu_1 {
-  background-color: #D94545;
-  border-radius: 5px;
-}
-
 #main-nav .vnav {
   list-style: none;
   padding: 0;
@@ -78,15 +71,12 @@ background-color:#D94545;
   text-decoration: none;
 }
 #main-nav .vnav__subnav {
-  box-shadow: 0 0 3px rgba(0,0,0,.1);
+  box-shadow: 0 0 3px rgba(0,0,0,.7);
   text-align: left;
   display: none;
-  background: #fff;
-  border: 1px solid #eee;
-  border-top: 4px solid #f5a34e;
+  border-top: 2px solid #f5a34e;
   position: absolute;
   z-index: 600;
-  padding: 8px 0;
 }
 #main-nav .vnav__subnav .vnav__item {
   display: block;
@@ -107,7 +97,10 @@ background-color:#D94545;
 #main-nav .vnav__subnav .vnav__item:hover, #main-nav .vnav__subnav .vnav__link--active {
   color: #f5a34e;
 }
-
+#main-nav #display_menu_1 {
+  background-color: #D94545;
+  border-radius: 3px;
+}
 #main-nav .vnav--level1 {
   position: relative;
   display: inline-table;
@@ -148,7 +141,6 @@ background-color:#D94545;
   overflow: hidden;
   overflow-y: scroll;
 }
-
 #push-menu .vnav {
   list-style: none;
   padding: 0;
@@ -199,10 +191,10 @@ background-color:#D94545;
   text-align: left;
   padding: 8px 15px 8px 30px;
 }
-
 #push-menu .vnav--level1 {
   position: relative;
   display: block;
+  background-color: #D94545;
 }
 #push-menu .vnav--level1 > .vnav__item {
   padding: 0;
