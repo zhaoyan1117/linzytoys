@@ -283,6 +283,7 @@
                 $(offerDiv.parentNode).prepend(titleUnderLineDiv);
                 $(offerDiv.parentNode).prepend(itemNumber);
                 $(offerDiv.parentNode).prepend(titleFont);
+                $('#priceTable br').remove();
 
                 // Cleanup breadcrumb td.
                 var breadcrumbTd = $('td.vCSS_breadcrumb_td')[0];
@@ -316,6 +317,9 @@
                 $('#vZoomMagnifierImage').mouseout(function() {
                     imageActionExplDiv.innerText = imageActionExplDivText;
                 });
+
+                // Remove unnecessary br in related products.
+                $('td.v65-productAvailability br').remove();
             }
 
             var onProductDetailPage = (location.pathname == "/ProductDetails.asp") ||
