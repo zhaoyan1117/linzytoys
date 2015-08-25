@@ -13,10 +13,11 @@ var checkoutPage = {
     },
 
     setup: function(event) {
+        var thisCheckoutPage = this;
         $('#v65-onepage-header').livequery(function() {
-            checkoutPage.reStructure();
-            checkoutPage.addAnouncement();
-            $('#v65-onepage-CheckoutForm').ready(checkoutPage.setupFormEvents);
+            thisCheckoutPage.reStructure();
+            thisCheckoutPage.addAnouncement();
+            $('#v65-onepage-CheckoutForm').ready(thisCheckoutPage.setupFormEvents.bind(thisCheckoutPage));
         });
     },
 
@@ -91,7 +92,7 @@ var checkoutPage = {
         btnDiv.appendChild(bottomPriceText);
         theForm.appendChild(btnDiv);
 
-        checkoutPage.tranlsateToSpanish();
+        this.tranlsateToSpanish();
     },
 
     tranlsateToSpanish: function() {
@@ -122,11 +123,11 @@ var checkoutPage = {
     addAnouncement: function() {
         /* Get announcements texts. */
         var mainAnnouncement = $('meta[name="checkout-announce-main"]').attr('content') ||
-                                checkoutPage.defaultAnnouncements.main;
+                                this.defaultAnnouncements.main;
         var shippingMethodAnnouncement = $('meta[name="checkout-announce-shipping"]').attr('content') ||
-                                checkoutPage.defaultAnnouncements.shipping;
+                                this.defaultAnnouncements.shipping;
         var paymentMethodAnnouncement = $('meta[name="checkout-announce-payment"]').attr('content') ||
-                                checkoutPage.defaultAnnouncements.payment;
+                                this.defaultAnnouncements.payment;
 
         var addressTable = document.getElementById('v65-onepage-ContentTable');
 
@@ -196,7 +197,7 @@ var checkoutPage = {
 
     setupFormEvents: function() {
         // Use myCopyB2S func.
-        document.getElementById('v65-onepage-CopyBillingToShippingLink').onclick = checkoutPage.myCopyB2S;
+        document.getElementById('v65-onepage-CopyBillingToShippingLink').onclick = this.myCopyB2S;
 
         // Remove re calculate shipping event.
         document.getElementById('BillingState_dropdown').onchange = function() {
@@ -329,7 +330,7 @@ var productDetailPage = {
 
 /* Bind setup callback for current page. */
 if (checkoutPage.isCurrentPage) {
-    $(checkoutPage.setup);
+    $(checkoutPage.setup.bind(checkoutPage));
 } else if (productDetailPage.isCurrentPage) {
-    $(productDetailPage.setup);
+    $(productDetailPage.setup.bind(productDetailPage));
 }
