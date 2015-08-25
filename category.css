@@ -162,6 +162,11 @@ table.v65-productDisplay .product_yousave {
 
 p.v-product__desc {
   text-align: center; /* added by yan 08/07 */
+  margin: 0px;
+}
+
+.v-product br {
+  display: none;
 }
 
 /* Discount Price */
@@ -294,6 +299,4 @@ table.colors_backgroundlight > tbody > tr > td > img, /*Heading images*/
   table.v65-productDisplay .product_dealprice {
     font-size: 12px;
   }
-
-
 }

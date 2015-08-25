@@ -66,6 +66,11 @@ table.v65-productDisplay font.text.colors_text, table.v65-productDisplay font.te
 
 .v-product .text {
   text-align: center; /* added by yan 08/07 */
+  margin: 0px;
+}
+
+.v-product br {
+  display: none;
 }
 
 .v-product div {
