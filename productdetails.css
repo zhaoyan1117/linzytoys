@@ -738,7 +738,7 @@ td[background] {background: none !important;}
 .Multi-Child_Background input.vCSS_input_addtocart {margin: 0; display: block;}
 
 /* Removes spacing before breadcrumbs */
-td.vCSS_breadcrumb_td b {display: block; margin-bottom: 20px;}
+td.vCSS_breadcrumb_td b {display: block; margin-bottom: 10px;}
 
 form#vCSS_mainform > img,
 form#vCSS_mainform > br,

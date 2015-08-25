@@ -9,6 +9,11 @@
   font-weight: normal;
 }
 
+#divWaitModal + table > tbody > tr:first-child b {
+  display: block;
+  margin-bottom: 10px;
+}
+
 /*****************************
 *   WHOLE SUB CAT CONTAINER  *
 *****************************/
@@ -214,7 +219,7 @@ td[background$="Grid_Single_Divider_Horiz.gif"] {
 
 /* * * * * * FIXES * * * * * */
 
-#content_area table {table-layout: fixed;}
+#content_area table { table-layout: fixed; }
 
 .colors_backgroundlight td[width="195"] + td[width="20"] {display: none;}
 
