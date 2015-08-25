@@ -242,20 +242,6 @@ table.colors_backgroundlight + table td {padding: 0;}
 /* Remove excess spacing to left of product name in Checkboxes display mode*/
 a.productnamecolor.colors_productname + img {display: none;}
 
-/* Override valign="bottom" in "Sort By:" container */
-form#MainForm > input[name="Cat"] + table td[valign="bottom"][rowspan="2"] {
-  vertical-align: top;
-  padding-top: 5px;
-}
-
-/* Remove excess spacing on left and right of "Sort By" container */
-form#MainForm > input[name="Cat"] + table > tbody > tr > td,
-form#MainForm > input[name="Cat"] + table td[valign="bottom"][rowspan="2"],
-form#MainForm > input[name="Cat"] + table td[align="right"] {
-  padding-left: 0;
-  padding-right: 0;
-}
-
 /* Heading */
 table.colors_backgroundlight > tbody > tr > td > img, /*Heading images*/
 .colors_lines_light, .colors_lines_light + .colors_backgroundneutral  /*Lines below heading*/ {
@@ -264,8 +250,33 @@ table.colors_backgroundlight > tbody > tr > td > img, /*Heading images*/
 
 #MainForm > table:nth-child(3) > tbody > tr > td > table:nth-child(2),
 #MainForm > table:last-child,
-#MainForm > table:nth-child(3) > tbody > tr > td > table:nth-child(1) > tbody > tr:nth-child(2) {
+#MainForm > table:nth-child(3) > tbody > tr > td > table:nth-child(1) > tbody > tr:nth-child(2){
   display: none;
+}
+
+b.category-action-expl {
+  font-weight: normal;
+}
+
+td.category-action-td {
+  padding: 0px !important;
+}
+
+td#sort-by-td {
+  text-align: left;
+}
+
+td#per-page-td {
+  text-align: center;
+}
+
+td#cur-page-td {
+  text-align: right;
+}
+
+.category-action-td .category-action-select {
+  width: 144px;
+  display: inline-block !important;
 }
 
 @media (max-width:480px){
@@ -276,10 +287,11 @@ table.colors_backgroundlight > tbody > tr > td > img, /*Heading images*/
   td[background*="/v/vspfiles/templates/have_hold_r/images/Grid_Divider_Vertical.gif"]{
     padding:0 10px;
   }
-  form#MainForm > input[name="Cat"] + table > tbody > tr > td, form#MainForm > input[name="Cat"] + table td[valign="bottom"][rowspan="2"], form#MainForm > input[name="Cat"] + table td[align="right"]{
+
+  form#MainForm > input[name="Cat"] + table > tbody > tr > td,
+  .category-action-td {
     display: block;
-    margin-bottom: 15px;
-    text-align: left;
+    text-align: left !important;
   }
 
   /* Product Title */

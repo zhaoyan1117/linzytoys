@@ -328,9 +328,109 @@ var productDetailPage = {
     }
 }
 
+/* Category page. */
+var categoryPage = {
+    isCurrentPage: (location.pathname.indexOf("-s/") != -1) ||
+                    (location.pathname.indexOf("_s/") != -1),
+
+    setup: function(event) {
+        /* Category page has an #SortBy element. */
+        if ($('#SortBy').length == 1) {
+            this.categoryPage.setup();
+        } else {
+            this.subcategoryPage.setup();
+        }
+    },
+
+    categoryPage: {
+        setup: function() {
+            this.reStructure();
+            this.reBindEvents();
+        },
+
+        reStructure: function() {
+            var selectClass = 'category-action-select';
+            var explClass = 'category-action-expl';
+            var tdClass = 'category-action-td';
+            var sortByTdID = 'sort-by-td';
+            var perPageTdID = 'per-page-td';
+            var curPageTdID = 'cur-page-td';
+
+            // Sort by.
+            var sortByTd = $('form#MainForm > input[name="Cat"] + table td[valign="bottom"][rowspan="2"]');
+            sortByTd.append($('#jmenuhide select'));
+            sortByTd.children()[0].remove();
+            $(sortByTd.children()[0]).addClass(selectClass);
+            sortByTd.addClass(tdClass);
+            sortByTd.attr('id', sortByTdID);
+
+            // Products per page.
+            var perPageTd = sortByTd.siblings();
+            perPageTd.addClass(tdClass);
+            perPageTd.attr('id', perPageTdID);
+            $('#per-page-td select').addClass(selectClass);
+            $('#per-page-td select option').each(function(){
+               var productsPerPage = this.innerText.slice(0,this.innerText.indexOf('per') - 1);
+               this.innerText = productsPerPage + ' products/page';
+            });
+            var curPageNoBr = $('#per-page-td nobr').remove();
+
+            // Current page number.
+            var curPageTd = $('<td/>', {
+                'id': curPageTdID,
+                'class': tdClass
+            });
+            perPageTd.after(curPageTd);
+            var curPageSelect = $('<select/>', {'class': selectClass});
+            var currentPageNum = parseInt(curPageNoBr.find('input').attr('value'));
+            var totalPageNum = parseInt(curPageNoBr.text()[curPageNoBr.text().indexOf('of ')+3]);
+            for (i = 1; i < totalPageNum+1; i++) {
+                $('<option/>', {
+                    'value': i,
+                    'text': i + ' of ' + totalPageNum
+                }).appendTo(curPageSelect);
+            }
+            curPageSelect.appendTo(curPageTd);
+            $('#cur-page-td select.category-action-select').val(currentPageNum);
+
+            $('<span/>', {
+                'class': explClass,
+                'text': 'Display:'
+            }).prependTo(curPageTd);
+            $('<span/>', {
+                'class': explClass,
+                'text': 'Sort By:'
+            }).prependTo(sortByTd);
+            $('<span/>', {
+                'class': explClass,
+                'text': 'View page:'
+            }).prependTo(perPageTd);
+        },
+
+        reBindEvents: function() {
+            // Change #SortBy select onchange event.
+            v$('SortBy').onchange = function() {
+                console.log(this.value);
+                if (this.value != '') {
+                    Add_Search_Param('sort', this.value);
+                }
+                Refine();
+            }
+        }
+    },
+
+    subcategoryPage: {
+        setup: function() {
+
+        }
+    }
+}
+
 /* Bind setup callback for current page. */
 if (checkoutPage.isCurrentPage) {
     $(checkoutPage.setup.bind(checkoutPage));
 } else if (productDetailPage.isCurrentPage) {
     $(productDetailPage.setup.bind(productDetailPage));
+} else if (categoryPage.isCurrentPage) {
+    $(categoryPage.setup.bind(categoryPage));
 }
