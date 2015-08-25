@@ -1,4 +1,20 @@
-function reStructure() {
+/*
+    Checkout page setup class.
+*/
+function CheckoutPage() {
+    var self = this;
+}
+
+CheckoutPage.prototype.setup = function() {
+    console.log(this);
+    $('#v65-onepage-header').livequery(function() {
+        self.reStructure();
+        self.addAnouncement();
+        $('#v65-onepage-CheckoutForm').ready(self.setupForm);
+    });
+};
+
+CheckoutPage.prototype.reStructure = function() {
     // Swap address table and cart table.
     var addressTable = document.getElementById('v65-onepage-ContentTable');
     var cartTable = document.getElementById('table_checkout_cart0');
@@ -35,7 +51,8 @@ function reStructure() {
     // Register same billing address button.
     $('#v65-onepage-shippingParent-row').hide();
     $('#v65-onepage-savedShipping-row').hide();
-    $('#v65-SameAsBilling').change(function() {
+    $('#v65-SameAsBilling').change(function(e) {
+        console.log(e)
         if (this.checked) {
             $('#v65-onepage-shippingParent-row').hide();
             $('#v65-onepage-savedShipping-row').hide();
@@ -53,11 +70,7 @@ function reStructure() {
         $('#v65-onepage-savedShipping-row').hide();
     }
 
-    addBottomSubmitButton();
-    tranlsateToSpanish();
-}
-
-function addBottomSubmitButton() {
+    // Add bottom place order btn.
     var theForm = document.getElementById('v65-onepage-CheckoutForm');
 
     var clearDiv = document.createElement('DIV');
@@ -72,9 +85,11 @@ function addBottomSubmitButton() {
     btnDiv.appendChild(bottomSubmitBtn);
     btnDiv.appendChild(bottomPriceText);
     theForm.appendChild(btnDiv);
-}
 
-function tranlsateToSpanish() {
+    tranlsateToSpanish();
+};
+
+CheckoutPage.prototype.tranlsateToSpanish = function() {
     // Change place order btn if spanish.
     if (document.documentElement.lang == 'es') {
         var placeOrderBtn = 'https://linzytoys.us/v/vspfiles/assets/images/buttons/order_es.gif'
@@ -97,9 +112,9 @@ function tranlsateToSpanish() {
         $('#v65-onepage-cartsummary-label').text(yourOrder);
         $('#v65-onepage-editcart').text(edit);
     }
-}
+};
 
-function addAnouncement() {
+CheckoutPage.prototype.addAnouncement = function() {
     /*
         Checkout page announcement.
     */
@@ -139,10 +154,10 @@ function addAnouncement() {
 
     var paymentRow = document.getElementById('v65-onepage-payment-details-parent-row');
     paymentRow.parentNode.appendChild(paymentMethodExpl);
-}
+};
 
 // Same as copy_billing_to_shipping except not reCalculateShipping in the end.
-function myCopyB2S() {
+CheckoutPage.prototype.myCopyB2S = function() {
     var Form = document.OnePageCheckoutForm
 
     ChosenCopyElement(Form.ShipCountry, Form.BillingCountry.value);
@@ -171,9 +186,9 @@ function myCopyB2S() {
     ChosenCopyElement(Form.ShipPostalCode, Form.BillingPostalCode.value);
     ChosenCopyElement(Form.ShipPhoneNumber, Form.BillingPhoneNumber.value);
     ChosenCopyElement(Form.ShipFaxNumber, Form.BillingFaxNumber.value);
-}
+};
 
-function setupForm() {
+CheckoutPage.prototype.setupForm = function() {
     // Use myCopyB2S func.
     document.getElementById('v65-onepage-CopyBillingToShippingLink').onclick = myCopyB2S;
 
@@ -192,19 +207,10 @@ function setupForm() {
 
     $('#DisplayShippingSpeedChoicesTD select')[0].onchange = function(){};
     $('#v65-onepage-CheckoutForm').unbind();
-}
-
-function checkoutPageSetup() {
-    $('#v65-onepage-header').livequery(function() {
-        reStructure();
-        addAnouncement();
-        $('#v65-onepage-CheckoutForm').ready(setupForm);
-    });
-}
+};
 
 var onCheckoutPage = (location.pathname == "/one-page-checkout.asp") ||
     (location.pathname.indexOf("/one-page-checkout.asp") != -1);
-
 
 function productDetailPageSetup() {
     // Setup zoom image size.
@@ -315,7 +321,8 @@ var onProductDetailPage = (location.pathname == "/ProductDetails.asp") ||
                           (location.pathname.indexOf("_p/") != -1);
 
 if (onCheckoutPage) {
-    $(checkoutPageSetup);
+    var checkoutPage = new CheckoutPage();
+    $(checkoutPage.setup);
 } else if (onProductDetailPage) {
     $(productDetailPageSetup);
 }
