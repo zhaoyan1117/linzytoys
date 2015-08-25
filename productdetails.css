@@ -7,7 +7,7 @@
 td.vCSS_breadcrumb_td a, /*Targets text*/
 td.vCSS_breadcrumb_td b /*Targets greater-than symbol*/ {
   color: #484848;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: normal;
 }
 

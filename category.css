@@ -257,6 +257,11 @@ table.colors_backgroundlight > tbody > tr > td > img, /*Heading images*/
   display: none;
 }
 
+#MainForm > table:nth-child(3) > tbody > tr > td > table:nth-child(2),
+#MainForm > table:last-child,
+#MainForm > table:nth-child(3) > tbody > tr > td > table:nth-child(1) > tbody > tr:nth-child(2) {
+  display: none;
+}
 
 @media (max-width:480px){
   .v65-productDisplay{
