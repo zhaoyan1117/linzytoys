@@ -310,7 +310,7 @@ var productDetailPage = {
         // Remove unnecessary br in related products.
         $('td.v65-productAvailability br').remove();
 
-        productDetailPage.tranlsateToSpanish();
+        this.tranlsateToSpanish();
     },
 
     tranlsateToSpanish: function() {
