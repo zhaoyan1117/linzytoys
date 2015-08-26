@@ -374,7 +374,7 @@ var categoryPage = {
                this.innerText = productsPerPage + ' products/page';
             });
             var curPageNoBr = $('#per-page-td nobr').remove();
-
+            a = curPageNoBr;
             // Current page number.
             var curPageTd = $('<td/>', {
                 'id': curPageTdID,
@@ -393,26 +393,34 @@ var categoryPage = {
             curPageSelect.appendTo(curPageTd);
             $('#cur-page-td select.category-action-select').val(currentPageNum);
 
+            // Add expl texts.
             $('<span/>', {
                 'class': explClass,
-                'text': 'Display:'
-            }).prependTo(curPageTd);
+                'text': 'Display: '
+            }).prependTo(perPageTd);
             $('<span/>', {
                 'class': explClass,
-                'text': 'Sort By:'
+                'text': 'Sort By: '
             }).prependTo(sortByTd);
             $('<span/>', {
                 'class': explClass,
-                'text': 'View page:'
-            }).prependTo(perPageTd);
+                'text': 'View page: '
+            }).prependTo(curPageTd);
         },
 
         reBindEvents: function() {
             // Change #SortBy select onchange event.
             v$('SortBy').onchange = function() {
-                console.log(this.value);
                 if (this.value != '') {
                     Add_Search_Param('sort', this.value);
+                }
+                Refine();
+            }
+
+            // Add refine event to current page selector.
+            $('td#cur-page-td select')[0].onchange = function() {
+                if (this.value != '') {
+                    Add_Search_Param('page', this.value);
                 }
                 Refine();
             }

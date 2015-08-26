@@ -254,12 +254,20 @@ table.colors_backgroundlight > tbody > tr > td > img, /*Heading images*/
   display: none;
 }
 
-b.category-action-expl {
-  font-weight: normal;
+#MainForm > table:nth-child(3) {
+  background-color: #f7f7f8;
+  border-radius: 2px;
+  border: 1px dotted #eeeeee;
+  display: block;
+}
+
+#MainForm > table:nth-child(3) > tbody > tr > td {
+  padding: 5px;
 }
 
 td.category-action-td {
   padding: 0px !important;
+  vertical-align: middle;
 }
 
 td#sort-by-td {
@@ -279,6 +287,21 @@ td#cur-page-td {
   display: inline-block !important;
 }
 
+@media only screen and (max-width: 767px) {
+  .category-action-expl {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+
+  .category-action-select {
+    margin: 0px auto;
+    width: 98% !important;
+    display: block;
+    text-align: center;
+  }
+}
+
 @media (max-width:480px){
   .v65-productDisplay{
     width: 100%;
@@ -291,7 +314,11 @@ td#cur-page-td {
   form#MainForm > input[name="Cat"] + table > tbody > tr > td,
   .category-action-td {
     display: block;
-    text-align: left !important;
+    text-align: right !important;
+  }
+
+  .category-action-td .category-action-select {
+    height: 30px !important;
   }
 
   /* Product Title */
