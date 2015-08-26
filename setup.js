@@ -1,3 +1,18 @@
+/* Every page. */
+var allPage = {
+    setup: function(event) {
+        $('body > div.page-wrap').ready(function() {
+            // Move private catalog to the bottom.
+            var catalogAnchors = $('li.vnav__item a[onclick*="2016_VALENTINE_CATALOG"]').parent().remove().find('a');
+            catalogAnchors.attr('title', '2016 Valentine Catalog');
+            catalogAnchors.removeClass();
+
+            $('<li/>').append(catalogAnchors[0]).appendTo($('footer.footer div.linksWrap ul.left'));
+            $('<li/>').append(catalogAnchors[1]).appendTo($('#link-col-1 > div > ul'));
+        });
+    }
+}
+
 /* Checkout page. */
 var checkoutPage = {
     isCurrentPage: (location.pathname == "/one-page-checkout.asp") ||
@@ -493,6 +508,8 @@ var categoryPage = {
         }
     }
 }
+
+$(allPage.setup(allPage));
 
 /* Bind setup callback for current page. */
 if (checkoutPage.isCurrentPage) {
