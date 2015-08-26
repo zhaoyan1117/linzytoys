@@ -503,11 +503,15 @@ table#v65-onepage-Shipping td {
   font-size: 13px;
   text-indent: 0px;
   vertical-align: middle;
-  padding: 0px 10px;
-  padding-top: 8px; }
+  padding: 10px;
+}
 
 #content_area #v65-onepage-ordercomments-row {
   border-top: 1px solid rgb(204, 204, 204);
+}
+
+#content_area #v65-cart-button-submit-row {
+  display: none;
 }
 
 #content_area #v65-onepage-ordercomments-row #v65-onepage-ordercomments-value textarea {
