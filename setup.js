@@ -375,6 +375,7 @@ var categoryPage = {
             });
             var curPageNoBr = $('#per-page-td nobr').remove();
             a = curPageNoBr;
+
             // Current page number.
             var curPageTd = $('<td/>', {
                 'id': curPageTdID,
@@ -406,6 +407,38 @@ var categoryPage = {
                 'class': explClass,
                 'text': 'View page: '
             }).prependTo(curPageTd);
+
+            // Redo page navigation btns.
+            var pageNav = $('<div/>', {'id':'page-navigator'});
+            var prevPageContainer = $('<div/>', {'id':'prev-page-container'});
+            var nextPageContainer = $('<div/>', {'id':'next-page-container'});
+            var prevPageBtn = $('<a/>', {
+                'id':'prev-page-button',
+                'text':'< Prev page'
+            });
+            var nextPageBtn = $('<a/>', {
+                'id':'next-page-button',
+                'text':'Next page >'
+            });
+            prevPageBtn.appendTo(prevPageContainer);
+            nextPageBtn.appendTo(nextPageContainer);
+            prevPageContainer.appendTo(pageNav);
+            nextPageContainer.appendTo(pageNav);
+            pageNav.appendTo($('#MainForm'));
+
+            if ($('input.previous_page_img').length != 0) {
+                prevPageBtn.addClass('page-nav-btn');
+                prevPageBtn[0].onclick = $('input.previous_page_img')[0].onclick;
+            } else {
+                prevPageBtn.addClass('page-nav-btn-disabled');
+            }
+
+            if ($('input.next_page_img').length != 0) {
+                nextPageBtn.addClass('page-nav-btn');
+                nextPageBtn[0].onclick = $('input.next_page_img')[0].onclick;
+            } else {
+                nextPageBtn.addClass('page-nav-btn-disabled');
+            }
         },
 
         reBindEvents: function() {
