@@ -349,6 +349,30 @@ var categoryPage = {
         },
 
         reStructure: function() {
+            var isSpanish = document.documentElement.lang == 'es';
+
+            if (isSpanish) {
+                var perPageSearchTerm = 'por';
+                var perPageText = ' productos/página';
+                var pageSelectSearchTerm = 'de ';
+                var pageSelectText = ' de ';
+                var sortByText = 'Ordenar por: ';
+                var displayText = 'Display: ';
+                var curPageText = 'Ver página: ';
+                var nextPageText = 'Pagina siguiente >';
+                var prevPageText = '< Pagina anterior';
+            } else {
+                var perPageSearchTerm = 'per';
+                var perPageText = ' products/page';
+                var pageSelectSearchTerm = 'of ';
+                var pageSelectText = ' of ';
+                var sortByText = 'Sort by: ';
+                var displayText = 'Display: ';
+                var curPageText = 'View page: ';
+                var nextPageText = 'Next page >';
+                var prevPageText = '< Prev page';
+            }
+
             var selectClass = 'category-action-select';
             var explClass = 'category-action-expl';
             var tdClass = 'category-action-td';
@@ -370,11 +394,10 @@ var categoryPage = {
             perPageTd.attr('id', perPageTdID);
             $('#per-page-td select').addClass(selectClass);
             $('#per-page-td select option').each(function(){
-               var productsPerPage = this.innerText.slice(0,this.innerText.indexOf('per') - 1);
-               this.innerText = productsPerPage + ' products/page';
+               var productsPerPage = this.innerText.slice(0,this.innerText.indexOf(perPageSearchTerm) - 1);
+               this.innerText = productsPerPage + perPageText;
             });
             var curPageNoBr = $('#per-page-td nobr').remove();
-            a = curPageNoBr;
 
             // Current page number.
             var curPageTd = $('<td/>', {
@@ -384,11 +407,15 @@ var categoryPage = {
             perPageTd.after(curPageTd);
             var curPageSelect = $('<select/>', {'class': selectClass});
             var currentPageNum = parseInt(curPageNoBr.find('input').attr('value'));
-            var totalPageNum = parseInt(curPageNoBr.text()[curPageNoBr.text().indexOf('of ')+3]);
+
+            var totalPageNum = parseInt(
+                curPageNoBr.text()[curPageNoBr.text().indexOf(pageSelectSearchTerm)+3]
+            );
+
             for (i = 1; i < totalPageNum+1; i++) {
                 $('<option/>', {
                     'value': i,
-                    'text': i + ' of ' + totalPageNum
+                    'text': i + pageSelectText + totalPageNum
                 }).appendTo(curPageSelect);
             }
             curPageSelect.appendTo(curPageTd);
@@ -397,15 +424,15 @@ var categoryPage = {
             // Add expl texts.
             $('<span/>', {
                 'class': explClass,
-                'text': 'Display: '
+                'text': displayText
             }).prependTo(perPageTd);
             $('<span/>', {
                 'class': explClass,
-                'text': 'Sort By: '
+                'text': sortByText
             }).prependTo(sortByTd);
             $('<span/>', {
                 'class': explClass,
-                'text': 'View page: '
+                'text': curPageText
             }).prependTo(curPageTd);
 
             // Redo page navigation btns.
@@ -414,11 +441,11 @@ var categoryPage = {
             var nextPageContainer = $('<div/>', {'id':'next-page-container'});
             var prevPageBtn = $('<a/>', {
                 'id':'prev-page-button',
-                'text':'< Prev page'
+                'text': prevPageText
             });
             var nextPageBtn = $('<a/>', {
                 'id':'next-page-button',
-                'text':'Next page >'
+                'text': nextPageText
             });
             prevPageBtn.appendTo(prevPageContainer);
             nextPageBtn.appendTo(nextPageContainer);
