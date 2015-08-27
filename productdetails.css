@@ -344,7 +344,6 @@ td#v65-productdetail-action-wrapper td {
 *****************************/
 
 /* Tabs default/unselected */
-span#Header_ProductDetail_ProductDetails_span,
 span#Header_ProductDetail_TechSpecs_span,
 span#Header_ProductDetail_ExtInfo_span,
 td#Header_ProductDetail_ProductDetails.vCSS_tab_unselected span#Header_ProductDetail_ProductDetails_span,
@@ -352,18 +351,16 @@ td#Header_ProductDetail_TechSpecs.vCSS_tab_unselected span#Header_ProductDetail_
 td#Header_ProductDetail_ExtInfo.vCSS_tab_unselected span#Header_ProductDetail_ExtInfo_span {
   background: rgb(204,204,204);
   color: #484848;
-  border: 1px solid #e0e0e0;
+  /* border: 1px solid #e0e0e0; */
   border-bottom: 0;
   display: inline-block;
   font-size: 14px;
   font-weight: 400 !important;
   line-height: 30px; /*Control height here*/
-  padding: 0 15px;
+  padding: 0 10px;
 }
 
 /* Tabs selected / unselected:hover */
-td#Header_ProductDetail_ProductDetails span#Header_ProductDetail_ProductDetails_span,
-td#Header_ProductDetail_ProductDetails.vCSS_tab_selected span#Header_ProductDetail_ProductDetails_span,
 td#Header_ProductDetail_TechSpecs.vCSS_tab_selected span#Header_ProductDetail_TechSpecs_span,
 td#Header_ProductDetail_ExtInfo.vCSS_tab_selected span#Header_ProductDetail_ExtInfo_span {
   background: #fff;
@@ -385,18 +382,15 @@ tr td[background$="expand_tab_right.gif"] img {width: 7px;}
 /* Description container and text */
 #ProductDetail_ProductDetails_div2 .colors_descriptionbox > tbody > tr:nth-child(3) > td[width="100%"],
 form .colors_descriptionbox {
-  background: #fff;
-  border-top: 1px solid #e0e0e0;
-  padding: 10px 15px;
 }
 
 /* Text color */
 form .colors_descriptionbox td {
-  color: #484848;
-  font-size: 13px;
+  color: black;
+  font-size: 14px;
   font-weight: normal;
   line-height: 1.4;
-  padding: 5px;
+  padding: 0px 5px 5px;
 }
 
 form .colors_descriptionbox td[width="1"] {
@@ -813,7 +807,7 @@ table td{
     }
 
     #v65-product-parent > tbody > tr:first-child + tr > td[align="right"]{
-      padding-left: 0;
+      padding: 0;
     }
   }
 
@@ -821,14 +815,13 @@ table td{
 /*------- mobile styles -------*/
 
   @media only screen and (max-width: 480px) {
-    span#Header_ProductDetail_ProductDetails_span,
     span#Header_ProductDetail_TechSpecs_span,
     span#Header_ProductDetail_ExtInfo_span,
     td#Header_ProductDetail_ProductDetails.vCSS_tab_unselected span#Header_ProductDetail_ProductDetails_span,
     td#Header_ProductDetail_TechSpecs.vCSS_tab_unselected span#Header_ProductDetail_TechSpecs_span,
     td#Header_ProductDetail_ExtInfo.vCSS_tab_unselected span#Header_ProductDetail_ExtInfo_span{
       font-size: 11px;
-      padding:0 5px;
+      padding: 0 8px;
     }
     form .colors_descriptionbox,form .colors_descriptionbox table {
       width: 100%;
@@ -836,7 +829,7 @@ table td{
       /*max-width: 480px;*/
     }
     form .colors_descriptionbox td{
-      font-size: 11px;
+      font-size: 14px;
     }
     .v65-productDisplay,
     #v65-product-parent > tbody > tr:first-child + tr > td[align="right"],
@@ -889,6 +882,41 @@ table td{
 #v65-product-parent > tbody > tr:nth-child(3),
 #v65-product-parent > tbody > tr:nth-child(2) > td:nth-child(1) > table > tbody > tr > td:nth-child(2) {
   display: none;
+}
+
+#ProductDetail_ProductDetails_div2 + img,
+#ProductDetail_ProductDetails_div2 + br,
+#v65-product-parent + table > tbody > tr > td > table:nth-child(1) > tbody > tr > td:nth-child(2),
+#vCSS_mainform > table:nth-child(4) > tbody > tr > td > table.colors_descriptionbox > tbody > tr:nth-child(odd),
+#vCSS_mainform > table:nth-child(4) > tbody > tr > td > table.colors_descriptionbox > tbody > tr:nth-child(2) > td:nth-child(odd) {
+  display: none;
+}
+
+#v65-product-parent + table > tbody > tr > td > table:nth-child(1) {
+  background-color: #f7f7f8;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border: 1px solid rgb(204,204,204);
+  border-bottom: 0px;
+  display: block;
+}
+
+#v65-product-parent + table > tbody > tr > td > table:nth-child(2) {
+  background-color: #f7f7f8;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border: 1px solid rgb(204,204,204);
+  border-top: 0px;
+  display: block;
+}
+
+#Header_ProductDetail_ProductDetails_span {
+  font-size: 15px;
+  background-color: transparent;
+  color: black;
+  font-weight: bold !important;
+  display: block;
+  padding: 5px 10px;
 }
 
 #imageActionExpl {

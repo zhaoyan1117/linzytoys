@@ -301,7 +301,13 @@ var productDetailPage = {
         $('#v65-product-parent > tbody > tr:nth-child(2) > td:nth-child(1) > table > tbody > tr > td:nth-child(1) br').remove();
 
         // Clear feature fields.
-        $('#v65-product-related').siblings().hide();
+        $('#Header_ProductDetail_ProductDetails').siblings().hide();
+
+        // Hide description box if there is not description.
+        if ($('div#ProductDetail_ProductDetails_div span#product_description').text() == "\n" ||
+            $('div#ProductDetail_ProductDetails_div span#product_description').text() == "") {
+            $('#v65-product-related').siblings().hide();
+        }
 
         // Hide large pic button.
         $('#product_photo_zoom_url').next().next().hide();
@@ -509,6 +515,16 @@ var categoryPage = {
     }
 }
 
+var registerPage = {
+    isCurrentPage: (location.pathname == "/register.asp") ||
+        (location.pathname.indexOf("/register.asp") != -1),
+
+    setup: function(event) {
+        // Add id to login table.
+        $('#RegisterForm').siblings().attr('id', 'login-table');
+    }
+}
+
 $(allPage.setup(allPage));
 
 /* Bind setup callback for current page. */
@@ -518,4 +534,6 @@ if (checkoutPage.isCurrentPage) {
     $(productDetailPage.setup.bind(productDetailPage));
 } else if (categoryPage.isCurrentPage) {
     $(categoryPage.setup.bind(categoryPage));
+} else if (registerPage.isCurrentPage) {
+    $(registerPage.setup.bind(registerPage));
 }
