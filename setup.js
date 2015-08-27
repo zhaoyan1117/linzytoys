@@ -517,15 +517,31 @@ var categoryPage = {
 
 var registerPage = {
     isCurrentPage: (location.pathname == "/register.asp") ||
-        (location.pathname.indexOf("/register.asp") != -1),
+        (location.pathname.indexOf("/register.asp") != -1) ||
+        (location.pathname == "/Register.asp") ||
+        (location.pathname.indexOf("/Register.asp") != -1),
 
     setup: function(event) {
         this.reStructure();
     },
 
     reStructure: function() {
+        if (document.documentElement.lang == 'es') {
+
+        } else {
+            var signUpEmail = 'Email:';
+            var signUpEmailRepeat = 'Re-enter email:';
+            var signUpPassword = 'Password:';
+            var signUpPasswordRepeat = 'Re-enter password:';
+            var billingInfoTitle = 'Billing Information';
+            var registerSubmitText = 'Sign up for Linzy Toys';
+        }
+
         // Add id to login table.
         $('#RegisterForm').siblings().attr('id', 'login-table');
+        $('#RegisterForm > table > tbody > tr:nth-child(2) > td > table').attr('id', 'register-info');
+        $('#RegisterForm > table > tbody > tr:nth-child(4) > td > table').attr('id', 'billing-info');
+        $('#RegisterForm > table > tbody > tr:nth-child(5) > td').attr('id', 'register-submit-td');
 
         // Move error blocks to the top.
         $('#login-table').before($('div.v65-error-list-wrapper'));
@@ -546,6 +562,29 @@ var registerPage = {
         // Add placeholder to input fields.
         $('#login-table form > table input[name="email"]').attr('placeholder', 'Email');
         $('#login-table form > table input[name="password"]').attr('placeholder', 'Password');
+
+        // Add sign up toggle.
+        $('#RegisterForm > table').before(
+            $('<div/>', {
+                'id': 'sign-up-toggle',
+                'text': 'New to Linzy Toys? Sign up here!'
+        }));
+
+        // Change sign up table text.
+        var signUpTableTexts = $('#register-info td[width="48%"] b');
+        signUpTableTexts[0].innerText = signUpEmail;
+        signUpTableTexts[1].innerText = signUpEmailRepeat;
+        signUpTableTexts[2].innerText = signUpPassword;
+        signUpTableTexts[3].innerText = signUpPasswordRepeat;
+
+        // Change billing info title text.
+        $('#RegisterForm > table > tbody > tr:nth-child(3) > td').text(billingInfoTitle);
+
+        // Hide unrelated elements above submit btns.
+        $('#register-submit-td input').siblings().hide();
+
+        // Style register submit btn.
+        $('#submitRegistration').attr('value', registerSubmitText);
     }
 }
 
