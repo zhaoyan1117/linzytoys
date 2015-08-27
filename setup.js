@@ -520,8 +520,32 @@ var registerPage = {
         (location.pathname.indexOf("/register.asp") != -1),
 
     setup: function(event) {
+        this.reStructure();
+    },
+
+    reStructure: function() {
         // Add id to login table.
         $('#RegisterForm').siblings().attr('id', 'login-table');
+
+        // Move error blocks to the top.
+        $('#login-table').before($('div.v65-error-list-wrapper'));
+
+        // Remove unnecessary classes.
+        $('#login-table form > table').removeClass();
+        $('#login-table form > table tr').removeClass();
+
+        // Restructure table.
+        $('#login-table form > table tr:first-child td:nth-child(2)').attr('colspan', '2');
+        $('#login-table form > table tr:first-child td:nth-child(1)').remove();
+        $('#login-table form > table tr:nth-child(2) > td:nth-child(1)').remove();
+        $('<td/>').append($('#login-table form > table input[type="submit"]'))
+                .appendTo($('#login-table form > table tr:nth-child(2)'));
+        $('#login-table form > table input[type="hidden"]').appendTo($('#login-table form'));
+        $('#login-table form > table tr:nth-child(3)').remove();
+
+        // Add placeholder to input fields.
+        $('#login-table form > table input[name="email"]').attr('placeholder', 'Email');
+        $('#login-table form > table input[name="password"]').attr('placeholder', 'Password');
     }
 }
 
