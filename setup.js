@@ -628,6 +628,15 @@ var registerPage = {
         billingInfoTexts[9].innerHTML = biPhone + requiredStar + colon;
         billingInfoTexts[10].innerHTML = biFax + colon;
 
+        // Show register form if register errors.
+        var logInErrors = ['Please type your e-mail address below.',
+                           'Sorry, the email address or password you typed is invalid. Please try again.'];
+
+        if ($('div.v65-error-list-text li').length != 0 &&
+            logInErrors.indexOf($('div.v65-error-list-text li').text()) == -1) {
+            $('#RegisterForm').show();
+        }
+
         this.bindEvents();
     },
 
