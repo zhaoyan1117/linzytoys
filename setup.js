@@ -527,7 +527,22 @@ var registerPage = {
 
     reStructure: function() {
         if (document.documentElement.lang == 'es') {
-
+            var signUpEmail = 'Email';
+            var signUpEmailRepeat = 'Reingresar en email';
+            var signUpPassword = 'Contraseña';
+            var signUpPasswordRepeat = 'Reingresar en contraseña';
+            var billingInfoTitle = 'Su dirección de facturación';
+            var registerSubmitText = 'Inscribirse para Linzy Toys';
+            var biFirstName = 'Nombre';
+            var biLastName = 'Apellido';
+            var biCompany = 'Compañía';
+            var biAddress = 'Dirección';
+            var biCity = 'Ciudad';
+            var biCountry = 'País';
+            var biState = 'Estado / provincia';
+            var biZip = 'Código postal código';
+            var biPhone = 'Teléfono';
+            var biFax = 'Fax';
         } else {
             var signUpEmail = 'Email';
             var signUpEmailRepeat = 'Re-enter email';
