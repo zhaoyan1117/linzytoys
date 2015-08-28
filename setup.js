@@ -576,9 +576,10 @@ var registerPage = {
         $('#login-table form > table input[name="password"]').attr('placeholder', 'Password');
 
         // Add sign up toggle.
-        $('#RegisterForm > table').before(
+        $('#RegisterForm').before(
             $('<div/>', {
                 'id': 'sign-up-toggle',
+                'class': 'sign-up-toggle-off',
                 'text': 'New to Linzy Toys? Sign up here!'
         }));
 
@@ -610,6 +611,26 @@ var registerPage = {
         billingInfoTexts[8].innerHTML = biZip + requiredStar + colon;
         billingInfoTexts[9].innerHTML = biPhone + requiredStar + colon;
         billingInfoTexts[10].innerHTML = biFax + colon;
+
+        this.bindEvents();
+    },
+
+    bindEvents: function() {
+        var toggleOffCls = 'sign-up-toggle-off';
+        var toggleOnCls = 'sign-up-toggle-on';
+
+        $('#sign-up-toggle').click(function() {
+            if ($('#RegisterForm').is(':visible')) {
+                $('#RegisterForm').slideUp(500, function() {
+                    $('#sign-up-toggle').removeClass(toggleOnCls);
+                    $('#sign-up-toggle').addClass(toggleOffCls);
+                });
+            } else {
+                $('#sign-up-toggle').removeClass(toggleOffCls);
+                $('#sign-up-toggle').addClass(toggleOnCls);
+                $('#RegisterForm').slideDown(500);
+            }
+        });
     }
 }
 
