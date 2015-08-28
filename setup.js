@@ -530,6 +530,9 @@ var registerPage = {
 
     reStructure: function() {
         if (document.documentElement.lang == 'es') {
+            var loginEmail = 'Email';
+            var loginPassword = 'Contraseña';
+            var signUpTitle = 'New to Linzy Toys? Sign up here!';
             var signUpEmail = 'Email';
             var signUpEmailRepeat = 'Reingresar en email';
             var signUpPassword = 'Contraseña';
@@ -547,6 +550,9 @@ var registerPage = {
             var biPhone = 'Teléfono';
             var biFax = 'Fax';
         } else {
+            var loginEmail = 'Email';
+            var loginPassword = 'Password';
+            var signUpTitle = 'New to Linzy Toys? Sign up here!';
             var signUpEmail = 'Email';
             var signUpEmailRepeat = 'Re-enter email';
             var signUpPassword = 'Password';
@@ -590,15 +596,15 @@ var registerPage = {
         $('#login-table form > table tr:nth-child(3)').remove();
 
         // Add placeholder to input fields.
-        $('#login-table form > table input[name="email"]').attr('placeholder', 'Email');
-        $('#login-table form > table input[name="password"]').attr('placeholder', 'Password');
+        $('#login-table form > table input[name="email"]').attr('placeholder', loginEmail);
+        $('#login-table form > table input[name="password"]').attr('placeholder', loginPassword);
 
         // Add sign up toggle.
         $('#RegisterForm').before(
             $('<div/>', {
                 'id': 'sign-up-toggle',
                 'class': 'sign-up-toggle-off',
-                'text': 'New to Linzy Toys? Sign up here!'
+                'text': signUpTitle
         }));
 
         // Change sign up table text.
@@ -672,6 +678,14 @@ var shoppingCartPage = {
                     (location.pathname.indexOf("/shoppingcart.asp") != -1),
 
     setup: function(event) {
+        if (document.documentElement.lang == 'es') {
+
+        } else {
+            var cartTitle = 'Shopping Cart';
+        }
+
+        // Change shopping cart title.
+        $('h2.v65-your-cart-title').text(cartTitle);
     }
 }
 
