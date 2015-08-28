@@ -1,8 +1,15 @@
+table#v65-cart-moreItems {
+  display: none;
+}
+
 /**************************
 *       PAGE HEADING      *
 **************************/
 h2.v65-your-cart-title {
-  text-indent: 0px; }
+  padding-bottom: 5px;
+  margin: 10px 0px 0px 0px;
+  border-bottom: 1px solid #eeeeee;
+}
 
 /**************************
 *         BORDERS         *

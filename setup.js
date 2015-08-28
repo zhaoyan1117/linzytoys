@@ -515,6 +515,7 @@ var categoryPage = {
     }
 }
 
+/* User login/register page. */
 var registerPage = {
     isCurrentPage: (location.pathname == "/register.asp") ||
         (location.pathname.indexOf("/register.asp") != -1) ||
@@ -665,6 +666,15 @@ var registerPage = {
     }
 }
 
+/* Shopping cart page. */
+var shoppingCartPage = {
+    isCurrentPage: (location.pathname == "/shoppingcart.asp") ||
+                    (location.pathname.indexOf("/shoppingcart.asp") != -1),
+
+    setup: function(event) {
+    }
+}
+
 $(allPage.setup(allPage));
 
 /* Bind setup callback for current page. */
@@ -676,4 +686,6 @@ if (checkoutPage.isCurrentPage) {
     $(categoryPage.setup.bind(categoryPage));
 } else if (registerPage.isCurrentPage) {
     $(registerPage.setup.bind(registerPage));
+} else if (shoppingCartPage.isCurrentPage) {
+    $(shoppingCartPage.setup.bind(shoppingCartPage));
 }
