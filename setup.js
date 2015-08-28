@@ -566,7 +566,7 @@ var registerPage = {
         var colon = ':';
 
         // Add id to login table.
-        $('#RegisterForm').siblings().attr('id', 'login-table');
+        $('#RegisterForm').prev().attr('id', 'login-table');
         $('#RegisterForm > table > tbody > tr:nth-child(2) > td > table').attr('id', 'register-info');
         $('#RegisterForm > table > tbody > tr:nth-child(4) > td > table').attr('id', 'billing-info');
         $('#RegisterForm > table > tbody > tr:nth-child(5) > td').attr('id', 'register-submit-td');
@@ -635,6 +635,11 @@ var registerPage = {
         if ($('div.v65-error-list-text li').length != 0 &&
             logInErrors.indexOf($('div.v65-error-list-text li').text()) == -1) {
             $('#RegisterForm').show();
+        }
+
+        // Adjust if there is announcement.
+        if ($('#div_articleid_61').length != 0) {
+            $('#div_articleid_61').parent().append($('div.v65-error-list-wrapper, #login-table, #sign-up-toggle, #RegisterForm'));
         }
 
         this.bindEvents();
