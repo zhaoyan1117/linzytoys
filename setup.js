@@ -519,7 +519,8 @@ var registerPage = {
     isCurrentPage: (location.pathname == "/register.asp") ||
         (location.pathname.indexOf("/register.asp") != -1) ||
         (location.pathname == "/Register.asp") ||
-        (location.pathname.indexOf("/Register.asp") != -1),
+        (location.pathname.indexOf("/Register.asp") != -1) ||
+        (location.pathname == "el-es-wirf/Linzy-juguetes"),
 
     setup: function(event) {
         this.reStructure();
