@@ -1144,7 +1144,9 @@ table#v65-onepage-registration td {
 #content_area .v65-cart-giftcert-details-row td b,
 #content_area .v65-cart-giftcert-details-row td font {font-weight: normal !important;}
 
-
+table#v65-cart-moreItems {
+  display: none;
+}
 
 /**************** PRODUCT DETAILS ****************/
 /* Fix image float */
