@@ -8,9 +8,9 @@
   color: #959595;
   position: fixed;
   width: 265px;
-  top: 15% !important;
+/*  top: 15% !important;
   left: 0 !important;
-  right: 0 !important;
+  right: 0 !important;*/
   bottom: auto !important;
   margin: auto !important;
   z-index: 1100; }
