@@ -529,13 +529,25 @@ var registerPage = {
         if (document.documentElement.lang == 'es') {
 
         } else {
-            var signUpEmail = 'Email:';
-            var signUpEmailRepeat = 'Re-enter email:';
-            var signUpPassword = 'Password:';
-            var signUpPasswordRepeat = 'Re-enter password:';
+            var signUpEmail = 'Email';
+            var signUpEmailRepeat = 'Re-enter email';
+            var signUpPassword = 'Password';
+            var signUpPasswordRepeat = 'Re-enter password';
             var billingInfoTitle = 'Billing Information';
             var registerSubmitText = 'Sign up for Linzy Toys';
+            var biFirstName = 'First Name';
+            var biLastName = 'Last Name';
+            var biCompany = 'Company';
+            var biAddress = 'Address';
+            var biCity = 'City';
+            var biCountry = 'Country';
+            var biState = 'State / Province';
+            var biZip = 'Zip / Postal Code';
+            var biPhone = 'Phone Number';
+            var biFax = 'Fax';
         }
+        var requiredStar = '<span>*</span>';
+        var colon = ':';
 
         // Add id to login table.
         $('#RegisterForm').siblings().attr('id', 'login-table');
@@ -572,10 +584,10 @@ var registerPage = {
 
         // Change sign up table text.
         var signUpTableTexts = $('#register-info td[width="48%"] b');
-        signUpTableTexts[0].innerText = signUpEmail;
-        signUpTableTexts[1].innerText = signUpEmailRepeat;
-        signUpTableTexts[2].innerText = signUpPassword;
-        signUpTableTexts[3].innerText = signUpPasswordRepeat;
+        signUpTableTexts[0].innerHTML = signUpEmail + requiredStar + colon;
+        signUpTableTexts[1].innerHTML = signUpEmailRepeat + requiredStar + colon;
+        signUpTableTexts[2].innerHTML = signUpPassword + requiredStar + colon;
+        signUpTableTexts[3].innerHTML = signUpPasswordRepeat + requiredStar + colon;
 
         // Change billing info title text.
         $('#RegisterForm > table > tbody > tr:nth-child(3) > td').text(billingInfoTitle);
@@ -585,6 +597,19 @@ var registerPage = {
 
         // Style register submit btn.
         $('#submitRegistration').attr('value', registerSubmitText);
+
+        // Change billing info table text.
+        var billingInfoTexts = $('#billing-info > tbody > tr > td:nth-child(1)');
+        billingInfoTexts[0].innerHTML = biFirstName + requiredStar + colon;
+        billingInfoTexts[1].innerHTML = biLastName + requiredStar + colon;
+        billingInfoTexts[2].innerHTML = biCompany + colon;
+        billingInfoTexts[3].innerHTML = biAddress + requiredStar + colon;
+        billingInfoTexts[5].innerHTML = biCity + requiredStar + colon;
+        billingInfoTexts[6].innerHTML = biCountry + requiredStar + colon;
+        billingInfoTexts[7].innerHTML = biState + requiredStar + colon;
+        billingInfoTexts[8].innerHTML = biZip + requiredStar + colon;
+        billingInfoTexts[9].innerHTML = biPhone + requiredStar + colon;
+        billingInfoTexts[10].innerHTML = biFax + colon;
     }
 }
 

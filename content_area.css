@@ -284,6 +284,11 @@ table[width="385"] {
   background-color: #2795e9 !important;
 }
 
+#login-table input[type="text"],
+#login-table input[type="password"] {
+  border-radius: 3px !important;
+}
+
 #login-table form > table td {
   padding: 12px;
 }
@@ -335,13 +340,25 @@ table[width="385"] {
   width: 23%;
 }
 
+#register-info td[width="48%"] span,
+#billing-info td[width="48%"] span,
+#billing-info > tbody > tr:nth-child(7) td span,
+#billing-info > tbody > tr:nth-child(8) td span {
+  color: #DA4545;
+}
+
 #register-info td[width="48%"] b,
 #billing-info td[width="48%"] b,
 #billing-info > tbody > tr:nth-child(7) td b,
 #billing-info > tbody > tr:nth-child(8) td b {
   font-weight: normal;
+}
+
+#billing-info > tbody > tr > td:nth-child(1),
+#register-info > tbody > tr > td:nth-child(1) {
   font-size: 14px;
-  margin-right: 2px;
+  text-align: right;
+  padding-right: 2px;
 }
 
 #register-info td,
@@ -362,6 +379,16 @@ table[width="385"] {
   text-align: left !important;
   line-height: 30px !important;
   box-shadow: none;
+}
+
+#register-info input:focus,
+#billing-info input:focus,
+#billing-info select:focus,
+#login-table input[type="text"]:focus,
+#login-table input[type="password"]:focus {
+  -moz-box-shadow:    inset 0 0 10px rgba(204,204,204,0.6) !important;
+  -webkit-box-shadow: inset 0 0 10px rgba(204,204,204,0.6) !important;
+  box-shadow:         inset 0 0 10px rgba(204,204,204,0.6) !important;
 }
 
 #RegisterForm > table > tbody > tr:nth-child(3) > td {
@@ -400,7 +427,15 @@ table[width="385"] {
 }
 
 @media only screen and (max-width: 480px) {
-  #login-table form {
-    width: 100%;
+  #login-table form,
+  #RegisterForm {
+    width: 100% !important;
+  }
+
+  #register-info td[width="48%"],
+  #billing-info td[width="48%"],
+  #billing-info > tbody > tr:nth-child(7) td,
+  #billing-info > tbody > tr:nth-child(8) td {
+    width: 28%;
   }
 }
