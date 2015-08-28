@@ -520,7 +520,8 @@ var registerPage = {
         (location.pathname.indexOf("/register.asp") != -1) ||
         (location.pathname == "/Register.asp") ||
         (location.pathname.indexOf("/Register.asp") != -1) ||
-        (location.pathname == "el-es-wirf/Linzy-juguetes"),
+        (location.pathname == "/el-es-wirf/Linzy-juguetes") ||
+        (location.pathname.indexOf("/el-es-wirf/Linzy-juguetes") != -1),
 
     setup: function(event) {
         this.reStructure();
