@@ -676,9 +676,15 @@ var registerPage = {
 /* Shopping cart page. */
 var shoppingCartPage = {
     isCurrentPage: (location.pathname == "/shoppingcart.asp") ||
-                    (location.pathname.indexOf("/shoppingcart.asp") != -1),
+                    (location.pathname.indexOf("/shoppingcart.asp") != -1) ||
+                    (location.pathname == "/ShoppingCart.asp") ||
+                    (location.pathname.indexOf("/ShoppingCart.asp") != -1),
 
     setup: function(event) {
+        this.reStructure();
+    },
+
+    reStructure: function() {
         if (document.documentElement.lang == 'es') {
 
         } else {
@@ -687,6 +693,46 @@ var shoppingCartPage = {
 
         // Change shopping cart title.
         $('h2.v65-your-cart-title').text(cartTitle);
+
+        // Remove unnecessary table cells.
+        $('table#v65-cart-table > tbody > tr:first-child').remove();
+        $('table#v65-cart-table tr.v65-cart-details-separator').remove();
+        $('table#v65-cart-table tr.v65-divider-hr-row').remove();
+
+        $('table#v65-cart-table tr.v65-cart-total-estimate-row + tr').remove();
+        $('table#v65-cart-table tr#v65-cart-footer-row').remove();
+
+        $('table#v65-cart-table td.table-border-left').remove();
+        $('table#v65-cart-table td.table-border-right').remove();
+        $('table#v65-cart-table td#v65-cart-header-left').remove();
+        $('table#v65-cart-table td#v65-cart-header-right').remove();
+        $('table#v65-cart-table td.v65-cart-header-blank').remove();
+        $('table#v65-cart-table td.colors_lines').remove();
+        $('table#v65-cart-table tr.v65-cart-tax-row > td:first-child').remove();
+        $('table#v65-cart-table tr.v65-cart-tax-row > td:last-child').remove();
+
+        // Re-organize cart details row.
+        $('table#v65-cart-table tr.v65-cart-details-row').each(function() {
+            $($(this).children()[1]).addClass('item-desc');
+            $($(this).children()[2]).addClass('item-price');
+            $($(this).children()[3]).addClass('item-qty');
+            $($(this).children()[4]).addClass('item-subtotal');
+
+            $(this).find('td.v65-cart-detail-productimage img')
+                    .prependTo($(this).find('td.item-desc'));
+            $(this).find('td.v65-cart-item-remove-cell a')
+                    .appendTo($(this).find('td.item-qty'));
+        });
+        $('table#v65-cart-table tr.v65-cart-details-row td.v65-cart-detail-productimage').remove();
+        $('table#v65-cart-table tr.v65-cart-details-row td.v65-cart-item-remove-cell').remove();
+
+        // Update column span.
+        $('table#v65-cart-table td#v65-cart-empty-details-cell').attr('colspan', '6');
+        $('table#v65-cart-table td#v65-cart-update-total-cell').attr('colspan', '3');
+
+        // Rebuild action div.
+
+        // Rebuild total price.
     }
 }
 
