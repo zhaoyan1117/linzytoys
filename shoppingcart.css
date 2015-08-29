@@ -23,6 +23,31 @@ form#shoppingcart-form {
   margin: 0px 2% 0px 0px;
 }
 
+table#v65-cart-table {
+  background-color: rgba(217,69,69,0.85);
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+table#v65-cart-table > tbody > tr:not(:first-child),
+table#v65-cart-table > tbody > tr:not(:first-child) > td.v65-item-zebra {
+  background-color: white;
+}
+
+table#v65-cart-table > tbody > tr:not(:first-child) {
+  border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+table#v65-cart-table tr#cart-header {
+  height: 40px;
+}
+
+table#v65-cart-table .v65-cart-header-cell font {
+  color: white !important;
+  font-size: 15px;
+}
+
+/* Proceed to checkout */
 table#v65-cart-checkout-parent {
   float: left;
   width: 20%;
@@ -31,7 +56,6 @@ table#v65-cart-checkout-parent {
   background-color: red;
 }
 
-/* Proceed to checkout */
 #v65-cart-checkout-parent > tbody > tr > td:nth-child(2) {
   text-align: center;
 }
