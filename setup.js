@@ -694,6 +694,7 @@ var shoppingCartPage = {
             var cartTitlePrice = 'Price';
             var cartTitleQty = 'Quantity';
             var cartTitleSubtotal = 'Subtotal';
+            var removeFromCart = 'Remove from cart';
         }
 
         // Add id to shopping cart form.
@@ -770,6 +771,9 @@ var shoppingCartPage = {
         $(cartTitle[1]).text(cartTitlePrice);
         $(cartTitle[2]).text(cartTitleQty);
         $(cartTitle[3]).text(cartTitleSubtotal);
+
+        // Chagne remove link text.
+        $('table#v65-cart-table a.v65-cart-item-remove-link').html(removeFromCart);
     }
 }
 

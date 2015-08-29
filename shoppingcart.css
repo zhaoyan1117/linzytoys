@@ -51,12 +51,34 @@ table#v65-cart-table tr.v65-cart-details-row td.item-price {
   width: 15%;
 }
 
+table#v65-cart-table tr.v65-cart-details-row td.item-price table {
+  width: 100%;
+  margin: 0px;
+}
+
 table#v65-cart-table tr.v65-cart-details-row td.item-qty {
   width: 15%;
+  text-align: center;
+}
+
+table#v65-cart-table tr.v65-cart-details-row a {
+  text-decoration: none;
+}
+
+table#v65-cart-table tr.v65-cart-details-row a:hover {
+  color: #f5a34e;
 }
 
 table#v65-cart-table tr.v65-cart-details-row td.item-subtotal {
   width: 15%;
+}
+
+table#v65-cart-table tr.v65-cart-details-row td.item-subtotal td:nth-child(2) {
+  display: none;
+}
+
+table#v65-cart-table tr.v65-cart-details-row td.item-subtotal b {
+  font-weight: normal;
 }
 
 table#v65-cart-table tr.v65-cart-details-row td.item-desc img {
