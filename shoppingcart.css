@@ -133,7 +133,7 @@ div#shopping-cart-action > a {
   width: 20%;
   height: 30px !important;
   line-height: 30px;
-  margin-right: 1%;
+  margin-right: 10%;
 }
 
 #v65-cart-coupon-entry-details-button {
@@ -165,12 +165,13 @@ div#shopping-cart-action div#v65-cart-coupon-entry-details-div {
   padding: 0px 10px;
   width: 40%;
   text-align: center;
+  margin-right: 18%;
 }
 
 div#shopping-cart-action input#btnRecalculate {
   float: left;
   height: 30px !important;
-  background-color: yellow;
+  width: 12%;
 }
 
 div#shopping-cart-action input {
