@@ -61,6 +61,11 @@ table#v65-cart-table tr.v65-cart-details-row td.item-qty {
   text-align: center;
 }
 
+table#v65-cart-table tr.v65-cart-details-row td.item-qty input {
+  margin: 0px 0px 3px !important;
+  border-radius: 5px !important;
+}
+
 table#v65-cart-table tr.v65-cart-details-row a {
   text-decoration: none;
 }
