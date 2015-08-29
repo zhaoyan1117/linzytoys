@@ -735,6 +735,14 @@ var shoppingCartPage = {
         $('table#v65-cart-table tr.v65-cart-details-row td.v65-cart-detail-productimage').remove();
         $('table#v65-cart-table tr.v65-cart-details-row td.v65-cart-item-remove-cell').remove();
 
+        // Re-organize coupon row if exists.
+        if ($('table#v65-cart-table  tr.v65-cart-giftcert-details-row').length != 0) {
+            $('table#v65-cart-table tr.v65-cart-giftcert-details-row > td:nth-child(2)')
+                .before($('table#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-item-remove-cell'));
+            $('table#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-giftcert-details-cell').attr('colspan', '2');
+            $('table#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-giftcert-details-cell img').remove();
+        }
+
         // Rebuild action div.
         var shoppingCartAction = $('<div/>', {
             'id': 'shopping-cart-action'

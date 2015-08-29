@@ -109,6 +109,23 @@ table#v65-cart-table .v65-cart-header-cell:first-child {
   text-align: left;
 }
 
+table#v65-cart-table tr.v65-cart-giftcert-details-row {
+  height: 30px;
+}
+
+table#v65-cart-table tr.v65-cart-giftcert-details-row td {
+  background-color: white;
+}
+
+table#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-giftcert-details-cell {
+  text-align: center;
+  padding: 0px;
+}
+
+table#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-giftcert-details-cell b {
+  color: black !important;
+}
+
 /* Shopping cart action. */
 div#shopping-cart-action {
   width: 100%;
