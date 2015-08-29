@@ -78,7 +78,9 @@ table#v65-cart-table tr.v65-cart-details-row td.item-subtotal {
   width: 15%;
 }
 
-table#v65-cart-table tr.v65-cart-details-row td.item-subtotal td:nth-child(2) {
+table#v65-cart-table tr.v65-cart-details-row td.item-subtotal td:nth-child(2),
+tr.v65-cart-giftcert-details-row table.v65-cart-giftcert-total td.v65-cart-details-cell + td,
+table#v65-cart-checkout-parent > tbody > tr > td:nth-child(1) {
   display: none;
 }
 
@@ -124,6 +126,24 @@ table#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-giftcert-detai
 
 table#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-giftcert-details-cell b {
   color: black !important;
+}
+
+tr.v65-cart-giftcert-details-row td {
+  text-transform: none !important;
+  font-weight: normal !important;
+}
+
+#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-item-remove-cell a {
+  text-decoration: none;
+}
+
+#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-item-remove-cell a:hover {
+  color: #f5a34e;
+}
+
+tr.v65-cart-giftcert-details-row table.v65-cart-giftcert-total td font {
+  color: black !important;
+  text-transform: none !important;
 }
 
 /* Shopping cart action. */
@@ -243,8 +263,12 @@ table#v65-cart-checkout-parent {
   float: left;
   width: 20%;
   margin: 0px;
+}
 
-  background-color: red;
+div#price-table-checkout {
+  background-color: #f7f7f8;
+  border: 1px solid rgb(204,204,204);
+  border-radius: 5px;
 }
 
 #v65-cart-checkout-parent > tbody > tr > td:nth-child(2) {

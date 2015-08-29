@@ -695,6 +695,7 @@ var shoppingCartPage = {
             var cartTitleQty = 'Quantity';
             var cartTitleSubtotal = 'Subtotal';
             var removeFromCart = 'Remove from cart';
+            var removeCoupon = 'Remove coupon';
             var applyCoupon = 'Apply';
             var recalculate = 'Recalculate';
         }
@@ -762,7 +763,7 @@ var shoppingCartPage = {
         $('<tbody/>').append($('table#v65-cart-table tr.v65-cart-tax-row'))
                         .append($('table#v65-cart-table tr.v65-cart-total-estimate-row'))
                         .appendTo(cartPriceTable);
-        shoppingCartAction.after(cartPriceTable);
+        $('table#v65-cart-checkout-parent form[name="Proceed_To_Checkout_Form"]').before(cartPriceTable);
         $('table#cart-price-table tr.v65-cart-tax-row > td:first-child').remove();
         $('table#cart-price-table tr.v65-cart-tax-row > td:last-child').remove();
         $('table#cart-price-table tr.v65-cart-tax-row > td:first-child').removeAttr('colspan');
@@ -793,6 +794,11 @@ var shoppingCartPage = {
 
         // Chagne remove link text.
         $('table#v65-cart-table a.v65-cart-item-remove-link').html(removeFromCart);
+        $('#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-item-remove-cell a').html(removeCoupon);
+
+        // Re-organize proceed to checkout btn and price summary.
+        var priceTableCheckoutTd = $('#v65-cart-checkout-parent > tbody > tr > td:nth-child(2)');
+        var priceTableCheckout = $('<div/>', {'id':'price-table-checkout'}).append(priceTableCheckoutTd.children()).appendTo(priceTableCheckoutTd);
     }
 }
 
