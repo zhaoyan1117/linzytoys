@@ -136,6 +136,48 @@ div#shopping-cart-action > a {
   margin-right: 1%;
 }
 
+#v65-cart-coupon-entry-details-button {
+  width: 18%;
+}
+
+#v65-cart-coupon-entry-details-input {
+  width: 25%;
+  border-radius: 5px;
+  padding: 5px 12px;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #4f4f4f;
+  text-align: left;
+  background-color: white;
+  background-image: none;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+  -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-colfpor ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+div#shopping-cart-action div#v65-cart-coupon-entry-details-div {
+  float: left;
+  height: 30px !important;
+  padding: 0px 10px;
+  width: 40%;
+  text-align: center;
+}
+
+div#shopping-cart-action input#btnRecalculate {
+  float: left;
+  height: 30px !important;
+  background-color: yellow;
+}
+
+div#shopping-cart-action input {
+  margin: 0px !important;
+  height: 30px !important;
+}
+
 .cart-action-btn {
   -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
   -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -176,23 +218,6 @@ div#shopping-cart-action > a {
 .cart-action-btn:active {
   position:relative;
   top:1px;
-}
-
-div#shopping-cart-action div#v65-cart-coupon-entry-details-div {
-  float: left;
-  height: 30px !important;
-  padding: 0px 10px;
-}
-
-div#shopping-cart-action input#btnRecalculate {
-  float: left;
-  height: 30px !important;
-  background-color: yellow;
-}
-
-div#shopping-cart-action input {
-  margin: 0px !important;
-  height: 30px !important;
 }
 
 /* Proceed to checkout */
