@@ -109,6 +109,30 @@ table#v65-cart-table .v65-cart-header-cell:first-child {
   text-align: left;
 }
 
+/* Shopping cart action. */
+div#shopping-cart-action {
+  width: 100%;
+  margin-top: 10px;
+  background-color: #F7F7F8;
+  border-radius: 3px;
+  border: 1px solid rgb(204, 204, 204);
+}
+
+div#shopping-cart-action:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+div#shopping-cart-action a,
+div#shopping-cart-action div,
+div#shopping-cart-action input {
+  float: left;
+}
+
 /* Proceed to checkout */
 table#v65-cart-checkout-parent {
   float: left;

@@ -695,6 +695,8 @@ var shoppingCartPage = {
             var cartTitleQty = 'Quantity';
             var cartTitleSubtotal = 'Subtotal';
             var removeFromCart = 'Remove from cart';
+            var applyCoupon = 'Apply';
+            var recalculate = 'Recalculate';
         }
 
         // Add id to shopping cart form.
@@ -735,7 +737,7 @@ var shoppingCartPage = {
 
         // Rebuild action div.
         var shoppingCartAction = $('<div/>', {
-            'id': 'shoping-cart-action'
+            'id': 'shopping-cart-action'
         });
         $('table#v65-cart-table').after(shoppingCartAction);
         shoppingCartAction.append($('table#v65-cart-table tr#v65-empty-cart-row a'));
@@ -764,6 +766,14 @@ var shoppingCartPage = {
         checkoutBtn[0].type = 'submit';
         checkoutBtn.attr('value', checkoutBtnText);
         checkoutBtn.removeAttr('src');
+        var applyCouponBtn = $('input#v65-cart-coupon-entry-details-button');
+        applyCouponBtn[0].type = 'submit';
+        applyCouponBtn.attr('value', applyCoupon);
+        applyCouponBtn.removeAttr('src');
+        var reCalculateBtn = $('input#btnRecalculate');
+        reCalculateBtn[0].type = 'submit';
+        reCalculateBtn.attr('value', recalculate);
+        reCalculateBtn.removeAttr('src');
 
         // Update shopping cart title texts.
         var cartTitle = $('tr#cart-header td');
