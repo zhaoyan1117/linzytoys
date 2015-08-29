@@ -741,8 +741,9 @@ var shoppingCartPage = {
         });
         $('table#v65-cart-table').after(shoppingCartAction);
         shoppingCartAction.append($('table#v65-cart-table tr#v65-empty-cart-row a').addClass('cart-action-btn'));
-        shoppingCartAction.append($('table#v65-cart-table div#v65-cart-coupon-entry-details-div').addClass('cart-action-btn'));
+        shoppingCartAction.append($('table#v65-cart-table div#v65-cart-coupon-entry-details-div'));
         shoppingCartAction.append($('table#v65-cart-table td#v65-cart-update-total-cell input').addClass('cart-action-btn'));
+        $('input#v65-cart-coupon-entry-details-button').addClass('cart-action-btn');
         $('table#v65-cart-table tr#v65-empty-cart-row').remove();
         $('table#v65-cart-table tr#v65-coupon-table-row').remove();
 

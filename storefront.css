@@ -22,8 +22,8 @@ tr#BillingState_Row + tr input[name="BillingPostalCode"] {
 #content_area table[width] select,
 #content_area table[width$="%"] input[value=""],
 #content_area table[width$="%"] input.v65-productdetail-cartqty,
-#content_area table[width$="%"] input[id^="Quantity"],
-#content_area table[width$="%"] input:not([type="radio"]):not([type="checkbox"]):not([type="image"]) {
+#content_area table[width$="%"] input[id^="Quantity"]
+/*,#content_area table[width$="%"] input:not([type="radio"]):not([type="checkbox"]):not([type="image"])*/ {
   min-width: 50px;
   height: auto;
   padding: 5px 12px;

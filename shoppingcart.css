@@ -181,8 +181,7 @@ div#shopping-cart-action > a {
 div#shopping-cart-action div#v65-cart-coupon-entry-details-div {
   float: left;
   height: 30px !important;
-  width: 40%;
-  background-color: red;
+  padding: 0px 10px;
 }
 
 div#shopping-cart-action input#btnRecalculate {
