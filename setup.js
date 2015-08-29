@@ -690,6 +690,10 @@ var shoppingCartPage = {
         } else {
             var cartTitle = 'Shopping Cart';
             var checkoutBtnText = 'Proceed to checkout';
+            var cartTitleItem = 'Item';
+            var cartTitlePrice = 'Price';
+            var cartTitleQty = 'Quantity';
+            var cartTitleSubtotal = 'Subtotal';
         }
 
         // Add id to shopping cart form.
@@ -759,6 +763,13 @@ var shoppingCartPage = {
         checkoutBtn[0].type = 'submit';
         checkoutBtn.attr('value', checkoutBtnText);
         checkoutBtn.removeAttr('src');
+
+        // Update shopping cart title texts.
+        var cartTitle = $('tr#cart-header td');
+        $(cartTitle[0]).text(cartTitleItem);
+        $(cartTitle[1]).text(cartTitlePrice);
+        $(cartTitle[2]).text(cartTitleQty);
+        $(cartTitle[3]).text(cartTitleSubtotal);
     }
 }
 
