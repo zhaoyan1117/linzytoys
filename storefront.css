@@ -794,7 +794,7 @@ table[width="96%"] {
 
 /* Item description header */
 #content_area #v65-cart-header-itemdescription {
-  padding-left: 21px !important; }
+  /* padding-left: 21px !important; */ }
 
 /* Centers table values */
 #content_area .v65-cart-giftcert-total div, .v65-cart-details-row td[width="70"], .v65-cart-details-row td[width="70"] div, .v65-cart-details-row td[width="135"], .v65-cart-details-row td[width="135"] div {
@@ -1120,7 +1120,7 @@ table#v65-onepage-registration td {
 /************** SHOPPING CART PAGE *******************/
 
 #content_area #v65-cart-table .v65-item-zebra {
-  background-color: #f7f7f8;
+  /* background-color: #f7f7f8; */
 }
 
 /*-hides random break */
