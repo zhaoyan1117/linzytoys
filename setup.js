@@ -689,10 +689,14 @@ var shoppingCartPage = {
 
         } else {
             var cartTitle = 'Shopping Cart';
+            var checkoutBtnText = 'Proceed to checkout';
         }
 
+        // Add id to shopping cart form.
+        $('table#v65-cart-table-container > tbody > tr > td > form').attr('id', 'shoppingcart-form');
+
         // Change shopping cart title.
-        $('h2.v65-your-cart-title').text(cartTitle);
+        $('h2.v65-your-cart-title').text(cartTitle).prependTo($('form#shoppingcart-form'));
 
         // Remove unnecessary table cells.
         $('table#v65-cart-table > tbody > tr:first-child').remove();
@@ -749,6 +753,12 @@ var shoppingCartPage = {
         $('table#cart-price-table tr.v65-cart-total-estimate-row > td:first-child').remove();
         $('table#cart-price-table tr.v65-cart-total-estimate-row > td:last-child').remove();
         $('table#cart-price-table tr.v65-cart-total-estimate-row > td:first-child').removeAttr('colspan');
+
+        // Change image btn to submit btn.
+        var checkoutBtn = $('table#v65-cart-checkout-table input.btn_checkout_guest');
+        checkoutBtn[0].type = 'submit';
+        checkoutBtn.attr('value', checkoutBtnText);
+        checkoutBtn.removeAttr('src');
     }
 }
 
