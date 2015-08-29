@@ -790,7 +790,7 @@ table[width="96%"] {
 
 /* Back back backitup */
 #content_area form #v65-cart-checkout-table {
-  width: 420px !important; }
+  /* width: 420px !important; */ }
 
 /* Item description header */
 #content_area #v65-cart-header-itemdescription {
