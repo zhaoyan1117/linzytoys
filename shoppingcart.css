@@ -42,6 +42,23 @@ table#v65-cart-table tr#cart-header {
   height: 40px;
 }
 
+table#v65-cart-table tr.v65-cart-details-row td.item-desc {
+  padding: 5px;
+}
+
+table#v65-cart-table tr.v65-cart-details-row td.item-desc img {
+  float: left;
+  width: 100px;
+}
+
+table#v65-cart-table tr.v65-cart-details-row td.item-desc table td.v65-cart-details-text {
+  padding: 0px 0px 0px 10px;
+}
+
+table#v65-cart-table tr.v65-cart-details-row td.item-desc table td.v65-cart-details-text b {
+  font-weight: normal;
+}
+
 table#v65-cart-table .v65-cart-header-cell font {
   color: white !important;
   font-size: 15px;
