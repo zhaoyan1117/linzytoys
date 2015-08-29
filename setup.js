@@ -708,8 +708,6 @@ var shoppingCartPage = {
         $('table#v65-cart-table td#v65-cart-header-right').remove();
         $('table#v65-cart-table td.v65-cart-header-blank').remove();
         $('table#v65-cart-table td.colors_lines').remove();
-        $('table#v65-cart-table tr.v65-cart-tax-row > td:first-child').remove();
-        $('table#v65-cart-table tr.v65-cart-tax-row > td:last-child').remove();
 
         // Re-organize cart details row.
         $('table#v65-cart-table tr.v65-cart-details-row').each(function() {
@@ -726,13 +724,31 @@ var shoppingCartPage = {
         $('table#v65-cart-table tr.v65-cart-details-row td.v65-cart-detail-productimage').remove();
         $('table#v65-cart-table tr.v65-cart-details-row td.v65-cart-item-remove-cell').remove();
 
-        // Update column span.
-        $('table#v65-cart-table td#v65-cart-empty-details-cell').attr('colspan', '6');
-        $('table#v65-cart-table td#v65-cart-update-total-cell').attr('colspan', '3');
-
         // Rebuild action div.
+        var shoppingCartAction = $('<div/>', {
+            'id': 'shoping-cart-action'
+        });
+        $('table#v65-cart-table').after(shoppingCartAction);
+        shoppingCartAction.append($('table#v65-cart-table tr#v65-empty-cart-row a'));
+        shoppingCartAction.append($('table#v65-cart-table div#v65-cart-coupon-entry-details-div'));
+        shoppingCartAction.append($('table#v65-cart-table td#v65-cart-update-total-cell input'));
+        $('table#v65-cart-table tr#v65-empty-cart-row').remove();
+        $('table#v65-cart-table tr#v65-coupon-table-row').remove();
 
         // Rebuild total price.
+        var cartPriceTable = $('<table/>', {
+            'id': 'cart-price-table'
+        });
+        $('<tbody/>').append($('table#v65-cart-table tr.v65-cart-tax-row'))
+                        .append($('table#v65-cart-table tr.v65-cart-total-estimate-row'))
+                        .appendTo(cartPriceTable);
+        shoppingCartAction.after(cartPriceTable);
+        $('table#cart-price-table tr.v65-cart-tax-row > td:first-child').remove();
+        $('table#cart-price-table tr.v65-cart-tax-row > td:last-child').remove();
+        $('table#cart-price-table tr.v65-cart-tax-row > td:first-child').removeAttr('colspan');
+        $('table#cart-price-table tr.v65-cart-total-estimate-row > td:first-child').remove();
+        $('table#cart-price-table tr.v65-cart-total-estimate-row > td:last-child').remove();
+        $('table#cart-price-table tr.v65-cart-total-estimate-row > td:first-child').removeAttr('colspan');
     }
 }
 
