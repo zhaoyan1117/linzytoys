@@ -255,7 +255,7 @@ table#cart-price-table tr.v65-cart-total-estimate-row b {
 }
 
 table#v65-cart-table-container {
-  min-width: 940px;
+/*   min-width: 940px; */
 }
 
 table#cart-price-table b {
@@ -315,6 +315,9 @@ div#price-table-checkout div#price-summary-title {
     width: 100%;
     margin-top: 20px;
   }
+}
+
+@media only screen and (max-width: 767px) {
 }
 
 @media only screen and (max-width: 480px) {
