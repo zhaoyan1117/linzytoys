@@ -750,10 +750,10 @@ var shoppingCartPage = {
             'id': 'shopping-cart-action'
         });
         $('table#v65-cart-table').after(shoppingCartAction);
-        shoppingCartAction.append($('table#v65-cart-table tr#v65-empty-cart-row a').addClass('cart-action-btn'));
+        shoppingCartAction.append($('table#v65-cart-table tr#v65-empty-cart-row a').addClass('secondary-btn'));
         shoppingCartAction.append($('table#v65-cart-table div#v65-cart-coupon-entry-details-div'));
-        shoppingCartAction.append($('table#v65-cart-table td#v65-cart-update-total-cell input').addClass('cart-action-btn'));
-        $('input#v65-cart-coupon-entry-details-button').addClass('cart-action-btn');
+        shoppingCartAction.append($('table#v65-cart-table td#v65-cart-update-total-cell input').addClass('secondary-btn'));
+        $('input#v65-cart-coupon-entry-details-button').addClass('secondary-btn');
         $('div#v65-cart-coupon-entry-details-div').contents()[0].remove();
         $('input#v65-cart-coupon-entry-details-input').attr('placeholder', couponText);
         $('table#v65-cart-table tr#v65-empty-cart-row').remove();
@@ -802,6 +802,10 @@ var shoppingCartPage = {
         // Re-organize proceed to checkout btn and price summary.
         var priceTableCheckoutTd = $('#v65-cart-checkout-parent > tbody > tr > td:nth-child(2)');
         var priceTableCheckout = $('<div/>', {'id':'price-table-checkout'}).append(priceTableCheckoutTd.children()).appendTo(priceTableCheckoutTd);
+        $('<div/>', {
+            'id': 'price-summary-title',
+            'text': 'Price summary'
+        }).prependTo($('div#price-table-checkout'));
 
         // Add btn style to proceed to checkout btn.
         $('#v65-cart-checkout-table td.v65-cart-checkout-membersonly-cell input').addClass('primary-btn');
