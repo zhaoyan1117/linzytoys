@@ -696,6 +696,7 @@ var shoppingCartPage = {
             var cartTitleSubtotal = 'Subtotal';
             var removeFromCart = 'Remove from cart';
             var removeCoupon = 'Remove coupon';
+            var couponText = 'Coupon Code';
             var applyCoupon = 'Apply';
             var recalculate = 'Recalculate';
         }
@@ -753,6 +754,8 @@ var shoppingCartPage = {
         shoppingCartAction.append($('table#v65-cart-table div#v65-cart-coupon-entry-details-div'));
         shoppingCartAction.append($('table#v65-cart-table td#v65-cart-update-total-cell input').addClass('cart-action-btn'));
         $('input#v65-cart-coupon-entry-details-button').addClass('cart-action-btn');
+        $('div#v65-cart-coupon-entry-details-div').contents()[0].remove();
+        $('input#v65-cart-coupon-entry-details-input').attr('placeholder', couponText);
         $('table#v65-cart-table tr#v65-empty-cart-row').remove();
         $('table#v65-cart-table tr#v65-coupon-table-row').remove();
 
