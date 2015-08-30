@@ -695,7 +695,8 @@ var shoppingCartPage = {
         removeCoupon: 'Remove coupon',
         couponText: 'Coupon Code',
         applyCoupon: 'Apply',
-        recalculate: 'Recalculate'
+        recalculate: 'Recalculate',
+        mobileDelete: 'Delete'
     },
 
     spanishText : {
@@ -742,23 +743,40 @@ var shoppingCartPage = {
         $(cartTitle[3]).text(this.t('cartTitleSubtotal'));
 
         // Re-organize cart details row.
+        var that = this;
         $('table#v65-cart-table tr.v65-cart-details-row').each(function() {
-            $($(this).children()[1]).addClass('item-desc');
-            $($(this).children()[2]).addClass('item-price');
-            $($(this).children()[3]).addClass('item-qty');
+            var descCell = $($(this).children()[1]);
+            var priceCell = $($(this).children()[2]);
+            var qtyCell = $($(this).children()[3]);
+
+            descCell.addClass('item-desc');
+            priceCell.addClass('item-price');
+            qtyCell.addClass('item-qty');
             $($(this).children()[4]).addClass('item-subtotal');
+
+            descCell.find('font').after(
+                $('<div/>', {
+                    'class': 'mobile-price',
+                    'text': priceCell.find('font').text().trim()
+            }));
 
             $(this).find('td.v65-cart-detail-productimage img')
                     .prependTo($(this).find('td.item-desc'));
             $(this).find('td.v65-cart-item-remove-cell a')
                     .appendTo($(this).find('td.item-qty'));
+
+            var deleteBtn = $(this).find('a.v65-cart-item-remove-link');
+            $('<a/>', {
+                'href': deleteBtn.attr('href'),
+                'class': 'mobile-delete secondary-btn',
+                'text': that.t('mobileDelete')
+            }).appendTo(qtyCell);
         });
         $('table#v65-cart-table tr.v65-cart-details-row td.v65-cart-detail-productimage').remove();
         $('table#v65-cart-table tr.v65-cart-details-row td.v65-cart-item-remove-cell').remove();
 
         // Chagne remove link text.
         $('table#v65-cart-table a.v65-cart-item-remove-link').html(this.t('removeFromCart'));
-        $('#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-item-remove-cell a').html(this.t('removeCoupon'));
     },
 
     reorganizeCouponRow: function() {
@@ -768,6 +786,7 @@ var shoppingCartPage = {
                 .before($('table#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-item-remove-cell'));
             $('table#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-giftcert-details-cell').attr('colspan', '2');
             $('table#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-giftcert-details-cell img').remove();
+            $('#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-item-remove-cell a').html(this.t('removeCoupon'));
         }
     },
 

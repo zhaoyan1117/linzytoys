@@ -318,6 +318,11 @@ div#price-table-checkout div#price-summary-title {
 }
 
 @media only screen and (max-width: 767px) {
+  table#v65-cart-table > tbody > tr:not(.v65-cart-giftcert-details-row) > td:nth-child(2),
+  table#v65-cart-table > tbody > tr:not(.v65-cart-giftcert-details-row) > td:nth-child(4),
+  table#v65-cart-table > tbody > tr.v65-cart-giftcert-details-row > td:nth-child(n+2) {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 480px) {
