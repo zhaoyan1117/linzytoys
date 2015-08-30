@@ -240,7 +240,7 @@ table#cart-price-table {
 }
 
 table#cart-price-table > tbody > tr:first-child > td:first-child {
-  width: 60%;
+  width: 90%;
 }
 
 table#cart-price-table > tbody > tr:first-child > td:last-child {
@@ -306,7 +306,15 @@ div#price-table-checkout div#price-summary-title {
 }
 
 /* * * * * * Shopping Cart Responsive * * * * * */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1200px) {
+  form#shoppingcart-form {
+    width: 100%;
+  }
+
+  table#v65-cart-checkout-parent {
+    width: 100%;
+    margin-top: 20px;
+  }
 }
 
 @media only screen and (max-width: 480px) {
