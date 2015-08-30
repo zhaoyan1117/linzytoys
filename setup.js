@@ -802,6 +802,9 @@ var shoppingCartPage = {
         // Re-organize proceed to checkout btn and price summary.
         var priceTableCheckoutTd = $('#v65-cart-checkout-parent > tbody > tr > td:nth-child(2)');
         var priceTableCheckout = $('<div/>', {'id':'price-table-checkout'}).append(priceTableCheckoutTd.children()).appendTo(priceTableCheckoutTd);
+
+        // Add btn style to proceed to checkout btn.
+        $('#v65-cart-checkout-table td.v65-cart-checkout-membersonly-cell input').addClass('primary-btn');
     }
 }
 
