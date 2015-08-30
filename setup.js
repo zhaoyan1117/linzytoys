@@ -696,11 +696,24 @@ var shoppingCartPage = {
         couponText: 'Coupon Code',
         applyCoupon: 'Apply',
         recalculate: 'Recalculate',
-        mobileDelete: 'Delete'
+        mobileDelete: 'Delete',
+        priceSummary: 'Price summary'
     },
 
     spanishText : {
-
+        cartTitle: 'Carrito de compras',
+        checkoutBtnText: 'Pasar por la caja',
+        cartTitleItem: 'Artículo',
+        cartTitlePrice: 'Precio',
+        cartTitleQty: 'Cantidad',
+        cartTitleSubtotal: 'Total parcial',
+        removeFromCart: 'Quitar del carrito',
+        removeCoupon: 'Retire cupón',
+        couponText: 'Código promocional',
+        applyCoupon: 'Aplicar',
+        recalculate: 'Recalcular',
+        mobileDelete: 'Borrar',
+        priceSummary: 'Resumen de precio'
     },
 
     t: function(text) {
@@ -858,7 +871,7 @@ var shoppingCartPage = {
                                     .appendTo(priceTableCheckoutTd);
         $('<div/>', {
             'id': 'price-summary-title',
-            'text': 'Price summary'
+            'text': this.t('priceSummary')
         }).prependTo($('div#price-table-checkout'));
 
         // Add btn style to proceed to checkout btn.
