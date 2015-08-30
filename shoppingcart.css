@@ -224,7 +224,8 @@ div#shopping-cart-action input {
 table#v65-cart-table a.mobile-delete,
 table#v65-cart-table div.mobile-price,
 table#v65-cart-table span.mobile-price-coupon,
-table#v65-cart-table a.mobile-delete-coupon {
+table#v65-cart-table a.mobile-delete-coupon,
+form#mobile-checkout-table {
   display: none;
 }
 
@@ -357,6 +358,11 @@ div#price-table-checkout div#price-summary-title {
     font-size: 13px;
     font-weight: normal;
     width: 115px;
+    text-decoration: none;
+  }
+
+  table#v65-cart-table a.mobile-delete-coupon:hover {
+    color: #f5a34e;
   }
 
   table#v65-cart-table span.mobile-price-coupon {
@@ -368,4 +374,41 @@ div#price-table-checkout div#price-summary-title {
 }
 
 @media only screen and (max-width: 480px) {
+  div#shopping-cart-action > a,
+  div#shopping-cart-action div#v65-cart-coupon-entry-details-div,
+  div#shopping-cart-action input#btnRecalculate {
+    width: 100%;
+  }
+
+  div#shopping-cart-action div#v65-cart-coupon-entry-details-div {
+    margin: 10px 0px;
+  }
+
+  input#v65-cart-coupon-entry-details-input {
+    width: 49.5%;
+    text-align: center;
+  }
+
+  input#v65-cart-coupon-entry-details-button {
+    width: 49.5%;
+  }
+
+  form#mobile-checkout-table {
+    display: table;
+    position: fixed;
+    top: 0;
+    z-index: 99999999;
+    background-color: #f7f7f8;
+    height: 50px;
+    border-bottom: 1px solid rgb(204, 204, 204);
+    width: 100%;
+  }
+
+  form#mobile-checkout-table table#v65-cart-checkout-table {
+    margin-top: 7px;
+  }
+
+  body > div.page-wrap {
+    margin-top: 50px;
+  }
 }

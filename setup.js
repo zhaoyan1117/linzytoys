@@ -863,6 +863,11 @@ var shoppingCartPage = {
 
         // Add btn style to proceed to checkout btn.
         $('#v65-cart-checkout-table td.v65-cart-checkout-membersonly-cell input').addClass('primary-btn');
+
+        // Add mobile proceed to checkout.
+        $('div#price-table-checkout form').clone()
+                                            .attr('id', 'mobile-checkout-table')
+                                            .prependTo('body > div.page-wrap');
     },
 
     reStructure: function() {
