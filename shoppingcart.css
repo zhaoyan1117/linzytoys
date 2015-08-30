@@ -221,6 +221,13 @@ div#shopping-cart-action input {
   height: 30px !important;
 }
 
+table#v65-cart-table a.mobile-delete,
+table#v65-cart-table div.mobile-price,
+table#v65-cart-table span.mobile-price-coupon,
+table#v65-cart-table a.mobile-delete-coupon {
+  display: none;
+}
+
 /* Proceed to checkout */
 table#v65-cart-checkout-parent {
   float: left;
@@ -322,6 +329,41 @@ div#price-table-checkout div#price-summary-title {
   table#v65-cart-table > tbody > tr:not(.v65-cart-giftcert-details-row) > td:nth-child(4),
   table#v65-cart-table > tbody > tr.v65-cart-giftcert-details-row > td:nth-child(n+2) {
     display: none;
+  }
+
+  table#v65-cart-table a.v65-cart-item-remove-link {
+    display: none;
+  }
+
+  table#v65-cart-table a.mobile-delete {
+    display: inline-block;
+    padding: 5.5px 0px;
+    width: 50px;
+    font-size: 13px;
+    font-weight: normal;
+  }
+
+  table#v65-cart-table div.mobile-price {
+    display: block;
+    color: #D94545;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  table#v65-cart-table a.mobile-delete-coupon {
+    display:  block;
+    padding: 5.5px 0px;
+    margin: 2px auto 6px;
+    font-size: 13px;
+    font-weight: normal;
+    width: 115px;
+  }
+
+  table#v65-cart-table span.mobile-price-coupon {
+    display: inline-block;
+    color: #D94545;
+    font-size: 15px;
+    font-weight: bold;
   }
 }
 

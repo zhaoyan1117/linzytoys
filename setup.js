@@ -787,6 +787,19 @@ var shoppingCartPage = {
             $('table#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-giftcert-details-cell').attr('colspan', '2');
             $('table#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-giftcert-details-cell img').remove();
             $('#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-item-remove-cell a').html(this.t('removeCoupon'));
+
+            // Mobile price.
+            $('<span/>', {
+                'class': 'mobile-price-coupon',
+                'text': $('#v65-cart-table tr.v65-cart-giftcert-details-row table.v65-cart-giftcert-total font').text().trim()
+            }).appendTo($('#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-giftcert-details-cell'));
+
+            // Mobile button.
+            $('<a/>', {
+                'class': 'mobile-delete-coupon secondary-btn',
+                'text': this.t('removeCoupon'),
+                'href': $('#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-item-remove-cell a').attr('href')
+            }).appendTo($('#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-giftcert-details-cell'));
         }
     },
 
