@@ -620,9 +620,10 @@ var registerPage = {
         // Hide unrelated elements above submit btns.
         $('#register-submit-td input').siblings().hide();
 
-        // Style register submit btn.
+        // Style register submit btn and login btn.
         $('#submitRegistration').attr('value', registerSubmitText);
         $('#submitRegistration').addClass('primary-btn');
+        $('#login-table form > table input[name="Login"]').addClass('color-theme-btn');
 
         // Change billing info table text.
         var billingInfoTexts = $('#billing-info > tbody > tr > td:nth-child(1)');
