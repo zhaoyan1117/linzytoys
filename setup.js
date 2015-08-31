@@ -274,6 +274,7 @@ var productDetailPage = {
         addToCart2.value = 'ADD TO CART';
         addToCart2.classList.remove('vCSS_input_addtocart');
         addToCart2.classList.add('vCSS_input_addtocart2');
+        addToCart2.classList.add('primary-btn');
         $('input.vCSS_input_addtocart').after(addToCart2);
 
         // Make second add to wish list button.
@@ -281,6 +282,7 @@ var productDetailPage = {
         addToWL2.type = 'submit';
         addToWL2.value = 'ADD TO WISH LIST';
         addToWL2.id = 'v65-product-wishlist-button2';
+        addToWL2.classList.add('secondary-btn');
         $('#v65-product-wishlist-button').after(addToWL2);
 
         // Rearrange locations of product title, itemnumber, and price table.

@@ -976,7 +976,7 @@ img[src*="btn_addtocart.gif"] {
   }
 
   #v65-product-parent > tbody > tr:nth-child(2) > td:nth-child(3) {
-    height: 200px;
+    height: 188px;
   }
 
   #action-wrapper-div {
@@ -1020,59 +1020,13 @@ img[src*="btn_addtocart.gif"] {
   input.vCSS_input_addtocart2 {
     display: block;
     width: 95.6%;
-    margin: 0px auto !important;
-
-    border: 1px solid #aaa !important;
-    height: 36px !important;
-    line-height: 24px !important;
-    vertical-align: middle !important;
-
-    -moz-border-radius: 3px !important;
-    -webkit-border-radius: 3px !important;
-    border-radius: 3px !important;
-
-    font-size: 20px !important;
-    font-weight: normal;
-    font-family: 'Slabo 27px', serif;
-    color: black !important;
-    text-align: center !important;
-    -webkit-appearance: none !important;
-
-    background : -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(9%,#feb201), color-stop(100%,#feb201)) !important;
-    background : -moz-linear-gradient(top, #ffffff 0%, #feb201 9%, #feb201 100%) !important;
-    background : -webkit-linear-gradient(top, #ffffff 0%, #feb201 9%, #feb201 100%) !important;
-    background : -o-linear-gradient(top, #ffffff 0%, #feb201 9%, #feb201 100%) !important;
-    background : -ms-linear-gradient(top, #ffffff 0%, #feb201 9%, #feb201 100%) !important;
-    background : linear-gradient(top, #ffffff 0%, #feb201 9%, #feb201 100%) !important;
+    margin: 0px auto;
   }
 
   input#v65-product-wishlist-button2 {
     display: block;
     width: 95.6%;
-    margin: 0px auto !important;
-
-    border: 1px solid #aaa !important;
-    height: 36px !important;
-    line-height: 24px !important;
-    vertical-align: middle !important;
-
-    -moz-border-radius: 3px !important;
-    -webkit-border-radius: 3px !important;
-    border-radius: 3px !important;
-
-    font-size: 20px !important;
-    font-weight: normal;
-    font-family: 'Slabo 27px', serif;
-    color: black !important;
-    text-align: center !important;
-    -webkit-appearance: none !important;
-
-    background : -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(9%,#aaa), color-stop(100%,#aaa)) !important;
-    background : -moz-linear-gradient(top, #ffffff 0%, #aaa 9%, #aaa 100%) !important;
-    background : -webkit-linear-gradient(top, #ffffff 0%, #aaa 9%, #aaa 100%) !important;
-    background : -o-linear-gradient(top, #ffffff 0%, #aaa 9%, #aaa 100%) !important;
-    background : -ms-linear-gradient(top, #ffffff 0%, #aaa 9%, #aaa 100%) !important;
-    background : linear-gradient(top, #ffffff 0%, #aaa 9%, #aaa 100%) !important;
+    margin: 0px auto;
   }
 
   input.vCSS_input_addtocart {
