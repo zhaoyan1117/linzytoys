@@ -197,11 +197,6 @@ float: left;
   width: 140px;
   margin: 10px;
   margin-bottom: 15px;
-  opacity: 0.85;
-}
-
-#content_area #btnSubmitOrder:hover {
-  opacity: 1.0;
 }
 
 #content_area #v65-cart-totals-parent {
@@ -282,12 +277,16 @@ table#savedPayment td {
   font-weight: normal;
   height: 66px;
   line-height: 66px;
+  vertical-align: middle;
   border: 1px solid #e3e3e3;
 }
 
-#btnSubmitOrderBottom #btnSubmitOrder {
+#btnSubmitOrderBottom #btnSubmitOrder2 {
+  padding: 0px;
   width: 140px;
-  margin-right: 23px;
+  height: 35px;
+  line-height: 35px;
+  margin-right: 5px;
 }
 
 /**************************
