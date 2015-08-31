@@ -730,9 +730,6 @@ var shoppingCartPage = {
         // Add id to shopping cart form.
         $('table#v65-cart-table-container > tbody > tr > td > form').attr('id', 'shoppingcart-form');
 
-        // Change shopping cart title.
-        $('h2.v65-your-cart-title').text(this.t('cartTitle')).prependTo($('form#shoppingcart-form'));
-
         // Remove unnecessary table cells.
         $('table#v65-cart-table > tbody > tr:first-child').remove();
         $('table#v65-cart-table tr.v65-cart-details-separator').remove();
@@ -876,6 +873,8 @@ var shoppingCartPage = {
             'text': this.t('priceSummary')
         }).prependTo($('div#price-table-checkout'));
 
+        $('div#price-table-checkout br').remove();
+
         // Add btn style to proceed to checkout btn.
         $('#v65-cart-checkout-table td.v65-cart-checkout-membersonly-cell input').addClass('primary-btn');
 
@@ -883,15 +882,22 @@ var shoppingCartPage = {
         $('div#price-table-checkout form').clone()
                                             .attr('id', 'mobile-checkout-table')
                                             .prependTo('body > div.page-wrap');
+        $('body > div.page-wrap').addClass('mobile-push-down');
     },
 
     reStructure: function() {
-        this.clearCells();
-        this.reorganizeCartDetails();
-        this.reorganizeCouponRow();
-        this.rebuildActionDiv();
-        this.rebuildTotalPrice();
-        this.reorganizeProceedToCheckout();
+        // Change shopping cart title.
+        $('h2.v65-your-cart-title').text(this.t('cartTitle')).prependTo($('form#shoppingcart-form'));
+
+        // Cart is not empty.
+        if ($('#v65-cart-table-container').length != 0) {
+            this.clearCells();
+            this.reorganizeCartDetails();
+            this.reorganizeCouponRow();
+            this.rebuildActionDiv();
+            this.rebuildTotalPrice();
+            this.reorganizeProceedToCheckout();
+        }
     }
 }
 
