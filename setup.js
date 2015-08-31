@@ -276,11 +276,16 @@ var productDetailPage = {
                                 .removeClass('vCSS_input_addtocart');
         $('input.vCSS_input_addtocart').after(addToCart2);
 
+        util.changeImageBtn2Submit('input.vCSS_input_addtocart', 'Add to cart')
+            .addClass('primary-btn');
+
         // Make second add to wish list button.
         var addToWL2 = util.changeImageBtn2Submit($('#v65-product-wishlist-button').clone(), 'Add to wish list')
                            .attr('id', 'v65-product-wishlist-button2')
                            .addClass('secondary-btn');
         $('#v65-product-wishlist-button').after(addToWL2);
+        util.changeImageBtn2Submit('#v65-product-wishlist-button', 'Add to wish list')
+            .addClass('secondary-btn');
 
         // Rearrange locations of product title, itemnumber, and price table.
         var titleFont = $('font.productnamecolorLARGE.colors_productname')[0];

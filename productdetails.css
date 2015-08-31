@@ -229,7 +229,7 @@ br + .colors_pricebox td[width="1"] + td[valign="top"] br + table {width: 100%;}
 
 /* Selects td containing "Add to Cart" and "Add to Wish List" */
 br + .colors_pricebox td[width="1"] + td[valign="top"] br + table > tbody > tr:first-child > td {
-    display: block;
+  display: block;
   padding: 10px 0 0; /*Adds spacing between buttons and qty*/
 }
 
@@ -240,26 +240,17 @@ br + .colors_pricebox td[width="1"] + td[valign="top"] br + table > tbody > tr:f
 
 /* "Add to Cart" button */
 input.vCSS_input_addtocart {
-    display: block;
-    margin: 0px auto;
-    width: 140px;
-    opacity: 0.85;
-}
-
-input.vCSS_input_addtocart:hover {
-    opacity: 1.0;
+  display: block;
+  margin: 0px auto;
+  width: 90%;
 }
 
 /* "Add to Wish List" input */
 input#v65-product-wishlist-button {
-    display: block;
-    margin: 0 auto 10px;
-    width: 131px;
-    opacity: 0.85;
-}
-
-input#v65-product-wishlist-button:hover {
-    opacity: 1.0;
+  display: block;
+  margin: 0 auto 10px;
+  width: 90%;
+  padding: 6px 0px;
 }
 
 /* "Add to Registry" img */
