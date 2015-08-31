@@ -6,6 +6,17 @@ var util = {
         btn.removeAttr('src');
         btn.removeAttr('alt');
         return btn;
+    },
+
+    checkCurrentPage: function(paths) {
+        var cur = false;
+        var curLoc = location.pathname.toLowerCase();
+        var curPath = '';
+        for(var i = 0; i < paths.length; i++) {
+            curPath = paths[i].toLowerCase();
+            cur = cur || (curLoc == curPath) || (curLoc.indexOf(curPath) != -1);
+        }
+        return cur;
     }
 }
 
@@ -26,8 +37,7 @@ var allPage = {
 
 /* Checkout page. */
 var checkoutPage = {
-    isCurrentPage: (location.pathname == "/one-page-checkout.asp") ||
-        (location.pathname.indexOf("/one-page-checkout.asp") != -1),
+    isCurrentPage: util.checkCurrentPage(["/one-page-checkout.asp"]),
 
     defaultAnnouncements: {
         main: "Please update the following information as mush as you can, " +
@@ -253,12 +263,7 @@ var checkoutPage = {
 
 /* Product detail page. */
 var productDetailPage = {
-    isCurrentPage: (location.pathname == "/ProductDetails.asp") ||
-                    (location.pathname.indexOf("/ProductDetails.asp") != -1) ||
-                    (location.pathname == "/productdetails.asp") ||
-                    (location.pathname.indexOf("/productdetails.asp") != -1) ||
-                    (location.pathname.indexOf("-p/") != -1) ||
-                    (location.pathname.indexOf("_p/") != -1),
+    isCurrentPage: util.checkCurrentPage(['/productdetails.asp', '-p/', '_p/']),
 
     setup: function(event) {
         // Setup zoom image size.
@@ -371,8 +376,7 @@ var productDetailPage = {
 
 /* Category page. */
 var categoryPage = {
-    isCurrentPage: (location.pathname.indexOf("-s/") != -1) ||
-                    (location.pathname.indexOf("_s/") != -1),
+    isCurrentPage: util.checkCurrentPage(['-s/', '_s/']),
 
     setup: function(event) {
         /* Category page has an #SortBy element. */
@@ -537,12 +541,7 @@ var categoryPage = {
 
 /* User login/register page. */
 var registerPage = {
-    isCurrentPage: (location.pathname == "/register.asp") ||
-        (location.pathname.indexOf("/register.asp") != -1) ||
-        (location.pathname == "/Register.asp") ||
-        (location.pathname.indexOf("/Register.asp") != -1) ||
-        (location.pathname == "/el-es-wirf/Linzy-juguetes") ||
-        (location.pathname.indexOf("/el-es-wirf/Linzy-juguetes") != -1),
+    isCurrentPage: util.checkCurrentPage(['/register.asp', '/el-es-wirf/Linzy-juguetes']),
 
     setup: function(event) {
         this.reStructure();
@@ -697,10 +696,7 @@ var registerPage = {
 
 /* Shopping cart page. */
 var shoppingCartPage = {
-    isCurrentPage: (location.pathname == "/shoppingcart.asp") ||
-                    (location.pathname.indexOf("/shoppingcart.asp") != -1) ||
-                    (location.pathname == "/ShoppingCart.asp") ||
-                    (location.pathname.indexOf("/ShoppingCart.asp") != -1),
+    isCurrentPage: util.checkCurrentPage(['/shoppingcart.asp']),
 
     setup: function(event) {
         this.reStructure();
