@@ -622,6 +622,7 @@ var registerPage = {
 
         // Style register submit btn.
         $('#submitRegistration').attr('value', registerSubmitText);
+        $('#submitRegistration').addClass('primary-btn');
 
         // Change billing info table text.
         var billingInfoTexts = $('#billing-info > tbody > tr > td:nth-child(1)');

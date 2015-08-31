@@ -411,31 +411,9 @@ table[width="385"] {
 }
 
 #submitRegistration {
-  height: 30px !important;
-  cursor:pointer !important;
-
-  padding: 0px 18px !important;
-  margin: 8px 0px !important;
-  background:#ffac34 !important;
-
-  background-image: linear-gradient(#ffcc4e,#ffac34) !important;
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffcc4e, endColorstr=#ffac34, GradientType=0)" !important;
-  border:1px solid #f1a02b !important;
-
-  color: #292f34 !important;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.5) !important;
-
-  -moz-border-radius: 5px !important;
-  -webkit-border-radius: 5px !important;
-  border-radius: 5px !important;
-  font-weight: bold;
-}
-
-#submitRegistration:hover {
-  background-color: #e99111 !important;
-  background-image: linear-gradient(#ffcc4e,#e99111) !important;
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffcc4e, endColorstr=#e99111, GradientType=0)" !important;
-  border-color: #ec8b12 !important;
+  font-size: 13px;
+  padding: 5px 10px;
+  margin: 6px 0px;
 }
 
 /* Hide by default. */
