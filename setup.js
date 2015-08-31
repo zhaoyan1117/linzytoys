@@ -807,25 +807,27 @@ var shoppingCartPage = {
 
     reorganizeCouponRow: function() {
         // Re-organize coupon row if exists.
-        if ($('table#v65-cart-table tr.v65-cart-giftcert-details-row').length != 0) {
-            $('table#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-giftcert-details-cell')
-                .after($('table#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-item-remove-cell'));
-            $('table#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-giftcert-details-cell').attr('colspan', '2');
-            $('table#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-giftcert-details-cell img').remove();
-            $('#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-item-remove-cell a').html(this.t('removeCoupon'));
+        var couponRow = 'table#v65-cart-table tr.v65-cart-giftcert-details-row';
+        var detailCell = 'td.v65-cart-giftcert-details-cell';
+        var removeCell = 'td.v65-cart-item-remove-cell';
+        if ($(couponRow).length != 0) {
+            $(couponRow + ' ' + detailCell).after($(couponRow + ' ' + removeCell));
+            $(couponRow + ' ' + detailCell).attr('colspan', '2');
+            $(couponRow + ' ' + detailCell + ' img').remove();
+            $(couponRow + ' ' + removeCell + ' a').html(this.t('removeCoupon'));
 
             // Mobile price.
             $('<span/>', {
                 'class': 'mobile-price-coupon',
-                'text': $('#v65-cart-table tr.v65-cart-giftcert-details-row table.v65-cart-giftcert-total font').text().trim()
-            }).appendTo($('#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-giftcert-details-cell'));
+                'text': $(couponRow + ' ' + 'table.v65-cart-giftcert-total font').text().trim()
+            }).appendTo($(couponRow + ' ' + detailCell));
 
             // Mobile button.
             $('<a/>', {
                 'class': 'mobile-delete-coupon secondary-btn',
                 'text': this.t('removeCoupon'),
-                'href': $('#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-item-remove-cell a').attr('href')
-            }).appendTo($('#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-giftcert-details-cell'));
+                'href': $(couponRow + ' ' + removeCell + ' a').attr('href')
+            }).appendTo($(couponRow + ' ' + detailCell));
         }
     },
 
