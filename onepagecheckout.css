@@ -80,7 +80,9 @@ select#PaymentMethodTypeDisplay {
 #content_area table#v65-onepage-Detail td input[type="password"]:focus,
 #content_area table#v65-onepage-Detail td input[type="text"]:focus,
 #content_area table#v65-onepage-Detail td select:focus {
-  box-shadow: inset 0 0 5px rgba(217, 69, 69, 0.3);
+  -moz-box-shadow:    inset 0 0 10px rgba(204,204,204,0.6) !important;
+  -webkit-box-shadow: inset 0 0 10px rgba(204,204,204,0.6) !important;
+  box-shadow:         inset 0 0 10px rgba(204,204,204,0.6) !important;
 }
 
 #content_area table#v65-onepage-Billing {
@@ -407,7 +409,9 @@ div#payment-method-expl {
 #content_area table#v65-onepage-ShippingCostParent td input[type="password"]:focus,
 #content_area table#v65-onepage-ShippingCostParent td input[type="text"]:focus,
 #content_area table#v65-onepage-ShippingCostParent td select:focus {
-  box-shadow: inset 0 0 5px rgba(217, 69, 69, 0.3);
+  -moz-box-shadow:    inset 0 0 10px rgba(204,204,204,0.6) !important;
+  -webkit-box-shadow: inset 0 0 10px rgba(204,204,204,0.6) !important;
+  box-shadow:         inset 0 0 10px rgba(204,204,204,0.6) !important;
 }
 
 #v65-onepage-savedShipping-row > td {
