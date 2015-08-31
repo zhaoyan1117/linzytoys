@@ -1,3 +1,13 @@
+var util = {
+    changeImageBtn2Submit: function(btnPath, value) {
+        var btn = $(btnPath);
+        btn[0].type = 'submit';
+        btn.attr('value', value);
+        btn.removeAttr('src');
+        btn.removeAttr('alt');
+    }
+}
+
 /* Every page. */
 var allPage = {
     setup: function(event) {
@@ -831,18 +841,9 @@ var shoppingCartPage = {
         $('table#v65-cart-table tr#v65-coupon-table-row').remove();
 
         // Change image btn to submit btn.
-        var checkoutBtn = $('table#v65-cart-checkout-table input.btn_checkout_guest');
-        checkoutBtn[0].type = 'submit';
-        checkoutBtn.attr('value', this.t('checkoutBtnText'));
-        checkoutBtn.removeAttr('src');
-        var applyCouponBtn = $('input#v65-cart-coupon-entry-details-button');
-        applyCouponBtn[0].type = 'submit';
-        applyCouponBtn.attr('value', this.t('applyCoupon'));
-        applyCouponBtn.removeAttr('src');
-        var reCalculateBtn = $('input#btnRecalculate');
-        reCalculateBtn[0].type = 'submit';
-        reCalculateBtn.attr('value', this.t('recalculate'));
-        reCalculateBtn.removeAttr('src');
+        util.changeImageBtn2Submit('table#v65-cart-checkout-table input.btn_checkout_guest', this.t('checkoutBtnText'));
+        util.changeImageBtn2Submit('input#v65-cart-coupon-entry-details-button', this.t('applyCoupon'));
+        util.changeImageBtn2Submit('input#btnRecalculate', this.t('recalculate'));
     },
 
     rebuildTotalPrice: function() {
