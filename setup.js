@@ -5,6 +5,7 @@ var util = {
         btn.attr('value', value);
         btn.removeAttr('src');
         btn.removeAttr('alt');
+        return btn;
     }
 }
 
@@ -269,20 +270,16 @@ var productDetailPage = {
         actionTd.appendChild(actionWrapperDiv);
 
         // Make second add to cart button.
-        var addToCart2 = $('input.vCSS_input_addtocart')[0].cloneNode();
-        addToCart2.type = 'submit';
-        addToCart2.value = 'ADD TO CART';
-        addToCart2.classList.remove('vCSS_input_addtocart');
-        addToCart2.classList.add('vCSS_input_addtocart2');
-        addToCart2.classList.add('primary-btn');
+        var addToCart2 = util.changeImageBtn2Submit($('input.vCSS_input_addtocart').clone(), 'Add to cart')
+                                .addClass('vCSS_input_addtocart2')
+                                .addClass('primary-btn')
+                                .removeClass('vCSS_input_addtocart');
         $('input.vCSS_input_addtocart').after(addToCart2);
 
         // Make second add to wish list button.
-        var addToWL2 = $('#v65-product-wishlist-button')[0].cloneNode();
-        addToWL2.type = 'submit';
-        addToWL2.value = 'ADD TO WISH LIST';
-        addToWL2.id = 'v65-product-wishlist-button2';
-        addToWL2.classList.add('secondary-btn');
+        var addToWL2 = util.changeImageBtn2Submit($('#v65-product-wishlist-button').clone(), 'Add to wish list')
+                           .attr('id', 'v65-product-wishlist-button2')
+                           .addClass('secondary-btn');
         $('#v65-product-wishlist-button').after(addToWL2);
 
         // Rearrange locations of product title, itemnumber, and price table.
