@@ -102,6 +102,9 @@ var checkoutPage = {
             $('#v65-onepage-savedShipping-row').hide();
         }
 
+        // Re-style submit order btn.
+        util.changeImageBtn2Submit('input#btnSubmitOrder', 'Place order').addClass('primary-btn');
+
         // Add bottom place order btn.
         var theForm = document.getElementById('v65-onepage-CheckoutForm');
 
@@ -109,12 +112,16 @@ var checkoutPage = {
         clearDiv.id = 'tablesClear';
         theForm.appendChild(clearDiv);
 
-        var bottomSubmitBtn = document.getElementById('btnSubmitOrder').cloneNode();
+        var bottomSubmitBtn = util.changeImageBtn2Submit($('input#btnSubmitOrder').clone(), 'Place order')
+                                    .removeAttr('id')
+                                    .attr('id', 'btnSubmitOrder2')
+                                    .addClass('primary-btn');
+
         var bottomPriceText = document.createTextNode('Total: ' + $('#TotalsTotalTD').text());
 
         var btnDiv = document.createElement('DIV');
         btnDiv.id = 'btnSubmitOrderBottom';
-        btnDiv.appendChild(bottomSubmitBtn);
+        btnDiv.appendChild(bottomSubmitBtn[0]);
         btnDiv.appendChild(bottomPriceText);
         theForm.appendChild(btnDiv);
 
@@ -124,7 +131,7 @@ var checkoutPage = {
     tranlsateToSpanish: function() {
         // Change place order btn if spanish.
         if (document.documentElement.lang == 'es') {
-            var placeOrderBtn = 'https://linzytoys.us/v/vspfiles/assets/images/buttons/order_es.gif'
+            var placeOrderBtn = 'Realizar pedido';
             var savedBillingAddr = 'Las direcciones de facturación Guardadas';
             var shipToBilling = ' Enviar a mi dirección de facturación';
             var savedShipAddr = 'Las direcciones de envío Guardadas';
@@ -133,8 +140,9 @@ var checkoutPage = {
             var payment = 'PAGO';
             var yourOrder = 'Su pedido';
             var edit = 'Editar';
-            document.getElementById('btnSubmitOrder').src = placeOrderBtn;
-            $('#btnSubmitOrderBottom #btnSubmitOrder')[0].src = placeOrderBtn;
+
+            $('input#btnSubmitOrder').attr('value', placeOrderBtn);
+            $('#btnSubmitOrderBottom input#btnSubmitOrder2').attr('value', placeOrderBtn);
             $('#v65-onepage-saved-billing-table > tbody > tr > td > font').text(savedBillingAddr);
             $('#v65-sameasbilling-checkbox-row > td')[0].lastChild.nodeValue = shipToBilling;
             $('#v65-onepage-saved-shipping-table > tbody > tr > td > font').text(savedShipAddr);
@@ -246,6 +254,9 @@ var checkoutPage = {
 /* Product detail page. */
 var productDetailPage = {
     isCurrentPage: (location.pathname == "/ProductDetails.asp") ||
+                    (location.pathname.indexOf("/ProductDetails.asp") != -1) ||
+                    (location.pathname == "/productdetails.asp") ||
+                    (location.pathname.indexOf("/productdetails.asp") != -1) ||
                     (location.pathname.indexOf("-p/") != -1) ||
                     (location.pathname.indexOf("_p/") != -1),
 
@@ -352,13 +363,8 @@ var productDetailPage = {
         if (document.documentElement.lang == 'es') {
             var addToCartText = 'Añadir a la cesta';
             var addToWLText = 'Añadir a la Lista de deseos';
-            var addToCartBtn = 'https://linzytoys.us/v/vspfiles/assets/images/buttons/cart2_es.gif';
-            var wlBtn = 'https://linzytoys.us/v/vspfiles/assets/images/buttons/wl2_es.gif';
-            $('input[src*="btn_addtocart.gif"]').attr("src", addToCartBtn);
-            $('img[src*="btn_addtocart.gif"]').attr("src", addToCartBtn);
-            $('input[src*="btn_addtowishlist.gif"]').attr("src", wlBtn);
-            $('input[value="ADD TO CART"]').attr("value", addToCartText);
-            $('input[value="ADD TO WISH LIST"]').attr("value", addToWLText);
+            $('input[value="Add to cart"]').attr("value", addToCartText);
+            $('input[value="Add to wish list"]').attr("value", addToWLText);
         }
     }
 }
@@ -700,7 +706,7 @@ var shoppingCartPage = {
         this.reStructure();
     },
 
-    englishText : {
+    englishText: {
         cartTitle: 'Shopping Cart',
         checkoutBtnText: 'Proceed to checkout',
         cartTitleItem: 'Item',
@@ -716,7 +722,7 @@ var shoppingCartPage = {
         priceSummary: 'Price summary'
     },
 
-    spanishText : {
+    spanishText: {
         cartTitle: 'Carrito de compras',
         checkoutBtnText: 'Pasar por la caja',
         cartTitleItem: 'Artículo',
