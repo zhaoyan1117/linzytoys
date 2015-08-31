@@ -807,9 +807,9 @@ var shoppingCartPage = {
 
     reorganizeCouponRow: function() {
         // Re-organize coupon row if exists.
-        if ($('table#v65-cart-table  tr.v65-cart-giftcert-details-row').length != 0) {
-            $('table#v65-cart-table tr.v65-cart-giftcert-details-row > td:nth-child(2)')
-                .before($('table#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-item-remove-cell'));
+        if ($('table#v65-cart-table tr.v65-cart-giftcert-details-row').length != 0) {
+            $('table#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-giftcert-details-cell')
+                .after($('table#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-item-remove-cell'));
             $('table#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-giftcert-details-cell').attr('colspan', '2');
             $('table#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-giftcert-details-cell img').remove();
             $('#v65-cart-table tr.v65-cart-giftcert-details-row td.v65-cart-item-remove-cell a').html(this.t('removeCoupon'));

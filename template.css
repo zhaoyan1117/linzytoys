@@ -7,7 +7,7 @@ Use Signika from google fonts.
 @import url(https://fonts.googleapis.com/css?family=Signika:400,600,700,300&subset=latin,latin-ext);
 
 body {
-  background: #e6dfcd
+  background: #e6dfcd;
   color: #484848;
 /*  font-family:Helvetica, serif !important; */
         font-family: 'Signika', sans-serif;

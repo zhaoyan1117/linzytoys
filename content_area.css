@@ -37,7 +37,7 @@ form[name='form2'] > table > tbody > tr > td > table[width='520'] > tbody > tr >
 /* Hacky way to beautify orders.asp */
 form[name='form2'] > table > tbody > tr > td > table > tbody > tr > td ul {
   list-style: none;
-  padding-left: 0 !important;;
+  padding-left: 0 !important;
 }
 
 form[name='form2'] > table > tbody > tr > td > table > tbody > tr > td table {
