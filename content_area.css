@@ -146,6 +146,7 @@ table#myaccount-table font {
 #orders-table-container > tbody > tr:nth-child(2) > td > table {
   background-color: #f7f7f8;
   width: 100%;
+  margin: 0px auto;
   border: 1px dotted #eeeeee;
   border-radius: 2px;
   display: block;
@@ -169,6 +170,98 @@ table#myaccount-table font {
 
 #orders-table-container > tbody > tr:nth-child(2) > td select {
   margin: 0px auto;
+}
+
+/* orders.asp orders list */
+#orders-table {
+  width: 60%;
+  min-width: 680px;
+  margin: 10px auto 0px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+#orders-table > tbody > tr:nth-child(1) td {
+  background-color: rgba(217,69,69,0.85);
+  height: 40px;
+  padding-left: 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+#orders-table > tbody > tr:nth-child(1) td font {
+  color: white;
+  font-size: 15px;
+}
+
+#orders-table > tbody > tr:nth-child(1) td font b {
+  font-weight: normal;
+}
+
+#orders-table > tbody > tr.colors_backgroundneutral td {
+  display: block;
+  width: 100%;
+}
+
+/* Order number */
+#orders-table > tbody > tr:not(:first-child):not(:last-child) {
+  border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+#orders-table > tbody > tr.colors_backgroundneutral td:nth-child(1) {
+  width: 60%;
+  float: left;
+  height: 35px;
+  line-height: 35px;
+  padding-left: 15px;
+}
+#orders-table > tbody > tr.colors_backgroundneutral td:nth-child(1) {
+  font-weight: bold;
+}
+
+#orders-table > tbody > tr.colors_backgroundneutral td:nth-child(1) b {
+  font-weight: normal;
+}
+
+#orders-table > tbody > tr.colors_backgroundneutral td:nth-child(1) b:not(:first-child) {
+  margin-left: 15px;
+}
+
+/* Change button */
+#orders-table > tbody > tr.colors_backgroundneutral td:nth-child(2) {
+  width: 40%;
+  float: left;
+  height: 35px;
+  padding: 3px 5px 3px 0px;
+  text-align: right;
+  min-width: 260px;
+}
+
+#orders-table > tbody > tr.colors_backgroundneutral td:nth-child(2) a:first-child {
+  width: 160px;
+  padding: 4px 0px;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+#orders-table > tbody > tr.colors_backgroundneutral td:nth-child(2) a:last-child {
+  width: 95px;
+  padding: 4px 0px;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+#orders-table > tbody > tr.colors_backgroundneutral td:nth-child(2) a:hover {
+  color: #f5a34e;
+}
+
+/* Order detail */
+#orders-table > tbody > tr.colors_backgroundneutral td:nth-child(3) {
+  clear:both;
+  display: none;
+  background-color: cyan;
 }
 
 /* COLORS */
