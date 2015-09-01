@@ -15,12 +15,12 @@ table.colors_lines_light td {
 }
 
 /* Hacky way to make My Orders table center align on myaccount.asp */
-form[name='form2'] > table > tbody > tr:nth-child(2) td {
+/*form[name='form2'] > table > tbody > tr:nth-child(2) td {
   text-align: -webkit-center;
-}
+}*/
 
 /* Hacky way to make text in My Orders table left align on myaccount.asp */
-form[name='form2'] > table > tbody > tr:nth-child(2) td table td {
+/*form[name='form2'] > table > tbody > tr:nth-child(2) td table td {
   text-align: left;
 }
 
@@ -32,10 +32,10 @@ form[name='form2'] > table > tbody > tr > td > table > tbody > tr > td {
 form[name='form2'] > table > tbody > tr > td > table[width='520'] > tbody > tr > td {
   border: 0px;
   padding: 0px;
-}
+}*/
 
 /* Hacky way to beautify orders.asp */
-form[name='form2'] > table > tbody > tr > td > table > tbody > tr > td ul {
+/*form[name='form2'] > table > tbody > tr > td > table > tbody > tr > td ul {
   list-style: none;
   padding-left: 0 !important;
 }
@@ -56,6 +56,81 @@ form[name='form2'] > table > tbody > tr > td > table > tbody > tr > td table td:
 
 .container a[href='myaccount.asp'] {
   font-size: 14px;
+}*/
+
+/* myaccount.asp */
+table#myaccount-table > tbody > tr:nth-child(4) {
+  display: none;
+}
+
+table#myaccount-table a {
+  text-decoration: none;
+}
+
+table#myaccount-table a:hover {
+  color: #f5a34e;
+}
+
+table#myaccount-table > tbody > tr:not(:first-child) > td > table {
+  width: 500px;
+  margin: 10px auto;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+table#myaccount-table > tbody > tr:not(:first-child) > td > table td {
+  background-color: #f7f7f8;
+}
+
+table#myaccount-table > tbody > tr:not(:first-child) > td > table > tbody > tr:first-child > td {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #D94545;
+}
+
+table#myaccount-table > tbody > tr:not(:first-child) > td > table > tbody > tr:first-child > td b {
+  font-weight: normal;
+}
+
+table#myaccount-table > tbody > tr:not(:first-child) > td > table td {
+  padding: 5px 5px 5px 15px;
+  display: block;
+  width: 100%;
+}
+
+table#myaccount-table > tbody > tr:not(:first-child) > td > table td {
+  border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+table#myaccount-table > tbody > tr:not(:first-child) > td > table > tbody > tr:last-child > td:last-child,
+table#myaccount-table > tbody > tr:not(:first-child) > td > table > tbody > tr:first-child > td:first-child {
+  border-bottom: 0px;
+}
+
+table#myaccount-table td {
+  font-size: 14px;
+}
+
+table#myaccount-table font {
+  font-size: 15px;
+  color: white;
+}
+
+#myaccount-table > tbody > tr:nth-child(6) > td > a {
+  padding: 5px 12px;
+  font-weight: normal;
+}
+
+/* orders.asp */
+#content_area > img,
+#content_area > br {
+  display: none;
+}
+
+#content_area > a {
+  font-size: 14px;
+  margin-bottom: 10px;
+  display: block;
 }
 
 /* COLORS */
@@ -422,5 +497,11 @@ table[width="385"] {
   #billing-info > tbody > tr:nth-child(7) td,
   #billing-info > tbody > tr:nth-child(8) td {
     width: 28%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  table#myaccount-table > tbody > tr:not(:first-child) > td > table {
+    width: 100%;
   }
 }

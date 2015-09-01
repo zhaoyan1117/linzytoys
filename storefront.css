@@ -337,21 +337,10 @@ a[href*="help_answer.asp"] {
     display: block;
     margin-top: 20px; } }
 
-#content_area form[name*="form2"] table[width="500"] {
-  margin: 10px 0;
-  table-layout: fixed;
-/*  width: 100%; */
-}
-
-#content_area form[name*="form2"] {
-  padding-bottom: 20px; }
-
 @media only screen and (max-width: 767px) {
   #content_area form[name*="form2"] table[width="500"] td {
     width: 100%;
     display: block; } }
-
-
 
 /********* STOREFRONT-WISHLIST **********/
 @media only screen and (max-width: 767px) {

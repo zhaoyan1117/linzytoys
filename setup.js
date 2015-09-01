@@ -918,7 +918,25 @@ var myAccountPage = {
         // Add ids.
         $('main#content_area > form').attr('id', 'myaccount-form');
         $('main#content_area > form > table').attr('id', 'myaccount-table');
+
+        // Hide unnecessary br.
+        $('main#content_area br').hide();
+
+        // Hide empty table cell.
+        $('#myaccount-table > tbody > tr > td > table td').each(function() {
+            if ($(this).text().trim() == '') {
+                $(this).hide();
+            }
+        });
+
+        // Style log out btn.
+        $('#myaccount-table > tbody > tr:nth-child(6) > td > a').addClass('secondary-btn');
     }
+}
+
+/* Orders page. */
+var ordersPage = {
+    isCurrentPage: util.checkCurrentPage(['/myaccount.asp'])
 }
 
 $(allPage.setup(allPage));
