@@ -910,6 +910,17 @@ var shoppingCartPage = {
     }
 }
 
+/* My account page. */
+var myAccountPage = {
+    isCurrentPage: util.checkCurrentPage(['/myaccount.asp']),
+
+    setup: function(event) {
+        // Add ids.
+        $('main#content_area > form').attr('id', 'myaccount-form');
+        $('main#content_area > form > table').attr('id', 'myaccount-table');
+    }
+}
+
 $(allPage.setup(allPage));
 
 /* Bind setup callback for current page. */
@@ -923,4 +934,6 @@ if (checkoutPage.isCurrentPage) {
     $(registerPage.setup.bind(registerPage));
 } else if (shoppingCartPage.isCurrentPage) {
     $(shoppingCartPage.setup.bind(shoppingCartPage));
+} else if (myAccountPage.isCurrentPage) {
+    $(myAccountPage.setup.bind(myAccountPage));
 }
