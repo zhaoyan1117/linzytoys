@@ -936,7 +936,13 @@ var myAccountPage = {
 
 /* Orders page. */
 var ordersPage = {
-    isCurrentPage: util.checkCurrentPage(['/myaccount.asp'])
+    isCurrentPage: util.checkCurrentPage(['/orders.asp']),
+
+    setup: function(event) {
+        // Add ids.
+        $('main#content_area > form').attr('id', 'orders-form');
+        $('main#content_area > form > table').attr('id', 'orders-table');
+    }
 }
 
 $(allPage.setup(allPage));
@@ -954,4 +960,6 @@ if (checkoutPage.isCurrentPage) {
     $(shoppingCartPage.setup.bind(shoppingCartPage));
 } else if (myAccountPage.isCurrentPage) {
     $(myAccountPage.setup.bind(myAccountPage));
+} else if (ordersPage.isCurrentPage) {
+    $(ordersPage.setup.bind(ordersPage));
 }
