@@ -15,7 +15,7 @@ table.colors_lines_light td {
 }
 
 /* Hacky way to make text in My Orders table left align on myaccount.asp */
-form[name='form2'] > table > tbody > tr:nth-child(2) td table td {
+/*form[name='form2'] > table > tbody > tr:nth-child(2) td table td {
   text-align: left;
 }
 
@@ -27,9 +27,9 @@ form[name='form2'] > table > tbody > tr > td > table[width='520'] > tbody > tr >
   border: 0px;
   padding: 0px;
 }
-
+*/
 /* Hacky way to beautify orders.asp */
-form[name='form2'] > table > tbody > tr > td > table > tbody > tr > td ul {
+/*form[name='form2'] > table > tbody > tr > td > table > tbody > tr > td ul {
   list-style: none;
   padding-left: 0 !important;
 }
@@ -50,7 +50,7 @@ form[name='form2'] > table > tbody > tr > td > table > tbody > tr > td table td:
 
 .container a[href='myaccount.asp'] {
   font-size: 14px;
-}
+}*/
 
 /* myaccount.asp */
 table#myaccount-table > tbody > tr:nth-child(4) {
@@ -115,7 +115,7 @@ table#myaccount-table font {
   font-weight: normal;
 }
 
-/* orders.asp */
+/* orders.asp return to my account */
 #content_area > img,
 #content_area > br {
   display: none;
@@ -127,8 +127,48 @@ table#myaccount-table font {
   display: block;
 }
 
-form#orders-form > table > tbody > tr > td > table > tbody > tr > td {
-  border: 1px solid grey;
+/* orders.asp order history title */
+#orders-table > tbody > tr:nth-child(1) > td {
+  text-align: left;
+  font-size: 24px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+#orders-table > tbody > tr:nth-child(1) > td b {
+  font-weight: normal;
+}
+
+/* view order period selection. */
+#orders-table > tbody > tr:nth-child(2) > td {
+  padding: 5px 0px;
+}
+
+#orders-table > tbody > tr:nth-child(2) > td > table {
+  background-color: #f7f7f8;
+  width: 100%;
+  border: 1px dotted #eeeeee;
+  border-radius: 2px;
+  display: block;
+}
+
+#orders-table > tbody > tr:nth-child(2) > td > table > tbody,
+#orders-table > tbody > tr:nth-child(2) > td > table > tbody > tr {
+  display: block;
+}
+
+#orders-table > tbody > tr:nth-child(2) > td > table > tbody > tr > td:not(:nth-child(2)) {
+  display: none;
+}
+
+#orders-table > tbody > tr:nth-child(2) > td > table > tbody > tr > td:nth-child(2) {
+  width: 100%;
+  padding: 5px;
+  display: block;
+  text-align: center;
+}
+
+#orders-table > tbody > tr:nth-child(2) > td select {
+  margin: 0px auto;
 }
 
 /* COLORS */

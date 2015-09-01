@@ -942,6 +942,36 @@ var ordersPage = {
         // Add ids.
         $('main#content_area > form').attr('id', 'orders-form');
         $('main#content_area > form > table').attr('id', 'orders-table');
+
+        this.styleOrdersPeriodSelect();
+    },
+
+    englishText: {
+        viewOrderPeriod: 'View'
+    },
+
+    spanishText: {
+        viewOrderPeriod: 'Ver'
+    },
+
+    t: function(text) {
+        if (document.documentElement.lang == 'es') {
+            return this.spanishText[text];
+        } else {
+            return this.englishText[text];
+        }
+    },
+
+    styleOrdersPeriodSelect: function() {
+        // Add view orders period text.
+        $('<span/>', {
+            'text': this.t('viewOrderPeriod') + ': '
+        }).prependTo($('#orders-table > tbody > tr:nth-child(2) > td > table > tbody > tr > td:nth-child(2)'));
+
+        // Bind events to select.
+        $('#orders-table > tbody > tr:nth-child(2) > td select').change(function(event) {
+            $('#content_area > form').submit();
+        });
     }
 }
 
