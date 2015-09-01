@@ -128,22 +128,22 @@ table#myaccount-table font {
 }
 
 /* orders.asp order history title */
-#orders-table > tbody > tr:nth-child(1) > td {
+#orders-table-container > tbody > tr:nth-child(1) > td {
   text-align: left;
   font-size: 24px;
   border-bottom: 1px solid #eeeeee;
 }
 
-#orders-table > tbody > tr:nth-child(1) > td b {
+#orders-table-container > tbody > tr:nth-child(1) > td b {
   font-weight: normal;
 }
 
 /* view order period selection. */
-#orders-table > tbody > tr:nth-child(2) > td {
+#orders-table-container > tbody > tr:nth-child(2) > td {
   padding: 5px 0px;
 }
 
-#orders-table > tbody > tr:nth-child(2) > td > table {
+#orders-table-container > tbody > tr:nth-child(2) > td > table {
   background-color: #f7f7f8;
   width: 100%;
   border: 1px dotted #eeeeee;
@@ -151,23 +151,23 @@ table#myaccount-table font {
   display: block;
 }
 
-#orders-table > tbody > tr:nth-child(2) > td > table > tbody,
-#orders-table > tbody > tr:nth-child(2) > td > table > tbody > tr {
+#orders-table-container > tbody > tr:nth-child(2) > td > table > tbody,
+#orders-table-container > tbody > tr:nth-child(2) > td > table > tbody > tr {
   display: block;
 }
 
-#orders-table > tbody > tr:nth-child(2) > td > table > tbody > tr > td:not(:nth-child(2)) {
+#orders-table-container > tbody > tr:nth-child(2) > td > table > tbody > tr > td:not(:nth-child(2)) {
   display: none;
 }
 
-#orders-table > tbody > tr:nth-child(2) > td > table > tbody > tr > td:nth-child(2) {
+#orders-table-container > tbody > tr:nth-child(2) > td > table > tbody > tr > td:nth-child(2) {
   width: 100%;
   padding: 5px;
   display: block;
   text-align: center;
 }
 
-#orders-table > tbody > tr:nth-child(2) > td select {
+#orders-table-container > tbody > tr:nth-child(2) > td select {
   margin: 0px auto;
 }
 

@@ -941,7 +941,8 @@ var ordersPage = {
     setup: function(event) {
         // Add ids.
         $('main#content_area > form').attr('id', 'orders-form');
-        $('main#content_area > form > table').attr('id', 'orders-table');
+        $('main#content_area > form > table').attr('id', 'orders-table-container');
+        $('#orders-table-container > tbody > tr:nth-child(3) > td > table').attr('id', 'orders-table');
 
         this.styleOrdersPeriodSelect();
     },
@@ -966,10 +967,10 @@ var ordersPage = {
         // Add view orders period text.
         $('<span/>', {
             'text': this.t('viewOrderPeriod') + ': '
-        }).prependTo($('#orders-table > tbody > tr:nth-child(2) > td > table > tbody > tr > td:nth-child(2)'));
+        }).prependTo($('#orders-table-container > tbody > tr:nth-child(2) > td > table > tbody > tr > td:nth-child(2)'));
 
         // Bind events to select.
-        $('#orders-table > tbody > tr:nth-child(2) > td select').change(function(event) {
+        $('#orders-table-container > tbody > tr:nth-child(2) > td select').change(function(event) {
             $('#content_area > form').submit();
         });
     }
