@@ -180,7 +180,7 @@ table#myaccount-table font {
 }
 
 /* orders.asp orders list */
-#content_area > form[name='form2'] {
+#content_area > form {
   display: none;
 }
 
@@ -698,3 +698,12 @@ table[width="385"] {
     width: 100%;
   }
 }
+
+@media only screen and (max-width: 991px) {
+  #orders-table {
+    min-width: 0px;
+    width: 100%;
+  }
+}
+
+
