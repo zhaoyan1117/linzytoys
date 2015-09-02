@@ -173,6 +173,10 @@ table#myaccount-table font {
 }
 
 /* orders.asp orders list */
+#content_area > form {
+  display: none;
+}
+
 #orders-table {
   width: 70%;
   min-width: 790px;
@@ -205,6 +209,7 @@ table#myaccount-table font {
 
 #orders-table > tbody > tr.colors_backgroundneutral {
   display: block;
+  background-color: #f7f7f8;
 }
 
 #orders-table > tbody > tr.colors_backgroundneutral div {
@@ -267,10 +272,24 @@ table#myaccount-table font {
 /* Order detail */
 #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(3) {
   clear:both;
+  border-top: 1px solid #eeeeee;
+  padding: 5px 0px 5px 15px;
 }
 
 table#orders-table table.order-detail-table {
-  background-color: white;
+  table-layout: fixed;
+}
+
+table#orders-table table.order-detail-table > tbody > tr > td:first-child {
+  width: 80%;
+}
+
+table#orders-table table.order-detail-table > tbody > tr > td:nth-child(2) {
+  width: 10%;
+}
+
+table#orders-table table.order-detail-table > tbody > tr > td:last-child {
+  width: 10%;
 }
 
 /* COLORS */

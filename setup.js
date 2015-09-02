@@ -961,10 +961,14 @@ var ordersPage = {
         // Add ids.
         $('main#content_area > form').attr('id', 'orders-form');
         $('main#content_area > form > table').attr('id', 'orders-table-container');
-        $('#orders-table-container > tbody > tr:nth-child(3) > td > table').attr('id', 'orders-table');
+        $('#orders-table-container > tbody > tr:nth-child(3) > td > table').attr('id', 'orders-table')
+                                                                            .removeClass();
 
         this.styleOrdersPeriodSelect();
         this.styleOrdersDetailTable();
+
+        // Fade in after re-structure.
+        $('form#orders-form').fadeIn('fast');
     },
 
     styleOrdersPeriodSelect: function() {
@@ -1013,6 +1017,7 @@ var ordersPage = {
             orderDetailCell.find('> table').addClass('order-detail-table');
         });
 
+        // Add toggle event.
         $('table#orders-table a.order-detail-toggle').click(function() {
             var orderDetailCell = $(this).parent().next();
 
