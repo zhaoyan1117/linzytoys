@@ -931,6 +931,8 @@ var myAccountPage = {
 
         // Style log out btn.
         $('#myaccount-table > tbody > tr:nth-child(6) > td > a').addClass('secondary-btn');
+
+        $('#myaccount-form').fadeIn('fast');
     }
 }
 
@@ -988,11 +990,18 @@ var ordersPage = {
     styleOrdersDetailTable: function() {
         var that = this;
 
+        // Toggal all btn.
         $('<a/>', {
             'class': 'secondary-btn',
+            'id': 'show-all-toggle',
             'text': this.t('showAllText')
         }).appendTo($('#orders-table > tbody > tr:nth-child(1) > td'));
 
+        $('#orders-table a#show-all-toggle').click(function() {
+
+        });
+
+        // Restructure each order row.
         $('table#orders-table > tbody > tr.colors_backgroundneutral').each(function() {
             var orderNumberCell = $(this).find('> td:nth-child(1)');
             var orderDetailCell = $(this).find('> td:nth-child(2)');
@@ -1034,6 +1043,12 @@ var ordersPage = {
             } else {
                 orderDetailCell.slideDown(500);
                 $(this).text(that.t('hideOrderDetailText'));
+            }
+
+            if ($('#orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(3)').is(':hidden')) {
+                $('#orders-table a#show-all-toggle').text(that.t('showAllText'));
+            } else {
+                $('#orders-table a#show-all-toggle').text(that.t('hideAllText'));
             }
         });
     }

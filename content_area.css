@@ -180,7 +180,7 @@ table#myaccount-table font {
 }
 
 /* orders.asp orders list */
-#content_area > form {
+#content_area > form[name='form2'] {
   display: none;
 }
 
@@ -210,7 +210,7 @@ table#myaccount-table font {
   font-weight: normal;
 }
 
-#orders-table > tbody > tr:nth-child(1) > td > a {
+#orders-table a#show-all-toggle {
   float: right;
   width: 95px;
   padding: 0px;
