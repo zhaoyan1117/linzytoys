@@ -938,17 +938,11 @@ var myAccountPage = {
 var ordersPage = {
     isCurrentPage: util.checkCurrentPage(['/orders.asp']),
 
-    setup: function(event) {
-        // Add ids.
-        $('main#content_area > form').attr('id', 'orders-form');
-        $('main#content_area > form > table').attr('id', 'orders-table-container');
-        $('#orders-table-container > tbody > tr:nth-child(3) > td > table').attr('id', 'orders-table');
-
-        this.styleOrdersPeriodSelect();
-    },
-
     englishText: {
-        viewOrderPeriod: 'View'
+        viewOrderPeriod: 'View',
+        changeOrderText: 'View or change order',
+        showOrderDetailText: 'Show detail',
+        hideOrderDetailText: 'Hide detail'
     },
 
     spanishText: {
@@ -963,6 +957,16 @@ var ordersPage = {
         }
     },
 
+    setup: function(event) {
+        // Add ids.
+        $('main#content_area > form').attr('id', 'orders-form');
+        $('main#content_area > form > table').attr('id', 'orders-table-container');
+        $('#orders-table-container > tbody > tr:nth-child(3) > td > table').attr('id', 'orders-table');
+
+        this.styleOrdersPeriodSelect();
+        this.styleOrdersDetailTable();
+    },
+
     styleOrdersPeriodSelect: function() {
         // Add view orders period text.
         $('<span/>', {
@@ -972,6 +976,37 @@ var ordersPage = {
         // Bind events to select.
         $('#orders-table-container > tbody > tr:nth-child(2) > td select').change(function(event) {
             $('#content_area > form').submit();
+        });
+    },
+
+    styleOrdersDetailTable: function() {
+        var that = this;
+
+        $('table#orders-table > tbody > tr.colors_backgroundneutral').each(function() {
+            var orderNumberCell = $(this).find('> td:nth-child(1)');
+            var orderDetailCell = $(this).find('> td:nth-child(2)');
+            var orderUpdateCell = $(this).find('> td:nth-child(3)');
+
+            orderNumberCell.find('br').remove();
+            orderDetailCell.before(orderUpdateCell);
+            orderUpdateCell.find('a').html(that.t('changeOrderText')).addClass('secondary-btn');
+            $('<a/>', {
+                'href': 'javascript: void(0);',
+                'text': that.t('showOrderDetailText'),
+                'class': 'secondary-btn order-detail-toggle'
+            }).appendTo(orderUpdateCell);
+
+            orderDetailCell.hide();
+        });
+
+        $('table#orders-table a.order-detail-toggle').click(function() {
+            var orderDetailCell = $(this).parent().next();
+
+            if (orderDetailCell.is(":visible")) {
+                orderDetailCell.slideUp(200);
+            } else {
+                orderDetailCell.slideDown(200);
+            }
         });
     }
 }
