@@ -997,15 +997,19 @@ var ordersPage = {
             }).appendTo(orderUpdateCell);
 
             orderDetailCell.hide();
+
+            $('<div/>', {
+                'class': 'order-detail-clear'
+            }).appendTo($(this));
         });
 
         $('table#orders-table a.order-detail-toggle').click(function() {
             var orderDetailCell = $(this).parent().next();
 
             if (orderDetailCell.is(":visible")) {
-                orderDetailCell.slideUp(200);
+                orderDetailCell.slideUp(500);
             } else {
-                orderDetailCell.slideDown(200);
+                orderDetailCell.slideDown(500);
             }
         });
     }

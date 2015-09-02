@@ -208,6 +208,10 @@ table#myaccount-table font {
   border-bottom: 1px solid rgb(204, 204, 204);
 }
 
+#orders-table > tbody > tr.colors_backgroundneutral {
+  display: block;
+}
+
 #orders-table > tbody > tr.colors_backgroundneutral td:nth-child(1) {
   width: 60%;
   float: left;
