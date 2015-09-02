@@ -946,7 +946,7 @@ var ordersPage = {
         showOrderDetailText: 'Show detail',
         hideOrderDetailText: 'Hide detail',
         showAllText: 'Expand all',
-        hideAllText: 'Hide all'
+        hideAllText: 'Collapse all'
     },
 
     spanishText: {
@@ -998,7 +998,15 @@ var ordersPage = {
         }).appendTo($('#orders-table > tbody > tr:nth-child(1) > td'));
 
         $('#orders-table a#show-all-toggle').click(function() {
-
+            var allOrderDetailCell = $('#orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(3)');
+            if (allOrderDetailCell.is(':hidden')) {
+                allOrderDetailCell.slideDown(500);
+                that.updateToggleAllText();
+                $('#orders-table a.order-detail-toggle').text(that.t('hideOrderDetailText'));
+            } else {
+                $('#orders-table a.order-detail-toggle').text(that.t('showOrderDetailText'));
+                allOrderDetailCell.slideUp(500, that.updateToggleAllText.bind(that));
+            }
         });
 
         // Restructure each order row.
@@ -1039,18 +1047,21 @@ var ordersPage = {
 
             if (orderDetailCell.is(":visible")) {
                 $(this).text(that.t('showOrderDetailText'));
-                orderDetailCell.slideUp(500);
+                orderDetailCell.slideUp(500, that.updateToggleAllText.bind(that));
             } else {
                 orderDetailCell.slideDown(500);
                 $(this).text(that.t('hideOrderDetailText'));
-            }
-
-            if ($('#orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(3)').is(':hidden')) {
-                $('#orders-table a#show-all-toggle').text(that.t('showAllText'));
-            } else {
-                $('#orders-table a#show-all-toggle').text(that.t('hideAllText'));
+                that.updateToggleAllText();
             }
         });
+    },
+
+    updateToggleAllText: function() {
+        if ($('#orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(3)').is(':hidden')) {
+            $('#orders-table a#show-all-toggle').text(this.t('showAllText'));
+        } else {
+            $('#orders-table a#show-all-toggle').text(this.t('hideAllText'));
+        }
     }
 }
 
