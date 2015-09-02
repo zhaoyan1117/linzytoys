@@ -884,7 +884,7 @@ a.shipping-deal .highlight {
   text-decoration:none;
   text-shadow:0px 1px 0px #ffee66;
 }
-.primary-btn:hover, .primary-btn:focus {
+.primary-btn:hover {
   background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffab23), color-stop(1, #ffec64));
   background:-moz-linear-gradient(top, #ffab23 5%, #ffec64 100%);
   background:-webkit-linear-gradient(top, #ffab23 5%, #ffec64 100%);
@@ -926,7 +926,7 @@ a.shipping-deal .highlight {
   text-decoration:none;
   text-shadow:0px 1px 0px #ffffff;
 }
-.secondary-btn:hover, .secondary-btn:focus {
+.secondary-btn:hover {
   background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
   background:-moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
   background:-webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
@@ -967,7 +967,7 @@ a.shipping-deal .highlight {
   text-decoration:none;
   text-shadow:0px 1px 0px #810e05;
 }
-.color-theme-btn:hover, .color-theme-btn:focus {
+.color-theme-btn:hover {
   background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537));
   background:-moz-linear-gradient(top, #c62d1f 5%, #f24537 100%);
   background:-webkit-linear-gradient(top, #c62d1f 5%, #f24537 100%);
