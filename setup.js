@@ -366,7 +366,19 @@ var productDetailPage = {
         // Remove unnecessary br in related products.
         $('td.v65-productAvailability br').remove();
 
+        // Re-style embedded youtube video.
+        var youtubeVideo = $('#ProductDetail_ProductDetails_div div.video_player > iframe');
+        if (youtubeVideo.length != 0) {
+            var videoId = youtubeVideo.attr('src').match(/embed\/(.+)\?/)[1];
+            youtubeVideo.attr('width', '560');
+            youtubeVideo.attr('height', '315');
+            youtubeVideo.removeAttr('allowfullscreen');
+            youtubeVideo.attr('src', "https://www.youtube.com/embed/" + videoId + "?modestbranding=1&fs=0&rel=0&showinfo=0");
+        }
+
         this.tranlsateToSpanish();
+
+        $('main#content_area > div[itemtype="http://schema.org/Product"]').fadeIn('fast');
     },
 
     tranlsateToSpanish: function() {

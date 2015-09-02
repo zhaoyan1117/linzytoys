@@ -1,5 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Slabo+27px);
 
+main#content_area > div[itemtype="http://schema.org/Product"] {
+  display: none;
+}
+
 /**************************
 *       BREADCRUMBS       *
 **************************/
@@ -397,6 +401,14 @@ form .colors_descriptionbox td[width="1"] {
 /* Hides all unused table rows not correlated with the features section text */
 #ProductDetail_ProductDetails_div2 .colors_descriptionbox > tbody > tr:not(:nth-child(3)) {
   display: none;
+}
+
+div#ProductDetail_ProductDetails_div div.video_container {
+  float: none !important;
+  padding: 10px 0px 0px 0px !important;
+}
+div#ProductDetail_ProductDetails_div div.video_description {
+  padding: 0px !important;
 }
 
 /***************************************
