@@ -382,8 +382,8 @@ td, .colors_text {
 
 /* CONTENT AREA */
 font {
-  color: black;
-  font-size: 14px;
+/*   color: black;
+  font-size: 14px; */
 }
 
 form {
@@ -486,9 +486,18 @@ table[width="385"] {
   color: #f5a34e;
 }
 
+#login-table form > table > tbody,
 #login-table form > table tr,
-#login-table form > table tr td {
+#login-table form > table tr:first-child > td {
   width: 100%;
+}
+
+#login-table form > table tr:last-child > td:first-child {
+  width: 80%;
+}
+
+#login-table form > table tr:last-child > td:last-child {
+  width: 20%;
 }
 
 #login-table form > table input {
