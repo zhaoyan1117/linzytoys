@@ -32,6 +32,10 @@ var allPage = {
             $('<li/>').append(catalogAnchors[0]).appendTo($('footer.footer div.linksWrap ul.left'));
             $('<li/>').append(catalogAnchors[1]).appendTo($('#link-col-1 > div > ul'));
         });
+
+        $(document).ready(function() {
+            $('#content_area > form').fadeIn('fast');
+        });
     }
 }
 
@@ -54,6 +58,7 @@ var checkoutPage = {
             thisCheckoutPage.reStructure();
             thisCheckoutPage.addAnouncement();
             $('#v65-onepage-CheckoutForm').ready(thisCheckoutPage.setupFormEvents.bind(thisCheckoutPage));
+            $('#v65-onepage-CheckoutForm').fadeIn('fast');
         });
     },
 
@@ -1065,8 +1070,6 @@ var ordersPage = {
     }
 }
 
-$(allPage.setup(allPage));
-
 /* Bind setup callback for current page. */
 if (checkoutPage.isCurrentPage) {
     $(checkoutPage.setup.bind(checkoutPage));
@@ -1083,3 +1086,5 @@ if (checkoutPage.isCurrentPage) {
 } else if (ordersPage.isCurrentPage) {
     $(ordersPage.setup.bind(ordersPage));
 }
+
+$(allPage.setup(allPage));

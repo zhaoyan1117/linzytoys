@@ -494,24 +494,24 @@ a[href*="help_answer.asp"] {
 @media only screen and (max-width: 767px) {
 
   /* Stack section */
-  #content_area form[name*="form2"] td[width$="%"] {
+/*   #content_area form[name*="form2"] td[width$="%"] {
     /*display: block !important;*/
     width: 100% !important;
     margin-bottom: 15px !important;
-  }
+  } */
   /* Specific for orders.asp */
-  #content_area form[name*="form2"] table.colors_lines_light .colors_backgroundneutral td[width$="%"] {
+/*   #content_area form[name*="form2"] table.colors_lines_light .colors_backgroundneutral td[width$="%"] {
     display: block !important;
     background-color: red;
   }
-
+ */
   /* Full table */
-  #content_area form[name*="form2"] table[width="520"] {
+/*   #content_area form[name*="form2"] table[width="520"] {
     width: 100%;
   }
-
+ */
   /* Clean up inputs and buttons */
-  #content_area form[name*="form2"] table[width="520"] td[width="236"] {
+/*   #content_area form[name*="form2"] table[width="520"] td[width="236"] {
     width: 100% !important;
     display: table-row;
   }
@@ -530,14 +530,14 @@ a[href*="help_answer.asp"] {
     margin-left: 0;
     margin-bottom: 15px;
   }
-
+ */
   /* center button and make easy to touch */
-  #content_area form[name*="form2"] a[href^="orderdetails.asp"] {
+/*   #content_area form[name*="form2"] a[href^="orderdetails.asp"] {
     display: block;
     padding: 15px 0;
     text-align: center;
   }
-
+ */
   /* OrderDetails.asp */
   #content_area form[action^="OrderDetails.asp"] td {
     width: 100% !important;

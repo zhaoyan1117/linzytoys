@@ -8,48 +8,14 @@ body {
   color: #545454;
   background-color: #e6dfcd; }
 
+#content_area > form {
+  display: none;
+}
+
 /* Modal Spacing */
 table.colors_lines_light td {
   padding: 0px;
 }
-
-/* Hacky way to make text in My Orders table left align on myaccount.asp */
-/*form[name='form2'] > table > tbody > tr:nth-child(2) td table td {
-  text-align: left;
-}
-
-form[name='form2'] > table > tbody > tr > td > table > tbody > tr > td {
-  padding: 4px;
-}
-
-form[name='form2'] > table > tbody > tr > td > table[width='520'] > tbody > tr > td {
-  border: 0px;
-  padding: 0px;
-}
-*/
-/* Hacky way to beautify orders.asp */
-/*form[name='form2'] > table > tbody > tr > td > table > tbody > tr > td ul {
-  list-style: none;
-  padding-left: 0 !important;
-}
-
-form[name='form2'] > table > tbody > tr > td > table > tbody > tr > td table {
-  table-layout: fixed;
-}
-
-form[name='form2'] > table > tbody > tr > td > table > tbody > tr > td table td:nth-child(1) {
-  width: 79%;
-}
-form[name='form2'] > table > tbody > tr > td > table > tbody > tr > td table td:nth-child(2) {
-  width: 10%;
-}
-form[name='form2'] > table > tbody > tr > td > table > tbody > tr > td table td:nth-child(3) {
-  width: 11%;
-}
-
-.container a[href='myaccount.asp'] {
-  font-size: 14px;
-}*/
 
 /* myaccount.asp */
 table#myaccount-table > tbody > tr:nth-child(4) {
@@ -180,10 +146,6 @@ table#myaccount-table font {
 }
 
 /* orders.asp orders list */
-#content_area > form {
-  display: none;
-}
-
 #orders-table {
   width: 70%;
   min-width: 790px;
@@ -697,6 +659,35 @@ table[width="385"] {
   table#myaccount-table > tbody > tr:not(:first-child) > td > table {
     width: 100%;
   }
+
+  #orders-table-container select {
+    display: inline-block !important;
+  }
+
+  #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(1) {
+    width: 53%;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: left;
+    line-height: 25px
+  }
+  #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(1) b:not(:first-child) {
+    margin-left: 0px;
+  }
+  #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(2) {
+    width: 47%;
+    min-width: 0px;
+    padding-right: 5px;
+    padding-left: 5px;
+    height: 75px;
+  }
+  #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(2) a {
+    float: right;
+  }
+  #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(2) a:first-child {
+    margin-bottom: 5px;
+  }
+
 }
 
 @media only screen and (max-width: 991px) {
@@ -705,5 +696,3 @@ table[width="385"] {
     width: 100%;
   }
 }
-
-
