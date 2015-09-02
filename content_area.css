@@ -212,6 +212,10 @@ table#myaccount-table font {
   font-weight: bold;
 }
 
+#orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(1) br {
+  display: none;
+}
+
 #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(1) b {
   font-weight: normal;
 }
@@ -671,6 +675,9 @@ table[width="385"] {
     text-align: left;
     line-height: 25px
   }
+  #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(1) br {
+    display: inline;
+  }
   #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(1) b:not(:first-child) {
     margin-left: 0px;
   }
@@ -687,6 +694,10 @@ table[width="385"] {
   #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(2) a:first-child {
     margin-bottom: 5px;
   }
+  #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(2) a:last-child {
+    margin-left: 100%;
+  }
+
 
 }
 

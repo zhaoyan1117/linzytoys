@@ -1020,9 +1020,6 @@ var ordersPage = {
             var orderDetailCell = $(this).find('> td:nth-child(2)');
             var orderUpdateCell = $(this).find('> td:nth-child(3)');
 
-            // Remove unnecessary br in order number cell.
-            orderNumberCell.find('br').remove();
-
             // Swap update btn cell and order detail cell.
             orderDetailCell.before(orderUpdateCell);
 
