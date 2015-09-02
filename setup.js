@@ -942,7 +942,9 @@ var ordersPage = {
         viewOrderPeriod: 'View',
         changeOrderText: 'View or change order',
         showOrderDetailText: 'Show detail',
-        hideOrderDetailText: 'Hide detail'
+        hideOrderDetailText: 'Hide detail',
+        showAllText: 'Expand all',
+        hideAllText: 'Hide all'
     },
 
     spanishText: {
@@ -985,6 +987,11 @@ var ordersPage = {
 
     styleOrdersDetailTable: function() {
         var that = this;
+
+        $('<a/>', {
+            'class': 'secondary-btn',
+            'text': this.t('showAllText')
+        }).appendTo($('#orders-table > tbody > tr:nth-child(1) > td'));
 
         $('table#orders-table > tbody > tr.colors_backgroundneutral').each(function() {
             var orderNumberCell = $(this).find('> td:nth-child(1)');

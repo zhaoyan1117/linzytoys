@@ -8,7 +8,6 @@ body {
   color: #545454;
   background-color: #e6dfcd; }
 
-
 /* Modal Spacing */
 table.colors_lines_light td {
   padding: 0px;
@@ -128,6 +127,14 @@ table#myaccount-table font {
 }
 
 /* orders.asp order history title */
+#orders-table-container a {
+  text-decoration: none;
+}
+
+#orders-table-container a:hover {
+  color: #f5a34e;
+}
+
 #orders-table-container > tbody > tr:nth-child(1) > td {
   text-align: left;
   font-size: 24px;
@@ -187,8 +194,8 @@ table#myaccount-table font {
 
 #orders-table > tbody > tr:nth-child(1) > td {
   background-color: rgba(217,69,69,0.85);
-  height: 40px;
-  padding-left: 15px;
+  height: 30px;
+  padding: 0px 15px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
@@ -196,10 +203,23 @@ table#myaccount-table font {
 #orders-table > tbody > tr:nth-child(1) > td font {
   color: white;
   font-size: 15px;
+  line-height: 40px;
 }
 
 #orders-table > tbody > tr:nth-child(1) > td font b {
   font-weight: normal;
+}
+
+#orders-table > tbody > tr:nth-child(1) > td > a {
+  float: right;
+  width: 95px;
+  padding: 0px;
+  margin: 5px 0px;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  height: 30px;
+  line-height: 28px;
 }
 
 #orders-table > tbody > tr.colors_backgroundneutral > td {
@@ -243,7 +263,7 @@ table#myaccount-table font {
   width: 40%;
   float: left;
   height: 40px;
-  padding: 5.5px 5px 5.5px 0px;
+  padding: 5px 15px 5px 0px;
   text-align: right;
   min-width: 260px;
 }
@@ -254,6 +274,7 @@ table#myaccount-table font {
   font-size: 14px;
   font-weight: normal;
   text-decoration: none;
+  height: 30px;
 }
 
 #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(2) a:last-child {
@@ -263,17 +284,14 @@ table#myaccount-table font {
   font-weight: normal;
   text-decoration: none;
   margin-left: 5px;
-}
-
-#orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(2) a:hover {
-  color: #f5a34e;
+  height: 30px;
 }
 
 /* Order detail */
 #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(3) {
   clear:both;
   border-top: 1px solid #eeeeee;
-  padding: 5px 0px 5px 15px;
+  padding: 5px 15px;
 }
 
 table#orders-table table.order-detail-table {
@@ -282,6 +300,22 @@ table#orders-table table.order-detail-table {
 
 table#orders-table table.order-detail-table > tbody > tr > td:first-child {
   width: 80%;
+}
+
+table#orders-table table.order-detail-table > tbody > tr > td:first-child ul {
+  list-style: none;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+table#orders-table table.order-detail-table > tbody > tr > td:first-child li:before {
+  content: "-";
+  padding-right: 4px;
+  color: #666666;
+}
+
+table#orders-table table.order-detail-table > tbody > tr > td:first-child a {
+  text-decoration: none;
 }
 
 table#orders-table table.order-detail-table > tbody > tr > td:nth-child(2) {
@@ -294,7 +328,7 @@ table#orders-table table.order-detail-table > tbody > tr > td:last-child {
 
 /* COLORS */
 .colors_background3 {
-  background-color: #D94545;
+/*   background-color: #D94545; */
 }
 
 .colors_highlight {
