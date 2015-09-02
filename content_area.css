@@ -181,7 +181,7 @@ table#myaccount-table font {
   border-top-right-radius: 5px;
 }
 
-#orders-table > tbody > tr:nth-child(1) td {
+#orders-table > tbody > tr:nth-child(1) > td {
   background-color: rgba(217,69,69,0.85);
   height: 40px;
   padding-left: 15px;
@@ -189,18 +189,26 @@ table#myaccount-table font {
   border-top-right-radius: 5px;
 }
 
-#orders-table > tbody > tr:nth-child(1) td font {
+#orders-table > tbody > tr:nth-child(1) > td font {
   color: white;
   font-size: 15px;
 }
 
-#orders-table > tbody > tr:nth-child(1) td font b {
+#orders-table > tbody > tr:nth-child(1) > td font b {
   font-weight: normal;
 }
 
-#orders-table > tbody > tr.colors_backgroundneutral td {
+#orders-table > tbody > tr.colors_backgroundneutral > td {
   display: block;
   width: 100%;
+}
+
+#orders-table > tbody > tr.colors_backgroundneutral {
+  display: block;
+}
+
+#orders-table > tbody > tr.colors_backgroundneutral div {
+  clear: both;
 }
 
 /* Order number */
@@ -208,11 +216,7 @@ table#myaccount-table font {
   border-bottom: 1px solid rgb(204, 204, 204);
 }
 
-#orders-table > tbody > tr.colors_backgroundneutral {
-  display: block;
-}
-
-#orders-table > tbody > tr.colors_backgroundneutral td:nth-child(1) {
+#orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(1) {
   width: 60%;
   float: left;
   height: auto;
@@ -221,16 +225,16 @@ table#myaccount-table font {
   font-weight: bold;
 }
 
-#orders-table > tbody > tr.colors_backgroundneutral td:nth-child(1) b {
+#orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(1) b {
   font-weight: normal;
 }
 
-#orders-table > tbody > tr.colors_backgroundneutral td:nth-child(1) b:not(:first-child) {
+#orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(1) b:not(:first-child) {
   margin-left: 15px;
 }
 
 /* Change button */
-#orders-table > tbody > tr.colors_backgroundneutral td:nth-child(2) {
+#orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(2) {
   width: 40%;
   float: left;
   height: 40px;
@@ -239,7 +243,7 @@ table#myaccount-table font {
   min-width: 260px;
 }
 
-#orders-table > tbody > tr.colors_backgroundneutral td:nth-child(2) a:first-child {
+#orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(2) a:first-child {
   width: 160px;
   padding: 4px 0px;
   font-size: 14px;
@@ -247,7 +251,7 @@ table#myaccount-table font {
   text-decoration: none;
 }
 
-#orders-table > tbody > tr.colors_backgroundneutral td:nth-child(2) a:last-child {
+#orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(2) a:last-child {
   width: 95px;
   padding: 4px 0px;
   font-size: 14px;
@@ -256,14 +260,17 @@ table#myaccount-table font {
   margin-left: 5px;
 }
 
-#orders-table > tbody > tr.colors_backgroundneutral td:nth-child(2) a:hover {
+#orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(2) a:hover {
   color: #f5a34e;
 }
 
 /* Order detail */
-#orders-table > tbody > tr.colors_backgroundneutral td:nth-child(3) {
+#orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(3) {
   clear:both;
-  background-color: cyan;
+}
+
+table#orders-table table.order-detail-table {
+  background-color: white;
 }
 
 /* COLORS */
