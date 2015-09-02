@@ -307,7 +307,9 @@ a.shipping-deal .highlight {
 * *      CONTENT AREA      * *
 *****************************/
 
-.content {}
+body > div.content {
+  margin-top: 20px;
+}
 
 /*****************************
 * *       SITE TOOLS     * *
