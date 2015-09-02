@@ -987,8 +987,16 @@ var ordersPage = {
             var orderDetailCell = $(this).find('> td:nth-child(2)');
             var orderUpdateCell = $(this).find('> td:nth-child(3)');
 
+            // Remove unnecessary br in order number cell.
             orderNumberCell.find('br').remove();
+
+            // Swap update btn cell and order detail cell.
             orderDetailCell.before(orderUpdateCell);
+
+            // Hide order detail cell.
+            orderDetailCell.hide();
+
+            // Style and add anchor in update cell.
             orderUpdateCell.find('a').html(that.t('changeOrderText')).addClass('secondary-btn');
             $('<a/>', {
                 'href': 'javascript: void(0);',
@@ -996,20 +1004,24 @@ var ordersPage = {
                 'class': 'secondary-btn order-detail-toggle'
             }).appendTo(orderUpdateCell);
 
-            orderDetailCell.hide();
-
+            // Add clear div in the end.
             $('<div/>', {
                 'class': 'order-detail-clear'
             }).appendTo($(this));
+
+            // Add class to table in detail cell.
+            orderDetailCell.find('> table').addClass('order-detail-table');
         });
 
         $('table#orders-table a.order-detail-toggle').click(function() {
             var orderDetailCell = $(this).parent().next();
 
             if (orderDetailCell.is(":visible")) {
+                $(this).text(that.t('showOrderDetailText'));
                 orderDetailCell.slideUp(500);
             } else {
                 orderDetailCell.slideDown(500);
+                $(this).text(that.t('hideOrderDetailText'));
             }
         });
     }
