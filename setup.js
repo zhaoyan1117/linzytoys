@@ -456,8 +456,8 @@ var categoryPage = {
             perPageTd.attr('id', perPageTdID);
             $('#per-page-td select').addClass(selectClass);
             $('#per-page-td select option').each(function(){
-               var productsPerPage = this.innerText.slice(0,this.innerText.indexOf(perPageSearchTerm) - 1);
-               this.innerText = productsPerPage + perPageText;
+               var productsPerPage = $(this).text().slice(0,$(this).text().indexOf(perPageSearchTerm) - 1);
+               $(this).text(productsPerPage + perPageText);
             });
             var curPageNoBr = $('#per-page-td nobr').remove();
 
