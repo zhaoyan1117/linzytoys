@@ -70,7 +70,7 @@ table#myaccount-table td {
   font-size: 14px;
 }
 
-table#myaccount-table font {
+table#myaccount-table table > tbody > tr:first-child font {
   font-size: 15px;
   color: white;
 }
@@ -706,8 +706,6 @@ table[width="385"] {
   #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(2) a:last-child {
     margin-left: 100%;
   }
-
-
 }
 
 @media only screen and (max-width: 991px) {

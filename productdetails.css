@@ -247,6 +247,8 @@ input.vCSS_input_addtocart {
   display: block;
   margin: 0px auto;
   width: 90%;
+  padding: 0px;
+  height: 35px;
 }
 
 /* "Add to Wish List" input */
@@ -254,7 +256,12 @@ input#v65-product-wishlist-button {
   display: block;
   margin: 0 auto 10px;
   width: 90%;
-  padding: 6px 0px;
+  height: 35px;
+  padding: 0px;
+}
+
+div#action-wrapper-div font input#v65-product-wishlist-button {
+  font-size: 10px;
 }
 
 /* "Add to Registry" img */
