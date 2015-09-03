@@ -1,16 +1,25 @@
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-</head>
-<style type="text/css">body,table,td {font: 11px Verdana; color: #000000;}</style>
-<body text="#000000">
-<table width="650" border="1" cellspacing="0" cellpadding="20" bgcolor="#FFFFFF" bordercolor="#CCCCCC" align="center">
-  <tr>
-    <td><a href="../../Default.asp">$(CompanyLogo)</a><br>
-      <br>
-    $(body)
-  </td>
-  </tr>
-</table>
-</body>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  </head>
+  <style type="text/css">
+    body{width:650px;margin:20px auto;font:11px Verdana;color:#000;border:2px solid #ccc;padding:10px;line-height:18px}a{text-decoration:none;color:#555}a:hover{color:#f5a34e}#body-container{min-height:500px;margin-top:10px;padding:10px;border-top:1px solid #ddd}#info-container{background-color:#f7f7f8;border-top:1px solid #ddd;width:100%;margin:10px auto 0;text-align:center;padding:10px 0}@media only screen and (max-width:767px){body{width:80%}#logo-container{text-align:center}}
+  </style>
+  <body text="#000000">
+    <div id="logo-container">
+      <a href="../../Default.asp">
+        $(CompanyLogo)
+      </a>
+    </div>
+    <div id="body-container">
+        $(body)
+    </div>
+    <div id="info-container">
+      <a href="../../Default.asp">www.linzytoys.com</a><br>
+      (626) 961-9069<br>
+      <a href="mailto:info@linzytoys.com">info@linzytoys.com</a><br>
+      Linzy Toys Inc. 15805 Valley Blvd.<br>
+      City of Industry, CA 91744
+    </div>
+  </body>
 </html>
