@@ -21,7 +21,7 @@
       Linzy Toys Inc. 15805 Valley Blvd.<br>
       City of Industry, CA 91744<br>
       <div id="subscribe-info">
-        This message was sent to $(EmailAddress).
+        This message was sent to $(EmailAddress).<br>
         <a href="http://www.VolusionEmail.com/?guid=$(GUID)&emailaddress=$(EmailAddress)&site=http%3A%2F%2Fwww%2Elinzytoys%2Ecom%2Fmailinglist%5Funsubscribe%2Easp">Click here to unsubscribe.</a>
       </div>
     </div>
