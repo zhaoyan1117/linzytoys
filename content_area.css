@@ -200,7 +200,7 @@ table#myaccount-table table > tbody > tr:first-child font {
 
 /* Order number */
 #orders-table > tbody > tr:not(:first-child):not(:last-child) {
-  border-bottom: 1px solid rgb(204, 204, 204);
+  border-bottom: 1px solid #ccc;
 }
 
 #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(1) {
@@ -677,14 +677,14 @@ table[width="385"] {
   }
   #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(1) {
     width: 53%;
-    padding-left: 5px;
+    padding-left: 10px;
     text-align: left;
     line-height: 23px;
   }
   #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(2) {
     width: 47%;
     min-width: 0px;
-    padding: 3px 5px;
+    padding: 3px 10px;
     height: 69px;
   }
   #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(1) br {
@@ -701,6 +701,16 @@ table[width="385"] {
   }
   #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(2) a {
     margin-left: 100%;
+  }
+  #orders-table > tbody > tr:nth-child(1) > td {
+    padding: 0px 10px 0px 10px;
+  }
+  #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(3) {
+    padding: 3px 10px;
+  }
+  table#orders-table table.order-detail-table > tbody > tr:nth-child(1),
+  table#orders-table table.order-detail-table > tbody > tr > td:not(:first-child) {
+    display: none;
   }
 }
 
