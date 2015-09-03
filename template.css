@@ -212,6 +212,41 @@ a:hover {
 }
 
 /*****************************
+* *    GOOGLE TRANSLATE    * *
+*****************************/
+#google_translate_element .goog-te-gadget {
+  font-size: 12px !important;
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#google_translate_element .goog-te-gadget-simple {
+  border: 0px;
+}
+
+#google_translate_element .goog-te-gadget-simple > span {
+  vertical-align: top !important;
+}
+
+#google_translate_element a.goog-te-menu-value {
+  margin: 0px;
+  color: #484848;
+}
+
+#google_translate_element a.goog-te-menu-value:hover {
+  color: #f5a34e;
+}
+
+#google_translate_element a.goog-te-menu-value > span:first-child {
+  font-size: 12px;
+}
+
+#google_translate_element a.goog-te-menu-value > img,
+#google_translate_element a.goog-te-menu-value > span:not(:first-child),
+#google_translate_element .goog-te-gadget-icon {
+  display: none;
+}
+
+/*****************************
 * *      CART SUMMARY    * *
 *****************************/
 
