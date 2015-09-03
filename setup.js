@@ -1094,6 +1094,22 @@ var ordersPage = {
     }
 }
 
+/* Home page. */
+var homePage = {
+    isCurrentPage: util.checkCurrentPage(['/default.asp', '/']),
+
+    setup: function(event) {
+        var featuredProductsTitle = $('<h2/>', {
+            'id': 'featured-products-title',
+            'class': 'homepage-subtitle',
+            'text': 'Featured Products'
+        });
+        $('img[src*="FeaturedProducts.gif"]').replaceWith(featuredProductsTitle);
+        $('h2#featured-products-title ~ br').remove();
+        $('h2#featured-products-title + table').remove();
+    }
+}
+
 /* Bind setup callback for current page. */
 if (checkoutPage.isCurrentPage) {
     $(checkoutPage.setup.bind(checkoutPage));
@@ -1109,6 +1125,8 @@ if (checkoutPage.isCurrentPage) {
     $(myAccountPage.setup.bind(myAccountPage));
 } else if (ordersPage.isCurrentPage) {
     $(ordersPage.setup.bind(ordersPage));
+} else if (homePage.isCurrentPage) {
+    $(homePage.setup.bind(homePage));
 }
 
 $(allPage.setup(allPage));

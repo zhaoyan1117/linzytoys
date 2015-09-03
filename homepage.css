@@ -2,6 +2,12 @@
     width: 100%;
 }
 
+h2.homepage-subtitle {
+  padding-bottom: 5px;
+  margin: 0px 0px 10px 0px;
+  border-bottom: 1px solid #eeeeee;
+}
+
 /* CONVERTS ALL IMAGES IN ARTICLE 2 (HOMEPAGE) TO BE RESPONSIVE */
 #div_articleid_2 img {
   display: block;
@@ -24,9 +30,8 @@
   min-width: 25px;
 }
 
-img[src$="/FeaturedProducts.gif"] {
-  width: 198px;
-  margin-left: 0px !important;
+img[src*="FeaturedProducts.gif"] {
+  display: none;
 }
 
 #div_articleid_2 img[src$="/clear1x1.gif"],
