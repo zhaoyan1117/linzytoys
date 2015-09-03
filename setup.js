@@ -1096,7 +1096,7 @@ var ordersPage = {
 
 /* Home page. */
 var homePage = {
-    isCurrentPage: util.checkCurrentPage(['/default.asp', '/']),
+    isCurrentPage: util.checkCurrentPage(['/default.asp']) || location.pathname == '/',
 
     setup: function(event) {
         var featuredProductsTitle = $('<h2/>', {
