@@ -672,17 +672,20 @@ table[width="385"] {
   table#myaccount-table > tbody > tr:not(:first-child) > td > table {
     width: 100%;
   }
-
   #orders-table-container select {
     display: inline-block !important;
   }
-
   #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(1) {
     width: 53%;
     padding-left: 5px;
-    padding-right: 5px;
     text-align: left;
-    line-height: 25px
+    line-height: 23px;
+  }
+  #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(2) {
+    width: 47%;
+    min-width: 0px;
+    padding: 3px 5px;
+    height: 69px;
   }
   #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(1) br {
     display: inline;
@@ -690,20 +693,13 @@ table[width="385"] {
   #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(1) b:not(:first-child) {
     margin-left: 0px;
   }
-  #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(2) {
-    width: 47%;
-    min-width: 0px;
-    padding-right: 5px;
-    padding-left: 5px;
-    height: 75px;
-  }
   #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(2) a {
     float: right;
   }
   #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(2) a:first-child {
-    margin-bottom: 5px;
+    margin-bottom: 3px;
   }
-  #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(2) a:last-child {
+  #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(2) a {
     margin-left: 100%;
   }
 }
