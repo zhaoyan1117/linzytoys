@@ -635,6 +635,9 @@ var registerPage = {
         $('#login-table form > table input[name="email"]').attr('placeholder', loginEmail);
         $('#login-table form > table input[name="password"]').attr('placeholder', loginPassword);
 
+        // Wrap inner table with a div for radius border.
+        $('<div/>').append($('#login-table form > table')).prependTo($('#login-table form'));
+
         // Add sign up toggle.
         $('#RegisterForm').before(
             $('<div/>', {
@@ -659,7 +662,7 @@ var registerPage = {
         // Style register submit btn and login btn.
         $('#submitRegistration').attr('value', registerSubmitText);
         $('#submitRegistration').addClass('primary-btn');
-        $('#login-table form > table input[name="Login"]').addClass('color-theme-btn');
+        $('#login-table form div table input[name="Login"]').addClass('color-theme-btn');
 
         // Change billing info table text.
         var billingInfoTexts = $('#billing-info > tbody > tr > td:nth-child(1)');
