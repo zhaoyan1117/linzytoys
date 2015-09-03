@@ -1,3 +1,7 @@
+h2.v65-your-cart-title + table {
+  display: none;
+}
+
 table#v65-cart-moreItems,
 table#v65-cart-moreItems + table br {
   display: none;
@@ -311,6 +315,24 @@ div#price-table-checkout div#price-summary-title {
   color: white;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+}
+
+/* Empty shopping cart */
+td#empty-cart-cell {
+  background: url(/v/vspfiles/templates/257/images/template/logo_bg.png) no-repeat center;
+  height: 500px;
+}
+td#empty-cart-cell b {
+  font-size: 18px;
+  font-weight: normal;
+}
+td#empty-cart-cell b a {
+  text-decoration: none;
+  color: #D94545;
+  font-weight: bold;
+}
+td#empty-cart-cell b a:hover {
+  color: #f5a34e;
 }
 
 /* * * * * * Shopping Cart Responsive * * * * * */

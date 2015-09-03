@@ -926,7 +926,11 @@ var shoppingCartPage = {
             this.rebuildActionDiv();
             this.rebuildTotalPrice();
             this.reorganizeProceedToCheckout();
+        } else {
+            $('h2.v65-your-cart-title + table td').attr('id', 'empty-cart-cell');
         }
+
+        $('h2.v65-your-cart-title + table').fadeIn('fast');
     }
 }
 
