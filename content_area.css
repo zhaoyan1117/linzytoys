@@ -508,6 +508,21 @@ table[width="385"] {
 #login-table input[type="text"],
 #login-table input[type="password"] {
   border-radius: 3px !important;
+  min-width: 50px;
+  padding: 5px 12px;
+  min-height: 25px;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #4f4f4f;
+  text-align: left;
+  background-color: white;
+  background-image: none;
+  border: 1px solid #cccccc;
+  -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-colfpor ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
 #login-table form table td {
