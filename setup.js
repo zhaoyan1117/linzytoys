@@ -1053,6 +1053,14 @@ var ordersPage = {
 
             // Add class to table in detail cell.
             orderDetailCell.find('> table').addClass('order-detail-table');
+
+            orderDetailCell.find('tr:not(:first-child)').each(function() {
+                var itemPrice = $(this).find('td:nth-child(2)').text().trim();
+                $('<span/>', {
+                    'class': 'mobile-price',
+                    'text': itemPrice
+                }).appendTo($(this).find('li'));
+            });
         });
 
         // Add toggle event.

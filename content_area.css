@@ -162,7 +162,7 @@ table#myaccount-table table > tbody > tr:first-child font {
   border-top-right-radius: 5px;
 }
 
-#orders-table > tbody > tr:nth-child(1) > td font {
+#orders-table > tbody > tr:nth-child(1) > td > font {
   color: white;
   font-size: 15px;
   line-height: 40px;
@@ -174,8 +174,7 @@ table#myaccount-table table > tbody > tr:first-child font {
 
 #orders-table a#show-all-toggle {
   float: right;
-  width: 95px;
-  padding: 0px;
+  padding: 0px 8px;
   margin: 5px 0px;
   font-size: 14px;
   font-weight: normal;
@@ -234,23 +233,17 @@ table#myaccount-table table > tbody > tr:first-child font {
   min-width: 260px;
 }
 
-#orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(2) a:first-child {
-  width: 160px;
-  padding: 4px 0px;
+#orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(2) a {
+  padding: 4px 8px;
   font-size: 14px;
   font-weight: normal;
   text-decoration: none;
   height: 30px;
+  white-space: nowrap;
 }
 
 #orders-table > tbody > tr.colors_backgroundneutral > td:nth-child(2) a:last-child {
-  width: 95px;
-  padding: 4px 0px;
-  font-size: 14px;
-  font-weight: normal;
-  text-decoration: none;
   margin-left: 5px;
-  height: 30px;
 }
 
 /* Order detail */
@@ -262,6 +255,10 @@ table#myaccount-table table > tbody > tr:first-child font {
 
 table#orders-table table.order-detail-table {
   table-layout: fixed;
+}
+
+table#orders-table table.order-detail-table span.mobile-price {
+  display: none;
 }
 
 table#orders-table table.order-detail-table > tbody > tr > td:first-child {
@@ -711,6 +708,12 @@ table[width="385"] {
   table#orders-table table.order-detail-table > tbody > tr:nth-child(1),
   table#orders-table table.order-detail-table > tbody > tr > td:not(:first-child) {
     display: none;
+  }
+  table#orders-table table.order-detail-table span.mobile-price {
+    display: inline-block;
+    color: #D94545;
+    margin-left: 6px;
+    font-weight: bold;
   }
 }
 
