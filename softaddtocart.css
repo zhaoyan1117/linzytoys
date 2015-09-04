@@ -157,7 +157,7 @@
   padding: 0px;
   text-align: left;
   vertical-align: top;
-  height: 50px;
+  height: 65px;
 }
 
 .soft_add_sub_total {
@@ -251,12 +251,12 @@
   background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffab23', endColorstr='#ffec64',GradientType=0);
   background-color:#ffab23;
+  text-decoration:none;
 }
 .check_out:active {
   position:relative;
   top:1px;
 }
-
 
 @media only screen and (max-width: 992px) {
   .cartDiv {
