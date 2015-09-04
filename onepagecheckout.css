@@ -542,6 +542,13 @@ table#v65-onepage-Shipping td {
   width: 98%;
   margin-left: auto;
   margin-right: auto;
+  font-size: 12px;
+}
+
+#v65-onepage-Billing input,
+#v65-onepage-Shipping input, .v65-onepage-shipping-value-cell input {
+  font-size: 14px !important;
+  padding: 6px 8px !important;
 }
 
 @media only screen and (max-width: 767px) {
