@@ -95,7 +95,7 @@
 .soft_add_content_area {
   height: auto;
   max-height: none;
-  min-height: 75px;
+  min-height: 65px;
   padding: 0px;
   overflow: auto;
   border-bottom: 0px;
