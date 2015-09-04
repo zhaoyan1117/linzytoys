@@ -1,5 +1,5 @@
 h2.v65-your-cart-title + table {
-  display: none;
+  /*display: none;*/
 }
 
 table#v65-cart-moreItems,
