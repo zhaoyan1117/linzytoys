@@ -670,6 +670,7 @@ body > div.content {
 .newsletter .social a.fb {
   background-position: 0 0;
   width: 14px;
+  display: none;
 }
 
 .newsletter .social a.tw {
@@ -680,11 +681,13 @@ body > div.content {
 .newsletter .social a.bl {
   background-position: -30px 0;
   width: 13px;
+  display: none;
 }
 
 .newsletter .social a.pin {
   background-position: right 0;
   width: 15px;
+  display: none;
 }
 
 /*****************************
