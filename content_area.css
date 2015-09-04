@@ -441,6 +441,39 @@ table[width="385"] {
 }
 
 /*
+  Order finished page.
+*/
+h2.order-finish-title {
+  padding-bottom: 5px;
+  margin: 0px 0px 10px 0px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+#content_area > table > tbody > tr > td {
+  background: url(/v/vspfiles/templates/257/images/template/logo_bg.png) no-repeat center;
+  height: 500px;
+  vertical-align: middle;
+}
+
+div#div_articleid_49 {
+  font-size: 17px;
+}
+div#div_articleid_49 .order-id {
+  color: #D94545;
+  font-weight: bold;
+}
+div#div_articleid_49 a {
+  text-decoration: none;
+}
+div#div_articleid_49 a:hover {
+  color: #f5a34e;
+}
+div#div_articleid_49 div#order-finished-end ~ br,
+div#div_articleid_49 div#order-finished-end ~ table {
+  display: none;
+}
+
+/*
     Register page.
 */
 #login-table form {

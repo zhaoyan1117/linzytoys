@@ -1115,6 +1115,18 @@ var homePage = {
     }
 }
 
+var orderFinishedPage = {
+    isCurrentPage: util.checkCurrentPage(['/OrderFinished.asp']),
+
+    setup: function(event) {
+        $('<h2>', {
+            'class': 'order-finish-title',
+            'text': 'Thank you, your order is placed!'
+        }).insertBefore('#content_area > table');
+    }
+}
+
+
 /* Bind setup callback for current page. */
 if (checkoutPage.isCurrentPage) {
     $(checkoutPage.setup.bind(checkoutPage));
@@ -1132,6 +1144,8 @@ if (checkoutPage.isCurrentPage) {
     $(ordersPage.setup.bind(ordersPage));
 } else if (homePage.isCurrentPage) {
     $(homePage.setup.bind(homePage));
+} else if (orderFinishedPage.isCurrentPage) {
+    $(orderFinishedPage.setup.bind(orderFinishedPage));
 }
 
 $(allPage.setup(allPage));
