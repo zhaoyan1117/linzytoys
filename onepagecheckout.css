@@ -129,13 +129,14 @@ select#PaymentMethodTypeDisplay {
 *******************************/
 
 #content_area #v65-onepage-payment-details-parent-table {
-float: left;
-    width: 31%;
-    background-color: #f7f7f8;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    margin-left: 1.5%;
-    margin-bottom: 0px;
+  display: none;
+  float: left;
+  width: 31%;
+  background-color: #f7f7f8;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-left: 1.5%;
+  margin-bottom: 0px;
 }
 
 #content_area #billing-info-announcement {
@@ -170,7 +171,7 @@ float: left;
 #content_area #v65-onepage-ContentTable {
   float: left;
 
-  width: 31%;
+  width: 47%;
 
   margin-left: 2%;
   margin-bottom: 0px;
@@ -178,14 +179,14 @@ float: left;
 
 #content_area #v65-onepage-ShippingCostParent {
   float: left;
-  width: 31%;
+  width: 47%;
 
   background-color: #f7f7f8;
 
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 
-  margin-left: 1.5%;
+  margin-left: 2%;
   margin-bottom: 0px;
 }
 
@@ -336,16 +337,16 @@ table#v65-onepage-ShippingCostDetails tr.v65-onepage-summary-spacer-row {
   display: none;
 }
 
-#content_area #v65-onepage-ShippingCostParent #v65-sameasbilling-checkbox-row {
-  border-bottom: 1px solid rgb(204, 204, 204);
-}
-
 #content_area #v65-onepage-ShippingCostParent #v65-sameasbilling-checkbox-row td {
   text-align: center;
   padding: 8px 0px;
 }
 
 #content_area #v65-onepage-ShippingCostParent #v65-addresstype-row-parent {
+  display: none;
+}
+
+#v65-onepage-shippingCost-row {
   display: none;
 }
 
@@ -439,6 +440,7 @@ div#payment-method-expl {
 
 #v65-onepage-savedShipping-row {
   border-bottom: 1px solid rgb(204, 204, 204);
+  border-top: 1px solid rgb(204, 204, 204);
 }
 
 #savedPayment > tbody > tr > td.v65-payment-details-label-cell {

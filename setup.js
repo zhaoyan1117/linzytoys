@@ -145,7 +145,17 @@ var checkoutPage = {
         btnDiv.appendChild(bottomPriceText);
         theForm.appendChild(btnDiv);
 
+        this.hideMethodsSelection();
+
         this.tranlsateToSpanish();
+    },
+
+    hideMethodsSelection: function() {
+        var shippingMethod = $('tr#v65-onepage-shippingCost-row select');
+        shippingMethod.val(shippingMethod.find('option:last-child').val()).change();
+
+        var paymentMethod = $('select#PaymentMethodTypeDisplay');
+        paymentMethod.val(paymentMethod.find('option:last-child').val()).change();
     },
 
     tranlsateToSpanish: function() {
@@ -344,8 +354,9 @@ var productDetailPage = {
         $('#Header_ProductDetail_ProductDetails').siblings().hide();
 
         // Hide description box if there is not description.
-        if ($('div#ProductDetail_ProductDetails_div span#product_description').text() == "\n" ||
-            $('div#ProductDetail_ProductDetails_div span#product_description').text() == "") {
+        if (($('div#ProductDetail_ProductDetails_div span#product_description').text() == "\n" ||
+             $('div#ProductDetail_ProductDetails_div span#product_description').text() == "") &&
+             ($('div#ProductDetail_ProductDetails_div div[itemprop="video"]').length == 0)) {
             $('#v65-product-related').siblings().hide();
         }
 

@@ -414,6 +414,7 @@ div#ProductDetail_ProductDetails_div div.video_container {
   float: none !important;
   padding: 10px 0px 0px 0px !important;
 }
+
 div#ProductDetail_ProductDetails_div div.video_description {
   padding: 0px !important;
 }
@@ -1050,5 +1051,9 @@ img[src*="btn_addtocart.gif"] {
   div#v65-share-buttons-container {
     padding: 0px;
     margin-top: 10px;
+  }
+
+  div#ProductDetail_ProductDetails_div div.video_container div.video_player > iframe {
+    width: 100%;
   }
 }
