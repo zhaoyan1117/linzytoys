@@ -29,9 +29,9 @@
     Modify the content value of the following three meta tags to
       change annoucnements on checkout page.
   -->
-  <meta name="checkout-announce-main" content="Please update the following information as mush as you can, our professional sales will contact you to finalize the details in 1 business day!">
-  <meta name="checkout-announce-shipping" content="Select any shipping method for now and our customer service will contact you for shipping details within 24 hours!">
-  <meta name="checkout-announce-payment" content="Select any payment method for now and our customer service will contact you for payment details within 24 hours!">
+  <meta name="checkout-announce-main" content="Please update the following information as much as you can, our customer service will contact you for PAYMENT and SHIPPING DETAILS  within 24 hours!">
+  <meta name="checkout-announce-shipping" content="Select any shipping method for now and our customer service will contact you for PAYMENT and SHIPPING DETAILS  within 24 hours!">
+  <meta name="checkout-announce-payment" content="Select any payment method for now and our customer service will contact you for PAYMENT and SHIPPING DETAILS  within 24 hours!">
   <!-- No change below this line. -->
 
   <script src='v/vspfiles/templates/257/js/jquery.livequery.min.js'></script>
@@ -123,9 +123,7 @@
         </div><!-- /.navbar-collapse -->
       </div> <!-- /.navbar -->
     </div> <!-- /.container -->
-    <a class="shipping-deal" data-v-edit-region="Shipping Deal">
-      <span class="uppercase">THIS IS A WHOLESALE ONLY WEBSITE,SIGN UP TO SEE PRICE AND GET ONLINE ORDER DISCOUNT USE CODE</span> <span class="highlight">"LINZY"</span> AT CHECKOUT!
-    </a>
+    <a class="shipping-deal" data-v-edit-region="Shipping Deal"><span class="uppercase">THIS IS A WHOLESALE ONLY WEBSITE,OUR MINIMUM ORDER IS <span class="highlight">"$150"</span>. PLEASE USE CODE</span> <span class="highlight">"LINZY"</span> AT CHECKOUT TO GET 5% OFF ON ORDERS!</a>
   </div>
   <div class="content">
     <main class="container" id="content_area" role="main"></main>
@@ -162,21 +160,26 @@
         <div class="col-sm-4 hidden-xs">
           <div class="linksWrap" data-v-edit-region="Quick Links">
             <div class="column__title">Quick Links</div>
-            <div class="row">
-              <div class="col-sm-6">
-                <ul class="column left">
-                  <li><a title="Terms and Conditions" href="/terms.asp">Terms & Conditions</a></li>
-                  <li><a title="Privacy Policy" href="/terms_privacy.asp">Privacy Policy</a></li>
-                  <li><a title="Product Index" href="/productslist.asp">Product Index</a></li>
-                  <li><a title="Category Index" href="/cindex.asp">Category Index</a></li>
-                </ul>
-              </div>
-              <div class="col-sm-6">
+              <div class="row">
+                <div class="col-sm-4">
+                  <ul class="column right">
+                    <li><a class="quick-link-hl" href="/category-s/196.htm" title="Just Arrived">Just Arrived</a></li>
+                    <li><a title="Product Index" href="/productslist.asp">Product Index</a></li>
+                    <li><a title="Category Index" href="/cindex.asp">Category Index</a></li>
+                  </ul>
+                </div>
+              <div class="col-sm-4">
                 <ul class="column right">
-                  <li><a title="Shipping Policy" href="/articles.asp?ID=57">Shipping</a> & <a title="Returns Policy" href="/returns.asp">Returns</a></li>
                   <li><a title="My Account" href="/myaccount.asp">My Account</a></li>
                   <li><a title="Log In" href="/login.asp">Log In</a></li>
                   <li><a title="View Your Cart" href="/shoppingcart.asp">View Cart</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-4">
+                <ul class="column left">
+                  <li><a title="Terms and Conditions" href="/terms.asp">Terms & Conditions</a></li>
+                  <li><a title="Privacy Policy" href="/terms_privacy.asp">Privacy Policy</a></li>
+                  <li><a title="Shipping Policy" href="/articles.asp?ID=57">Shipping</a> & <a title="Returns Policy" href="/returns.asp">Returns</a></li>
                 </ul>
               </div>
             </div>
@@ -209,6 +212,7 @@
                   <li><a href="/terms.asp" title="Terms &amp; Conditions">Terms &amp; Conditions</a></li>
                   <li><a href="/productslist.asp" title="Product Index">Product Index</a></li>
                   <li><a href="/cindex.asp" title="Category List">Category List</a></li>
+                  <li><a class="quick-link-hl" href="/category-s/196.htm" title="Just Arrived">Just Arrived</a></li>
                 </ul>
               </div>
             </div>
@@ -321,12 +325,12 @@
   </script>
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>
-    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-    e.src='//www.google-analytics.com/analytics.js';
-    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-    ga('create','UA-XXXXX-X');ga('send','pageview');
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-67226686-1', 'auto');
+    ga('send', 'pageview');
   </script>
 </body>
 </html>

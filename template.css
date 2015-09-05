@@ -735,7 +735,11 @@ body > div.content {
   margin-bottom: 6px;
   padding-bottom: 6px;
   text-transform: uppercase;
-        color:#D94545;
+  color:#D94545;
+}
+
+.footer .quick-link-hl {
+  color:#d96a45;
 }
 
 /* --- ICONS --- */
