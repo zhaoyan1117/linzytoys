@@ -150,36 +150,6 @@ span.product_code {
 *      2nd PRICEBOX       *
 **************************/
 
-/* 2nd Pricebox Container */
-br + .colors_pricebox {
-  background: #fff; /*Overrides default*/
-  margin-top: 35px; /*Make same as height of heading*/
-  padding-bottom: 10px;
-  position: relative;
-  margin-bottom: 5%;
-}
-
-/* Heading */
-br + .colors_pricebox > tbody > tr > td > table > tbody > tr:first-child > td:first-child:before {
-  background: #fff;
-  bottom: 100%;
-  color: #484848;
-  content: "Choose your options:"; /*Text to be displayed*/
-  display: block;
-  font-size: 14px;
-  font-weight: normal;
-  text-transform: uppercase;
-  border-bottom: 1px solid #e0e0e0;
-  left: 0;
-  line-height: 35px; /*Adjust height*/
-  position: absolute;
-  text-indent: 15px;
-  width: 100%;
-}
-
-/* Hides original heading image */
-.colors_pricebox img[src$="Options_Text_Choose.gif"] {display: none;}
-
 /* Large label */
 table#options_table font.colors_productname b {
   color: #484848;
@@ -198,23 +168,6 @@ br + .colors_pricebox table td {
 /*************************************
 *   2nd PRICEBOX - Label alignment   *
 *************************************/
-
-/* Contains everything but Qty and buttons */
-#options_table {
-  font-size: 12px;
-    margin-left: 0;
-}
-
-/* Add spacing between table rows */
-#options_table td {
-  padding: 2px 0;
-}
-
-/* Targets Qty */
-#options_table script + br + table > tbody > tr:first-child > td:first-child {
-  padding: 2px 0 0 48px;
-  display: block;
-}
 
 /* Targets Qty input */
 br + .colors_pricebox script + br + table input.v65-productdetail-cartqty {
@@ -983,6 +936,38 @@ img[src*="btn_addtocart.gif"] {
   width: 140px;
   display: none;
 }
+
+/* Options table */
+#product-info-td > br + table {
+  background: transparent;
+  position: relative;
+}
+
+#product-info-td > br + table > tbody > tr > td > table > tbody > tr:not(:nth-child(3)),
+#product-info-td > br + table > tbody > tr > td > table > tbody > tr:nth-child(3) > td:nth-child(odd) {
+  display: none;
+}
+
+#product-info-td > br + table > tbody > tr > td > table > tbody > tr:nth-child(3) > td:nth-child(2) > table > tbody > tr > td {
+  padding: 0px;
+}
+
+#options_table {
+  width: 50%;
+  margin: 10px 0px 0px 8px;
+}
+
+#options_table tr td:first-child {
+  width: 20%;
+  vertical-align: middle;
+  text-align: left;
+  background: red;
+}
+
+#options_table tr td:last-child {
+  background: cyan;
+}
+
 
 @media only screen and (max-width: 767px) {
   #v65-product-parent > tbody > tr:nth-child(2) > td {

@@ -294,6 +294,7 @@ var productDetailPage = {
         this.moveActionCell();
         this.changeImageBtns();
         this.reStructureInfo();
+        this.reStructureOptionsTable();
         this.cleanBreadcrumb();
         this.reStructureDesc();
         this.addImageActionExpl();
@@ -325,6 +326,11 @@ var productDetailPage = {
         }).append($('#v65-product-wishlist-button'))
           .appendTo(actionDiv);
 
+        // Remove nbsp if exists.
+        if ($('.vCSS_input_addtocart').parent().contents().length == 12) {
+            $('.vCSS_input_addtocart').parent().contents()[10].remove();
+        }
+
         actionTd.find('br').remove();
     },
 
@@ -348,6 +354,15 @@ var productDetailPage = {
         parentTd.prepend(titleUnderLineDiv);
         parentTd.prepend(itemNumber);
         parentTd.prepend(titleFont);
+    },
+
+    reStructureOptionsTable: function() {
+        $('#options_table tr').each(function () {
+            $(this).find('br').remove();
+            $(this).find('img').remove();
+            $(this).find('td:nth-child(3)').contents()[2].remove();
+            $(this).find('td:nth-child(2)').remove();
+        });
     },
 
     cleanBreadcrumb: function() {
