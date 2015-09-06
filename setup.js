@@ -1126,6 +1126,7 @@ var homePage = {
     }
 }
 
+/* Order finished page. */
 var orderFinishedPage = {
     isCurrentPage: util.checkCurrentPage(['/OrderFinished.asp']),
 
