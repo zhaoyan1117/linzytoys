@@ -384,10 +384,9 @@ var productDetailPage = {
         }
 
         // Hide description box if there is not description.
-        if (($('div#ProductDetail_ProductDetails_div span#product_description').text() == "\n" ||
-             $('div#ProductDetail_ProductDetails_div span#product_description').text() == "") &&
-             ($('div#ProductDetail_ProductDetails_div div[itemprop="video"]').length == 0)) {
-            $('#v65-product-related').siblings().hide();
+        if (($('div#ProductDetail_ProductDetails_div span#product_description').text().trim() == "") &&
+            ($('div#ProductDetail_ProductDetails_div div[itemprop="video"]').length == 0)) {
+            $('#v65-product-parent + table > tbody > tr > td > *:not(#v65-product-related)').hide();
         }
     },
 
