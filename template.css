@@ -306,13 +306,15 @@ a:hover {
 
 a.shipping-deal {
   display: block;
-  width: 79.2%;
+  width: 100%;
 
   border-top: 1px solid #eaeaea;
   border-bottom: 1px solid #eaeaea;
 
-  margin: 15px auto;
-  padding: 10px 0;
+  margin: 15px auto 0px;
+  padding: 10px;
+
+  background-color: #f7f7f8;
 
   font-size: 14px;
   color: #484848;
@@ -327,7 +329,8 @@ a.shipping-deal {
 
 a.shipping-deal:hover {
   text-decoration: none;
-  opacity: .7;
+  background-color: #eee;
+  color: #000;
 }
 
 a.shipping-deal .uppercase {
@@ -337,7 +340,6 @@ a.shipping-deal .uppercase {
 a.shipping-deal .highlight {
   color: #fe757f;
 }
-
 /*****************************
 * *      CONTENT AREA      * *
 *****************************/
