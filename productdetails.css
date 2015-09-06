@@ -57,6 +57,7 @@ font.productnamecolorLARGE.colors_productname + i {
 
 #priceTable .product_discountprice .pricecolor {
   font-size: 15px;
+  font-weight: bold;
 }
 
 /***********************************
