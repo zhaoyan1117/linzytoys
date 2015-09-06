@@ -286,101 +286,77 @@ var productDetailPage = {
     isCurrentPage: util.checkCurrentPage(['/productdetails.asp', '-p/', '_p/']),
 
     setup: function(event) {
+        $('#v65-product-parent > tbody > tr:nth-child(2)').attr('id', 'product-parent-tr');
+        $('#v65-product-parent > tbody > tr:nth-child(2) > td:nth-child(1)').attr('id', 'product-image-td');
+        $('#v65-product-parent > tbody > tr:nth-child(2) > td:nth-child(2)').attr('id', 'product-info-td');
+
+        this.resizeManifierImage();
+        this.moveActionCell();
+        this.changeImageBtns();
+        this.reStructureInfo();
+        this.cleanBreadcrumb();
+        this.reStructureDesc();
+        this.addImageActionExpl();
+
+        $('main#content_area > div[itemtype="http://schema.org/Product"]').fadeIn('fast');
+    },
+
+    resizeManifierImage: function() {
         // Setup zoom image size.
         $('#product_photo').mouseover(function() {
             $('#vZoomMagnifierImage').width($('#vZoomTransparentOverlay').width());
         });
+    },
 
+    moveActionCell: function() {
         // Move action button td.
-        var containerTr = $('#v65-product-parent > tbody > tr:nth-child(2)')[0];
-        var actionTd = document.getElementById('v65-productdetail-action-wrapper');
-        containerTr.appendChild(actionTd);
-        $('#v65-productdetail-action-wrapper br').remove();
-        var actionWrapperDiv = document.createElement('DIV');
-        actionWrapperDiv.id = 'action-wrapper-div';
-        var shareBtns = document.getElementById('v65-share-buttons-container');
-        actionWrapperDiv.appendChild(shareBtns);
-        while (actionTd.childNodes.length > 0) {
-            actionWrapperDiv.appendChild(actionTd.childNodes[0]);
-        }
-        actionTd.appendChild(actionWrapperDiv);
+        var actionTd = $('#v65-productdetail-action-wrapper').appendTo($('#product-parent-tr'));
+        var actionDiv = $('<div/>', {'id': 'action-wrapper-div'}).appendTo(actionTd);
 
-        // Make second add to cart button.
-        var addToCart2 = util.changeImageBtn2Submit($('input.vCSS_input_addtocart').clone(), 'Add to cart')
-                                .addClass('vCSS_input_addtocart2')
-                                .addClass('primary-btn')
-                                .removeClass('vCSS_input_addtocart');
-        $('input.vCSS_input_addtocart').after(addToCart2);
+        actionDiv.append($('#v65-share-buttons-container'));
 
+        $('<div/>', {
+            'id':'addtocart-div'
+        }).append($('input.v65-productdetail-cartqty').parent().parent().parent().parent())
+          .appendTo(actionDiv);
+
+        $('<div/>', {
+            'id':'addtowl-div'
+        }).append($('#v65-product-wishlist-button'))
+          .appendTo(actionDiv);
+
+        actionTd.find('br').remove();
+    },
+
+    changeImageBtns: function() {
         util.changeImageBtn2Submit('input.vCSS_input_addtocart', 'Add to cart')
             .addClass('primary-btn');
-
-        // Make second add to wish list button.
-        var addToWL2 = util.changeImageBtn2Submit($('#v65-product-wishlist-button').clone(), 'Add to wish list')
-                           .attr('id', 'v65-product-wishlist-button2')
-                           .addClass('secondary-btn');
-        $('#v65-product-wishlist-button').after(addToWL2);
         util.changeImageBtn2Submit('#v65-product-wishlist-button', 'Add to wish list')
             .addClass('secondary-btn');
+    },
 
+    reStructureInfo: function() {
         // Rearrange locations of product title, itemnumber, and price table.
-        var titleFont = $('font.productnamecolorLARGE.colors_productname')[0];
-        var offerDiv = $('div[itemprop="offers"]')[0];
-        var titleUnderLineDiv = document.createElement('DIV');
-        titleUnderLineDiv.id = 'titleUnderline';
-        var itemNumber = $('div[itemprop="offers"] i');
-        itemNumber = itemNumber[itemNumber.length-1];
+        var titleFont = $('font.productnamecolorLARGE.colors_productname');
+        var offerDiv = $('div[itemprop="offers"]');
+        var titleUnderLineDiv = $('<div/>', {'id': 'titleUnderline'});
+        var itemNumber = $('div[itemprop="offers"] i:last-of-type');
+        var priceTable = offerDiv.find('table').attr('id', 'priceTable');
 
-        $('#v65-product-parent > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr:nth-child(1) > td > div > table')[0].id = 'priceTable';
-        var priceTable = document.getElementById('priceTable');
-        $(offerDiv.parentNode).prepend(priceTable);
-        $(offerDiv.parentNode).prepend(titleUnderLineDiv);
-        $(offerDiv.parentNode).prepend(itemNumber);
-        $(offerDiv.parentNode).prepend(titleFont);
-        $('#priceTable br').remove();
+        var parentTd = offerDiv.parent();
+        parentTd.prepend(priceTable);
+        parentTd.prepend(titleUnderLineDiv);
+        parentTd.prepend(itemNumber);
+        parentTd.prepend(titleFont);
+    },
 
-        // Cleanup breadcrumb td.
-        var breadcrumbTd = $('td.vCSS_breadcrumb_td')[0];
-        while (breadcrumbTd.childNodes.length > 1) {
-            breadcrumbTd.removeChild(breadcrumbTd.lastChild);
-        }
+    cleanBreadcrumb: function() {
+        $('td.vCSS_breadcrumb_td').contents().slice(1).remove();
+    },
 
-        // Remove br in itemoffers.
-        var offersBrs = $('div[itemprop="offers"] br');
-        offersBrs[offersBrs.length-1].remove();
-        $('#v65-product-parent > tbody > tr:nth-child(2) > td:nth-child(1) > table > tbody > tr > td:nth-child(1) br').remove();
-
-        // Clear feature fields.
+    reStructureDesc: function() {
+        // Clean feature fields.
         $('#Header_ProductDetail_ProductDetails').siblings().hide();
-
-        // Hide description box if there is not description.
-        if (($('div#ProductDetail_ProductDetails_div span#product_description').text() == "\n" ||
-             $('div#ProductDetail_ProductDetails_div span#product_description').text() == "") &&
-             ($('div#ProductDetail_ProductDetails_div div[itemprop="video"]').length == 0)) {
-            $('#v65-product-related').siblings().hide();
-        }
-
-        // Hide large pic button.
-        $('#product_photo_zoom_url').next().next().hide();
-        $('#product_photo_zoom_url').next().hide();
-
-        // Add image action expl.
-        var imageActionExplDivText = 'Roll over image to zoom in';
-        var imageActionExplDivHoverText = 'Click to open expanded view';
-        var imageActionExplDiv = document.createElement('DIV');
-        imageActionExplDiv.id = 'imageActionExpl';
-        imageActionExplDiv.innerText = imageActionExplDivText;
-        $('#product_photo_zoom_url').after(imageActionExplDiv);
-
-        $('#product_photo_zoom_url').mouseover(function() {
-            imageActionExplDiv.innerText = imageActionExplDivHoverText;
-        });
-        $('#vZoomMagnifierImage').mouseout(function() {
-            imageActionExplDiv.innerText = imageActionExplDivText;
-        });
-
-        // Remove unnecessary br in related products.
-        $('td.v65-productAvailability br').remove();
 
         // Re-style embedded youtube video.
         var youtubeVideo = $('#ProductDetail_ProductDetails_div div.video_player > iframe');
@@ -392,18 +368,30 @@ var productDetailPage = {
             youtubeVideo.attr('src', "https://www.youtube.com/embed/" + videoId + "?modestbranding=1&fs=0&rel=0&showinfo=0");
         }
 
-        this.tranlsateToSpanish();
-
-        $('main#content_area > div[itemtype="http://schema.org/Product"]').fadeIn('fast');
+        // Hide description box if there is not description.
+        if (($('div#ProductDetail_ProductDetails_div span#product_description').text() == "\n" ||
+             $('div#ProductDetail_ProductDetails_div span#product_description').text() == "") &&
+             ($('div#ProductDetail_ProductDetails_div div[itemprop="video"]').length == 0)) {
+            $('#v65-product-related').siblings().hide();
+        }
     },
 
-    tranlsateToSpanish: function() {
-        if (document.documentElement.lang == 'es') {
-            var addToCartText = 'Añadir a la cesta';
-            var addToWLText = 'Añadir a la Lista de deseos';
-            $('input[value="Add to cart"]').attr("value", addToCartText);
-            $('input[value="Add to wish list"]').attr("value", addToWLText);
-        }
+    addImageActionExpl: function() {
+        // Add image action expl.
+        var imageActionExplDivText = 'Roll over image to zoom in';
+        var imageActionExplDivHoverText = 'Click to open expanded view';
+
+        var imageActionExplDiv = $('<div/>', {
+            'id': 'imageActionExpl',
+            'text': imageActionExplDivText
+        }).insertAfter($('#product_photo_zoom_url'));
+
+        $('#product_photo_zoom_url').mouseover(function() {
+            imageActionExplDiv.text(imageActionExplDivHoverText);
+        });
+        $('#vZoomMagnifierImage').mouseout(function() {
+            imageActionExplDiv.text(imageActionExplDivText);
+        });
     }
 }
 
