@@ -199,11 +199,14 @@ input[src$="/btn_go.gif"] {
 
 /* PAGE HEADINGS */
 #content_area img[src*="/headings/heading_"] + br + form:before, #content_area img[src*="/headings/heading_"] + br + table:before, #content_area img[src*="/headings/heading_"] + br + div:before, #content_area img[src*="/headings/heading_"] + br + br + table:before, #content_area img[src*="/headings/heading_help.gif"] + br + img + a + br + table > tbody:before {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-family: inherit;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-bottom: 0px;
+  margin: 0px 0px 10px 0px;
+  border-bottom: 1px solid #eeeeee;
+  color: #000;
+  font-size: 24px;
+  font-weight: normal;
 }
 
 
