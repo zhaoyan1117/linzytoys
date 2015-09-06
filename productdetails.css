@@ -885,7 +885,7 @@ table td{
 *************************/
 
 /* Remove unnecessary cells. */
-#product-info-td > table:first-of-type > tbody > tr > td > table > tbody > tr:nth-child(odd),,
+#product-info-td > table:first-of-type > tbody > tr > td > table > tbody > tr:nth-child(odd),
 #product-info-td > table:first-of-type > tbody > tr > td > table > tbody > tr:nth-child(2) > td:nth-child(odd),
 #product-info-td > table:first-of-type > tbody > tr > td > table > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr:nth-child(2),
 #product-parent-tr + tr,
