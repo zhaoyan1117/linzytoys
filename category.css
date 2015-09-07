@@ -197,8 +197,7 @@ img[src*="/v/vspfiles/photos/"] {
   display: block;
   max-width: 100%;
   height: auto;
-  margin: 0 0 15px;
-  margin-left: 0px;
+  margin: 0 auto 15px;
 }
 /*****************************
 *  CENTER PROD NAME & PRICE  *
@@ -347,6 +346,46 @@ td#cur-page-td {
   /* Deal Price */
   table.v65-productDisplay .product_dealprice {
     font-size: 12px;
+  }
+
+  /* Mobile products */
+  .v-product-grid {
+    margin: 10px 0px;
+  }
+  .v-product-grid .v-product {
+    margin: 0px !important;
+    padding: 0px !important;
+  }
+  .v-product-grid .v-product:not(:last-child) {
+    border-bottom: 1px solid #eeeeee;
+  }
+  .v-product-grid .v-product .v-product__img {
+    float: left;
+    width: 50%;
+  }
+  .v-product-grid .v-product .v-product__img img {
+    margin: 0px !important;
+  }
+  .v65-productDisplay .productnamecolor.colors_productname,
+  a.productnamecolor.colors_productname {
+    text-align: left;
+    margin: 1px 0px 0px 51%;
+  }
+  .v-product-grid .v-product .v-product__desc {
+    text-align: left;
+    margin-left: 51%;
+  }
+  .v-product-grid .v-product > div {
+    margin-left: 51%;
+  }
+  .v-product .text, .v-product div {
+    text-align: left;
+  }
+  table.v65-productDisplay .product_productprice {
+    text-align: left;
+  }
+  table.v65-productDisplay .product_discountprice {
+    text-align: left;
   }
 }
 
