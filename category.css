@@ -21,10 +21,7 @@
 /*Set container's background or border*/
 .colors_backgroundneutral {
   background: none; /*Overrides default*/
-  border-bottom: 1px solid #eaeaea;
   display: block;
-  margin-bottom: 30px;
-  padding-bottom: 12px;
 }
 
 /*****************************
@@ -34,8 +31,8 @@
 /* Heading background */
 table.colors_backgroundlight {
   background: none;
-  border-bottom: 0 solid #e1e1e1;
   width: 100%;
+  margin: 0px auto 5px;
 }
 
 /* Heading text styling */
@@ -46,9 +43,6 @@ table.colors_backgroundlight > tbody > tr > td:first-child b {
   text-transform: uppercase;
   font-family: inherit;
   font-weight: normal;
-  padding: 20px 0 10px;
-  border-bottom: 1px solid #eaeaea;
-  margin-bottom: 12px;
 }
 
 /*****************************
@@ -58,7 +52,9 @@ table.colors_backgroundlight > tbody > tr > td:first-child b {
 /* Category links outer container (excludes heading container) */
 /* Use for background and padding */
 table.colors_backgroundlight + table {
-  padding: 3% 0;
+  border-bottom: 1px solid #eaeaea;
+  border-top: 1px solid #eaeaea;
+  margin-bottom: 10px;
 }
 
 .subcategory_name {
@@ -66,11 +62,15 @@ table.colors_backgroundlight + table {
   vertical-align: middle;
 }
 
+img[src*='clear1x1.gif'] {
+  display: none;
+}
+
 /* Category link */
 a.subcategory_link {
   font-size: 14px;
   display: block;
-  padding:2% 0;
+  padding: 8px 0px;
   font-weight: normal;
 }
 
