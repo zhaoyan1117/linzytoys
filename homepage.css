@@ -61,7 +61,7 @@ img[src*="FeaturedProducts.gif"] {
 }
 
 .v65-productDisplay .productnamecolor.colors_productname:hover, a.productnamecolor.colors_productname:hover {
-  color: #e9616e;
+  color: #f5a34e;
   text-decoration: none;
 }
 table.v65-productDisplay font.text.colors_text, table.v65-productDisplay font.text.colors_text b {
@@ -170,6 +170,9 @@ table.v65-productDisplay .product_dealprice {
   .v-product-grid .v-product {
     margin: 0px !important;
     padding: 0px !important;
+  }
+  .v-product-grid .v-product:nth-child(even) {
+    background-color: #f7f7f8;
   }
   .v-product-grid .v-product:not(:last-child) {
     border-bottom: 1px solid #eeeeee;
