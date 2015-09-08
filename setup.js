@@ -11,6 +11,12 @@ var util = {
     checkCurrentPage: function(paths) {
         var cur = false;
         var curLoc = location.pathname.toLowerCase();
+
+        // If in redict page use search parameters.
+        if (curLoc == "/urlrewrite.asp") {
+            curLoc = location.search.toLowerCase();
+        }
+
         var curPath = '';
         for(var i = 0; i < paths.length; i++) {
             curPath = paths[i].toLowerCase();
@@ -409,9 +415,10 @@ var productDetailPage = {
     }
 }
 
-/* Category page. */
+/* Category page and Search results page. */
 var categoryPage = {
-    isCurrentPage: util.checkCurrentPage(['-s/', '_s/']),
+    // Search results is displayed with category layout as well.
+    isCurrentPage: util.checkCurrentPage(['-s/', '_s/', '/SearchResults.asp']),
 
     setup: function(event) {
         /* Category page has an #SortBy element. */
