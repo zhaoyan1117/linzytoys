@@ -28,6 +28,12 @@ var util = {
     // http://stackoverflow.com/questions/11582512/how-to-get-url-parameters-with-javascript/11582513#11582513
     getURLParameter: function(name) {
         return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+    },
+
+    removeNbsp: function(element) {
+        element = $(element);
+        element.html(element.html().replace(/&nbsp;/g, ''));
+        return element;
     }
 }
 
@@ -333,9 +339,7 @@ var productDetailPage = {
           .appendTo(actionDiv);
 
         // Remove nbsp if exists.
-        if ($('.vCSS_input_addtocart').parent().contents().length == 12) {
-            $('.vCSS_input_addtocart').parent().contents()[10].remove();
-        }
+        util.removeNbsp($('.vCSS_input_addtocart').parent());
 
         actionTd.find('br').remove();
     },
@@ -366,7 +370,7 @@ var productDetailPage = {
         $('#options_table tr').each(function () {
             $(this).find('br').remove();
             $(this).find('img').remove();
-            $(this).find('td:nth-child(3)').contents()[2].remove();
+            util.removeNbsp($(this).find('td:nth-child(3)'));
             $(this).find('td:nth-child(2)').remove();
         });
     },
