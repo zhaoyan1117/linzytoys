@@ -821,7 +821,7 @@ var shoppingCartPage = {
 
         // Re-organize cart details row.
         var that = this;
-        $('table#v65-cart-table tr.v65-cart-details-row').each(function() {
+        $('table#v65-cart-table tr.v65-cart-details-row').each(function(index, element) {
             var descCell = $($(this).children()[1]);
             var priceCell = $($(this).children()[2]);
             var qtyCell = $($(this).children()[3]);
@@ -848,6 +848,24 @@ var shoppingCartPage = {
                 'class': 'mobile-delete secondary-btn',
                 'text': that.t('mobileDelete')
             }).appendTo(qtyCell);
+
+            // Grab item options if needed.
+            var optionsAnchor = descCell.find('a[href="javascript:void(0);"]');
+            if (optionsAnchor.length == 1) {
+                $jQueryModern.get('Help_CartItemDetails.asp?CartID=' + (index+1), function(data) {
+                    var parsedData = $($jQueryModern.parseHTML(data));
+                    parsedData.find('li').each(function() {
+                       var co = $(this).text().trim().split(':');
+                       var c = co[0];
+                       var o = co[1];
+                       optionsAnchor.after($('<span class="item-option">\
+                            <span class="category">'+ c +'</span>\
+                            <span class="option">'+ o +'</span>\
+                        </span>'));
+                    });
+                    optionsAnchor.remove();
+                });
+            }
         });
         $('table#v65-cart-table tr.v65-cart-details-row td.v65-cart-detail-productimage').remove();
         $('table#v65-cart-table tr.v65-cart-details-row td.v65-cart-item-remove-cell').remove();
