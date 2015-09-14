@@ -150,6 +150,41 @@ tr.v65-cart-giftcert-details-row table.v65-cart-giftcert-total td font {
   text-transform: none !important;
 }
 
+td.v65-cart-details-text font.carttext {
+  display: block;
+}
+
+td.v65-cart-details-text font.carttext:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.item-desc .item-option {
+  display: inline-block;
+  border-radius: 4px;
+  margin: 2px 4px 0px 0px;
+  border: 1px solid #bbbbbb;
+  float: left;
+  color: black;
+}
+
+.item-desc .item-option .category {
+  display: inline-block;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  padding: 1px 2px;
+  background-color: #eaeaea;
+  float: left;
+}
+
+.item-desc .item-option .option {
+  display: inline-block;
+  padding: 1px 2px;
+  float: left;
+}
+
+
 /* Shopping cart action. */
 div#shopping-cart-action {
   width: 100%;
