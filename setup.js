@@ -42,6 +42,7 @@ var allPage = {
     setup: function(event) {
         this.moveCatalog2QuickLink();
         this.reDesignShoppingCart();
+        this.customizeGoogleTranslate();
 
         $(document).ready(function() {
             $('#content_area > form').fadeIn('fast');
@@ -63,6 +64,17 @@ var allPage = {
     reDesignShoppingCart: function() {
         // $('.cartDiv').livequery(function() {
         //     $('.cartDiv span.product_id a').click(function() {
+        //     });
+        // });
+    },
+
+    customizeGoogleTranslate: function() {
+        // $('.goog-te-menu-frame:first').ready(function() {
+        //     var spanish = $('.goog-te-menu-frame:first').contents().find('span.text:contains(Spanish)');
+        //     console.log(spanish.text());
+        //     console.log(spanish);
+        //     $(spanish).click(function(){
+        //         console.log('meme');
         //     });
         // });
     }
