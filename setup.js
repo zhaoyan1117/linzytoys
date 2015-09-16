@@ -40,6 +40,15 @@ var util = {
 /* Every page. */
 var allPage = {
     setup: function(event) {
+        this.moveCatalog2QuickLink();
+        this.reDesignShoppingCart();
+
+        $(document).ready(function() {
+            $('#content_area > form').fadeIn('fast');
+        });
+    },
+
+    moveCatalog2QuickLink: function() {
         $('body > div.page-wrap').ready(function() {
             // Move private catalog to the bottom.
             var catalogAnchors = $('li.vnav__item a[onclick*="2016_VALENTINE_CATALOG"]').parent().remove().find('a');
@@ -49,10 +58,13 @@ var allPage = {
             $('<li/>').append(catalogAnchors[0]).prependTo($('footer.footer div.linksWrap ul.left'));
             $('<li/>').append(catalogAnchors[1]).appendTo($('#link-col-1 > div > ul'));
         });
+    },
 
-        $(document).ready(function() {
-            $('#content_area > form').fadeIn('fast');
-        });
+    reDesignShoppingCart: function() {
+        // $('.cartDiv').livequery(function() {
+        //     $('.cartDiv span.product_id a').click(function() {
+        //     });
+        // });
     }
 }
 
