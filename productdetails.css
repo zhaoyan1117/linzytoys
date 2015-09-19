@@ -734,7 +734,7 @@ td.vCSS_breadcrumb_td > b + br + img {
 #options_table tr > td:first-child br {display: none;}
 
 /* Related products/accessories fixes */
-.colors_lines_light {background: none;}
+.colors_lines_light {background: none !important;}
 table.colors_backgroundlight {display: block; margin-bottom: -1px;}
 table.colors_lines_light td.colors_backgroundlight {padding: 0;}
 
