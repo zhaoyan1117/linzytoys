@@ -39,7 +39,15 @@ var util = {
 
 /* Every page. */
 var allPage = {
-    setup: function(event) {
+    beforeSetup: function(event) {
+        $(document).ready(function() {
+            if ($('body').contents()[0].nodeType == Node.TEXT_NODE) {
+                $('body').contents()[0].remove();
+            }
+        });
+    },
+
+    afterSetup: function(event) {
         this.moveCatalog2QuickLink();
         this.reDesignShoppingCart();
         this.customizeGoogleTranslate();
@@ -1194,6 +1202,8 @@ var orderFinishedPage = {
 }
 
 
+$(allPage.beforeSetup(allPage));
+
 /* Bind setup callback for current page. */
 if (checkoutPage.isCurrentPage) {
     $(checkoutPage.setup.bind(checkoutPage));
@@ -1215,4 +1225,4 @@ if (checkoutPage.isCurrentPage) {
     $(orderFinishedPage.setup.bind(orderFinishedPage));
 }
 
-$(allPage.setup(allPage));
+$(allPage.afterSetup(allPage));

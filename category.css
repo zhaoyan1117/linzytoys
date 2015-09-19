@@ -464,3 +464,9 @@ td#cur-page-td {
   display: inline-block;
   text-align: right;
 }
+
+/* New product label */
+.icon-new-product:before {
+  font-size: 200%;
+  margin-left: 1px;
+}

@@ -694,6 +694,12 @@ div#div_articleid_49 div#order-finished-end ~ table {
   margin-bottom: 15px;
 }
 
+/* New product label */
+.icon-new-product:before,
+.icon-new-product:before:hover {
+  color: #D94545;
+}
+
 @media only screen and (max-width: 480px) {
   #login-table form,
   #RegisterForm,
