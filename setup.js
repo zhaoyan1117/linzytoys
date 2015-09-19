@@ -381,6 +381,16 @@ var productDetailPage = {
             .addClass('primary-btn');
         util.changeImageBtn2Submit('#v65-product-wishlist-button', 'Add to wish list')
             .addClass('secondary-btn');
+        // Disable add to card button if out of stock.
+
+        if ($('meta[itemprop="availability"][content="InStock"]').length == 0) {
+            var addToCart = $('input.vCSS_input_addtocart');
+            $('input.v65-productdetail-cartqty').attr('disabled', 'disabled');
+            addToCart.attr('disabled', 'disabled')
+                    .attr('value', 'Sold Out')
+                    .addClass('disabled-btn')
+                    .removeClass('primary-btn');
+        }
     },
 
     reStructureInfo: function() {

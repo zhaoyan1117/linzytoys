@@ -947,6 +947,13 @@ span[itemprop="description"] li:before {
 
 input.v65-productdetail-cartqty {
   padding: 2px 5px!important;
+  border-radius: 3px!important;
+}
+
+input.v65-productdetail-cartqty:disabled {
+  background: #dedede !important;
+  color: #cecece !important;
+  cursor: not-allowed;
 }
 
 img[src*="btn_largerphoto.gif"] {
@@ -1028,6 +1035,11 @@ img[src*="btn_addtocart.gif"] {
   color: black;
   font-size: 15px;
   min-width: 105px;
+}
+
+/* Error list */
+.v65-error-list-wrapper {
+  padding: 0px 10px 10px;
 }
 
 @media only screen and (max-width: 767px) {

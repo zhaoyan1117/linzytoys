@@ -1048,3 +1048,24 @@ body > div.content {
   position:relative;
   top:1px;
 }
+
+.disabled-btn {
+  -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  box-shadow:inset 0px 1px 0px 0px #ffffff;
+  background-color:#ededed;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:1px solid #dcdcdc;
+  display:inline-block;
+  cursor:not-allowed !important;
+  color:#aaa;
+  font-family:Arial;
+  font-size:15px;
+  font-weight:bold;
+  padding: 6px 20px;
+  text-align:center;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #ffffff;
+}
