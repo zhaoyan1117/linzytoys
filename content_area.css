@@ -449,7 +449,7 @@ h2.order-finish-title {
   border-bottom: 1px solid #eeeeee;
 }
 
-#content_area > table > tbody > tr > td {
+#content_area h2.order-finish-title + table {
   background: url(/v/vspfiles/templates/257/images/template/logo_bg.png) no-repeat center;
   height: 500px;
   vertical-align: middle;
@@ -692,6 +692,12 @@ div#div_articleid_49 div#order-finished-end ~ table {
 
 #div_articleid_61 {
   margin-bottom: 15px;
+}
+
+/* New arrival label */
+#new-product {
+  background: url(/v/vspfiles/templates/257/images/template/new-product.svg) no-repeat;
+  float: left;
 }
 
 @media only screen and (max-width: 480px) {
