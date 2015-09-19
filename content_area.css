@@ -694,12 +694,6 @@ div#div_articleid_49 div#order-finished-end ~ table {
   margin-bottom: 15px;
 }
 
-/* New arrival label */
-#new-product {
-  background: url(/v/vspfiles/templates/257/images/template/new-product.svg) no-repeat;
-  float: left;
-}
-
 @media only screen and (max-width: 480px) {
   #login-table form,
   #RegisterForm,

@@ -1030,15 +1030,6 @@ img[src*="btn_addtocart.gif"] {
   min-width: 105px;
 }
 
-/* New product label */
-#new-product {
-  background-size: 23px 23px;
-  width: 23px;
-  height: 23px;
-  margin-top: 3px;
-  margin-right: 3px;
-}
-
 @media only screen and (max-width: 767px) {
   #options_table {
     width: 100%;
