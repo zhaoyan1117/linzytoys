@@ -61,11 +61,13 @@ var allPage = {
         $('body > div.page-wrap').ready(function() {
             // Move private catalog to the bottom.
             var catalogAnchors = $('li.vnav__item a[onclick*="2016_VALENTINE_CATALOG"]').parent().remove().find('a');
-            catalogAnchors.attr('title', '2016 Valentine Catalog');
-            catalogAnchors.removeClass().addClass('quick-link-hl');
+            if (catalogAnchors.length != 0) {
+                catalogAnchors.attr('title', '2016 Valentine Catalog');
+                catalogAnchors.removeClass().addClass('quick-link-hl');
 
-            $('<li/>').append(catalogAnchors[0]).prependTo($('footer.footer div.linksWrap ul.left'));
-            $('<li/>').append(catalogAnchors[1]).appendTo($('#link-col-1 > div > ul'));
+                $('<li/>').append(catalogAnchors[0]).prependTo($('footer.footer div.linksWrap ul.left'));
+                $('<li/>').append(catalogAnchors[1]).appendTo($('#link-col-1 > div > ul'));
+            }
         });
     },
 
