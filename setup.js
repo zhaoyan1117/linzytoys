@@ -322,6 +322,15 @@ var checkoutPage = {
 
         $('#DisplayShippingSpeedChoicesTD select')[0].onchange = function(){};
         $('#v65-onepage-CheckoutForm').unbind();
+
+        // Make sure payment and shipping method are selected.
+        $('#v65-onepage-CheckoutForm').submit(function() {
+            var shippingMethod = $('tr#v65-onepage-shippingCost-row select');
+            shippingMethod.val(shippingMethod.find('option:last-child').val()).change();
+
+            var paymentMethod = $('select#PaymentMethodTypeDisplay');
+            paymentMethod.val(paymentMethod.find('option:last-child').val()).change();
+        });
     }
 }
 
