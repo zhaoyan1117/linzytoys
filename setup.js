@@ -42,7 +42,9 @@ var allPage = {
     beforeSetup: function(event) {
         $(document).ready(function() {
             if ($('body').contents()[0].nodeType == Node.TEXT_NODE) {
-                $('body').contents()[0].remove();
+                // To accommodate IE...
+                var extraText = $('body').contents()[0];
+                extraText.parentNode.removeChild(extraText);
             }
         });
     },
