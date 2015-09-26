@@ -695,9 +695,12 @@ div#div_articleid_49 div#order-finished-end ~ table {
 }
 
 /* New product label */
-.icon-new-product:before,
-.icon-new-product:before:hover {
-  color: #D94545;
+b.icon-new-product {
+  background-image: url(../images/template/new-product.svg);
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: text-top;
+  margin-left: 5px;
 }
 
 @media only screen and (max-width: 480px) {
