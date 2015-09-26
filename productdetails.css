@@ -1044,9 +1044,9 @@ img[src*="btn_addtocart.gif"] {
 
 /* New product label */
 b.icon-new-product {
-  width: 25px;
-  height: 25px;
-  background-size: 25px 25px;
+  width: 30px;
+  height: 30px;
+  background-size: 30px 30px;
 }
 
 @media only screen and (max-width: 767px) {

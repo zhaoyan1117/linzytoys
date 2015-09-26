@@ -289,6 +289,12 @@ td#cur-page-td {
   display: inline-block !important;
 }
 
+/* New product label */
+b.icon-new-product {
+  width: 25px;
+  height: 25px;
+  background-size: 25px 25px;
+}
 @media only screen and (max-width: 767px) {
   .category-action-expl {
     width: 100%;

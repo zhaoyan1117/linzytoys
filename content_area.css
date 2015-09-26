@@ -700,7 +700,7 @@ b.icon-new-product {
   background-repeat: no-repeat;
   display: inline-block;
   vertical-align: text-top;
-  margin-left: 5px;
+  margin-left: 3px;
 }
 
 @media only screen and (max-width: 480px) {
