@@ -1049,6 +1049,18 @@ b.icon-new-product {
   background-size: 30px 30px;
 }
 
+b.icon-coming-soon {
+  width: 35px;
+  height: 35px;
+  background-size: 35px 35px;
+}
+
+b.icon-sold-out {
+  width: 35px;
+  height: 35px;
+  background-size: 35px 35px;
+}
+
 @media only screen and (max-width: 767px) {
   #options_table {
     width: 100%;

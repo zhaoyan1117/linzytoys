@@ -703,6 +703,22 @@ b.icon-new-product {
   margin-left: 3px;
 }
 
+b.icon-coming-soon {
+  background-image: url(../images/template/coming-soon.svg);
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: text-top;
+  margin-left: 3px;
+}
+
+b.icon-sold-out {
+  background-image: url(../images/template/sold-out.svg);
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: text-top;
+  margin-left: 3px;
+}
+
 @media only screen and (max-width: 480px) {
   #login-table form,
   #RegisterForm,
