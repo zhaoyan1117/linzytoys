@@ -291,21 +291,21 @@ td#cur-page-td {
 
 /* New product label */
 b.icon-new-product {
-  width: 25px;
-  height: 25px;
-  background-size: 25px 25px;
+  width: 30px;
+  height: 30px;
+  background-size: 30px 30px;
 }
 
 b.icon-coming-soon {
-  width: 33px;
-  height: 33px;
-  background-size: 33px 33px;
+  width: 30px;
+  height: 30px;
+  background-size: 30px 30px;
 }
 
 b.icon-sold-out {
-  width: 25px;
-  height: 25px;
-  background-size: 25px 25px;
+  width: 30px;
+  height: 30px;
+  background-size: 30px 30px;
 }
 
 @media only screen and (max-width: 767px) {

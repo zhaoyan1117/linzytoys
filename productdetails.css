@@ -1056,9 +1056,9 @@ b.icon-coming-soon {
 }
 
 b.icon-sold-out {
-  width: 35px;
-  height: 35px;
-  background-size: 35px 35px;
+  width: 30px;
+  height: 30px;
+  background-size: 30px 30px;
 }
 
 @media only screen and (max-width: 767px) {

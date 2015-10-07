@@ -704,7 +704,7 @@ b.icon-new-product {
 }
 
 b.icon-coming-soon {
-  background-image: url(../images/template/coming-soon.svg);
+  background-image: url(../images/template/coming-soon.png);
   background-repeat: no-repeat;
   display: inline-block;
   vertical-align: text-top;
@@ -712,7 +712,7 @@ b.icon-coming-soon {
 }
 
 b.icon-sold-out {
-  background-image: url(../images/template/sold-out.svg);
+  background-image: url(../images/template/sold-out.png);
   background-repeat: no-repeat;
   display: inline-block;
   vertical-align: text-top;
