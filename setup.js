@@ -1227,10 +1227,14 @@ var orderFinishedPage = {
     isCurrentPage: util.checkCurrentPage(['/OrderFinished.asp']),
 
     setup: function(event) {
+        // Add title.
         $('<h2>', {
             'class': 'order-finish-title',
             'text': 'Thank you, your order is placed!'
         }).insertBefore('#content_area > table');
+
+        // Hide everythign else but the text.
+        $('#div_articleid_49').siblings().hide();
     }
 }
 
