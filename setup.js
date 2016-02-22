@@ -170,20 +170,30 @@ var checkoutPage = {
             $('#v65-onepage-savedShipping-row').hide();
         }
 
-        // Re-style submit order btn.
-        util.changeImageBtn2Submit('input#btnSubmitOrder', 'Place order').addClass('primary-btn');
+        // Re-style submit order btn, this is currently hided.
+        util.changeImageBtn2Submit('#btnSubmitOrder', 'Place order').addClass('primary-btn');
 
         // Add bottom place order btn.
-        var theForm = document.getElementById('v65-onepage-CheckoutForm');
+        var theFormName = 'v65-onepage-CheckoutForm';
+        var theForm = document.getElementById(theFormName);
 
         var clearDiv = document.createElement('DIV');
         clearDiv.id = 'tablesClear';
         theForm.appendChild(clearDiv);
 
-        var bottomSubmitBtn = util.changeImageBtn2Submit($('input#btnSubmitOrder').clone(), 'Place order')
-                                    .removeAttr('id')
-                                    .attr('id', 'btnSubmitOrder2')
-                                    .addClass('primary-btn');
+        // The following code doesn't work anymore because the submit element is changed to a button.
+        // var bottomSubmitBtn = util.changeImageBtn2Submit($('#btnSubmitOrder').clone(), 'Place order')
+        //                             .removeAttr('id')
+        //                             .attr('id', 'btnSubmitOrder2')
+        //                             .addClass('primary-btn');
+        var bottomSubmitBtn = $("<input/>", {
+            'class': 'primary-btn',
+            'value': 'Place order',
+            'id': 'btnSubmitOrder2',
+            'type': 'submit',
+            'name': 'btnSubmitOrder',
+            'form': theFormName
+        });
 
         var bottomPriceText = document.createTextNode('Total: ' + $('#TotalsTotalTD').text());
 
