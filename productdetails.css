@@ -115,8 +115,8 @@ div[itemprop="offers"] > table {
 /* Product Code */
 span.product_code_title,
 span.product_code {
-  color: #a8a8a8;
-  font-size: 12px;
+  color: #000;
+  font-size: 16px;
   font-style: normal;
   font-weight: normal;
 }
