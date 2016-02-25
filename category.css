@@ -107,7 +107,7 @@ img[src*="/v/vspfiles/photos/"]{
 /* Product Title */
 table.v65-productDisplay .productnamecolor {
   font: 600 12px 'Source Sans Pro', Arial, Sans-Serif;
-  text-align: center; /* added by yan 08/07 */
+  text-align: center;/* added by yan 08/07 */
   text-decoration: none;
 }
 
@@ -116,6 +116,13 @@ table.v65-productDisplay .productnamecolor:hover {
 }
 .v-product div {
   text-align: center; /* added by yan 08/11 */
+}
+
+table.v65-productDisplay a.v-product__item-number {
+  font-size: 13px;
+  font-weight: normal;
+  margin-bottom: 3px;
+  margin-top: -10px;
 }
 
 /* List Price */

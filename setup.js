@@ -622,6 +622,16 @@ var categoryPage = {
             } else {
                 nextPageBtn.addClass('page-nav-btn-disabled');
             }
+
+            // Add item-number.
+            $('a.v-product__title').each(function() {
+                var itemNumber = $(this).attr('title').split(',')[1].trim();
+                var itemNumberText = "ITEM NUMBER: " + itemNumber;
+
+                var itemNumberAnchor = $(this).clone().addClass('v-product__item-number');
+                itemNumberAnchor.text(itemNumberText);
+                $(this).before(itemNumberAnchor);
+            });
         },
 
         reBindEvents: function() {
