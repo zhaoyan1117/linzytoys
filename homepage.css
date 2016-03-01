@@ -69,6 +69,13 @@ table.v65-productDisplay font.text.colors_text, table.v65-productDisplay font.te
   font-size: 12px;
 }
 
+table.v65-productDisplay a.v-product__item-number {
+  font-size: 13px !important;
+  font-weight: normal !important;
+  margin-bottom: 3px;
+  margin-top: -4px;
+}
+
 .v-product .text {
   text-align: center; /* added by yan 08/07 */
   margin: 0px;

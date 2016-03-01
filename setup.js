@@ -34,6 +34,18 @@ var util = {
         element = $(element);
         element.html(element.html().replace(/&nbsp;/g, ''));
         return element;
+    },
+
+    addProductItemNumbers: function() {
+        $('a.v-product__title').each(function() {
+            var itemNumbers = $(this).attr('title').split(',');
+            var itemNumber = itemNumbers[itemNumbers.length - 1].trim();
+            var itemNumberText = "ITEM NUMBER: " + itemNumber;
+
+            var itemNumberAnchor = $(this).clone().addClass('v-product__item-number');
+            itemNumberAnchor.text(itemNumberText);
+            $(this).before(itemNumberAnchor);
+        });
     }
 }
 
@@ -624,14 +636,7 @@ var categoryPage = {
             }
 
             // Add item-number.
-            $('a.v-product__title').each(function() {
-                var itemNumber = $(this).attr('title').split(',')[1].trim();
-                var itemNumberText = "ITEM NUMBER: " + itemNumber;
-
-                var itemNumberAnchor = $(this).clone().addClass('v-product__item-number');
-                itemNumberAnchor.text(itemNumberText);
-                $(this).before(itemNumberAnchor);
-            });
+            util.addProductItemNumbers();
         },
 
         reBindEvents: function() {
@@ -1229,6 +1234,9 @@ var homePage = {
         $('img[src*="FeaturedProducts.gif"]').replaceWith(featuredProductsTitle);
         $('h2#featured-products-title ~ br').remove();
         $('h2#featured-products-title + table').remove();
+
+        // Add product item numbers.
+        util.addProductItemNumbers();
     }
 }
 
