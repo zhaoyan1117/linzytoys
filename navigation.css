@@ -53,9 +53,12 @@ background-color:#D94545;
 }
 #main-nav .vnav__link {
   color: #F6F6F6;
---  display: block; --
 
+  /*
+  display: block;
   font-size: 13px;
+  */
+
   font-weight: normal;
   letter-spacing: 0.1em;
   line-height: 50px;
